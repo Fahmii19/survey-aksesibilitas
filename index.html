@@ -36,11 +36,15 @@
         right: 0;
       }
 
-      footer {
+      .container_footer {
         position: absolute;
         bottom: 0px;
-        /* left: 16px;
-        right: 16px; */
+        z-index: 20;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 7.5vh;
         z-index: 10;
       }
     </style>
@@ -50,9 +54,9 @@
       rel="stylesheet"
     />
   </head>
-  <body class="flex flex-col h-screen">
+  <body class="flex flex-col h-screen font-helvetica">
     <!-- Header -->
-    <div class="bg-transparent text-black p-4">
+    <!-- <div class="bg-transparent text-black p-4">
       <div class="header flex justify-between items-center">
         <div class="">
           <svg
@@ -74,7 +78,7 @@
           alt=""
         />
       </div>
-    </div>
+    </div> -->
 
     <!-- Content -->
     <main class="flex-grow relative">
@@ -83,18 +87,91 @@
       </div>
 
       <!-- Footer -->
+      <div
+        class="container_footer absolute w-full bottom-0 p-5 px-6 items-center grid grid-cols-3 bg-slate-50 shadow-3xl text-gray-400 cursor-pointer"
+      >
+        <div
+          class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
+            ></path>
+          </svg>
+          <!-- <span class="mt-1">Rekap</span> -->
+        </div>
+        <div class="flex flex-col items-center hover:text-blue-400">
+          <div
+            class="absolute bottom-5 shadow-2xl text-center flex items-center justify-center rounded-full text-3xl w-20 h-20 p-2 text-white bg-blue-500 transition ease-in duration-200"
+            id="toggleButtonOpen"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 18 18"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 1v16M1 9h16"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+            ></path>
+          </svg>
+          <!-- <span class="mt-1">Profile</span> -->
+        </div>
+      </div>
+
       <footer
         id="footer"
-        class="text-black p-4 bg-white rounded-[15px] w-full h-[25vh] transition-all ease-in-out duration-300 overflow-y-auto"
+        class="text-black px-6 pt-4 pb-10 bg-white rounded-tl-[15px] rounded-tr-[15px] w-full h-[25vh] transition-all ease-in-out duration-300 overflow-y-auto"
       >
         <div class="flex justify-center mb-2">
           <div
-            id="toggleButton"
             class="w-12 h-1.5 bg-gray-300 rounded-full cursor-pointer"
+            id="toggleButtonClose"
           ></div>
         </div>
         <div class="overflow-y-auto h-full relative">
           <form>
+            <div class="mb-3 flex flex-col">
+              <div class="font-semibold text-2xl text-gray-700">
+                Tambah Survey
+              </div>
+              <div class="text-gray-400">
+                penginputan data untuk aksesibilitas
+              </div>
+            </div>
             <div class="mb-3">
               <label
                 for="nama_lokasi"
@@ -153,22 +230,6 @@
                 <option value="">Di atas</option>
               </select>
             </div>
-            <div class="mb-3">
-              <label
-                for="kelas_jalan"
-                class="block mb-2 text-sm font-medium text-gray-900 tracking-wide"
-                >Kelas Jalan</label
-              >
-              <select
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                name="kelas_jalan"
-              >
-                <option value="">Pilih Kelas Jalan</option>
-                <option value="">Arteri</option>
-                <option value="">Kolektor</option>
-                <option value="">Lingkungan</option>
-              </select>
-            </div>
             <div class="grid grid-cols-1 mb-3">
               <label
                 class="block mb-2 text-sm font-medium text-gray-900 tracking-wide"
@@ -207,52 +268,6 @@
                 <span>Tipe File: gambar</span>
               </p>
             </div>
-            <div class="grid grid-cols-1 mb-3">
-              <label
-                class="block mb-2 text-sm font-medium text-gray-900 tracking-wide"
-                >Foto Kiri</label
-              >
-
-              <div class="flex items-center justify-center w-full">
-                <label
-                  class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center"
-                >
-                  <div
-                    class="h-full w-full text-center flex flex-col items-center justify-center items-center"
-                  >
-                    <div class="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
-                      <img
-                        class="has-mask h-36 object-center"
-                        src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&amp;ext=jpg"
-                        alt="freepik image"
-                      />
-                    </div>
-                    <p class="pointer-none text-gray-500">
-                      <span class="text-sm">Seret dan lepas</span> berkas di
-                      sini
-                      <br />
-                      atau
-                      <a href="" id="" class="text-blue-600 hover:underline"
-                        >pilih berkas</a
-                      >
-                      dari komputer Anda
-                    </p>
-                  </div>
-                  <input type="file" class="hidden" />
-                </label>
-              </div>
-              <p class="text-sm text-center text-gray-300">
-                <span>Tipe File: gambar</span>
-              </p>
-            </div>
-            <div class="mb-3">
-              <button
-                type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-              >
-                Kirim
-              </button>
-            </div>
           </form>
         </div>
       </footer>
@@ -263,17 +278,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 
   <script>
-    // Expandable footer
     const footer = document.getElementById("footer");
-    const toggleButton = document.getElementById("toggleButton");
+    const toggleButtonOpen = document.getElementById("toggleButtonOpen");
+    const toggleButtonClose = document.getElementById("toggleButtonClose");
 
-    toggleButton.addEventListener("click", function () {
-      if (footer.style.height === "60vh") {
-        footer.style.height = "25vh";
-      } else {
-        footer.style.height = "60vh";
-      }
-    });
+    function openFooter() {
+      footer.style.height = "60vh";
+    }
+
+    function closeFooter() {
+      footer.style.height = "25vh";
+    }
+
+    toggleButtonOpen.addEventListener("click", openFooter);
+    toggleButtonClose.addEventListener("click", closeFooter);
 
     mapboxgl.accessToken =
       "pk.eyJ1IjoibWVudGhvZWxzciIsImEiOiJja3M0MDZiMHMwZW83MnVwaDZ6Z2NhY2JxIn0.vQFxEZsM7Vvr-PX3FMOGiQ";

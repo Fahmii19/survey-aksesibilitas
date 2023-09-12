@@ -9,7 +9,11 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        helvetica: ["Helvetica"],
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
 };
