@@ -2,11 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-.ubuntu_light {
+/* .ubuntu_light {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
 }
 .ubuntu_bold {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
+} */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.map-container {
+  position: relative;
+  flex-grow: 1;
+}
+
+#mapAksesibilitas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+a.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+/* @font-face {
+  font-family: "SF Pro";
+  src: url("/src/font/sf-pro-display_regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.inter_bold {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
 }

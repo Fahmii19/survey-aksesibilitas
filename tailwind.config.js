@@ -10,8 +10,11 @@ module.exports = {
       xl: "1280px",
     },
     extend: {
+      // fontFamily: {
+      //   helvetica: ["Helvetica"],
+      // },
       fontFamily: {
-        helvetica: ["Helvetica"],
+        // "sf-pro": ["SF Pro"],
       },
     },
   },
