@@ -13,9 +13,12 @@ module.exports = {
       // fontFamily: {
       //   helvetica: ["Helvetica"],
       // },
-      fontFamily: {
-        // "sf-pro": ["SF Pro"],
-      },
+      // fontFamily: {
+      //   // "sf-pro": ["SF Pro"],
+      // },
+      // fontFamily: {
+      //   inter: ["Inter"],
+      // },
     },
   },
   plugins: [require("flowbite/plugin")],
