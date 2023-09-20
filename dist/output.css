@@ -1315,6 +1315,26 @@ input:checked + .toggle-bg {
   height: 20.5vh;
 }
 
+.h-\[36vh\] {
+  height: 36vh;
+}
+
+.h-\[26vh\] {
+  height: 26vh;
+}
+
+.h-\[29vh\] {
+  height: 29vh;
+}
+
+.h-\[0vh\] {
+  height: 0vh;
+}
+
+.h-\[19vh\] {
+  height: 19vh;
+}
+
 .w-full {
   width: 100%;
 }

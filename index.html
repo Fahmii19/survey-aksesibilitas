@@ -52,7 +52,7 @@
       <div class="w-full absolute bottom-0 flex flex-col">
         <!-- Rekap -->
         <div
-          class="pb-[4vh] text-black px-6 pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[30vh] transition-all ease-in-out duration-300 table-rekap-hide"
+          class="pb-[4vh] text-black px-6 pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[30vh] transition-all ease-in-out duration-300 table-rekap-hide hidden"
         >
           <!--  -->
           <div class="flex justify-center mb-3">
@@ -482,20 +482,23 @@
               </div>
             </div>
           </div>
-          <!--  -->
         </div>
 
         <!-- Form Input -->
         <div
-          class="pb-[4vh] text-black px-6 pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[40vh] transition-all ease-in-out duration-300 overflow-y-auto form-input-akses hidden"
+          class="pb-[4vh] text-black px-6 pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[30vh] transition-all ease-in-out duration-300 form-input-akses hidden"
         >
-          <div class="flex justify-center mb-2">
+          <!--  -->
+          <div class="flex justify-center mb-3">
             <div
-              class="w-14 h-1.5 bg-gray-300 rounded-full cursor-pointer"
+              class="w-14 h-1.5 bg-gray-300 rounded-full cursor-pointer sticky top-0 z-10"
               id="toggleButtonFormInput"
             ></div>
           </div>
-          <div class="h-full relative p-1 -ml-3">
+          <!-- expand_rekap  -->
+          <div
+            class="relative overflow-y-auto h-[26vh] expand_form_input hide-scrollbar"
+          >
             <form>
               <div class="mb-5 -mt-1 flex flex-col">
                 <div class="font-semibold text-3xl text-gray-700">
@@ -728,67 +731,71 @@
             </form>
           </div>
         </div>
+
         <!-- Profil -->
         <div
-          class="pb-[4vh] text-black px-6 pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[25vh] transition-all ease-in-out duration-300 overflow-y-auto form-profil hidden"
+          class="pb-[4vh] text-black px-6 pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[30vh] transition-all ease-in-out duration-300 form-profil hidden"
         >
-          <div class="flex justify-center mb-2">
+          <!--  -->
+          <div class="flex justify-center mb-3">
             <div
-              class="w-14 h-1.5 bg-gray-300 rounded-full cursor-pointer"
+              class="w-14 h-1.5 bg-gray-300 rounded-full cursor-pointer sticky top-0 z-10"
               id="toggleButtonProfil"
             ></div>
           </div>
-          <div class="h-full relative p-1 -ml-3">
-            <form>
-              <div class="mb-5 -mt-1 flex flex-col">
-                <div class="font-semibold text-3xl text-gray-700">Profil</div>
-              </div>
-              <div class="mb-3">
-                <label
-                  for="nama_lokasi"
-                  class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
-                  >Nama</label
-                >
-                <input
-                  type="text"
-                  id="nama_lokasi"
-                  name="nama_lokasi"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
-                  value="Fahmi"
-                  readonly
-                />
-              </div>
-              <div class="mb-3">
-                <label
-                  for="alamat"
-                  class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
-                  >Penempatan</label
-                >
-                <input
-                  type="text"
-                  id="lebar"
-                  name="lebar"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
-                  value="Kecamatan Cilandak"
-                  readonly
-                />
-              </div>
-              <div class="mb-3">
-                <label
-                  for="lebar"
-                  class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
-                  >Jabatan</label
-                >
-                <input
-                  type="text"
-                  id="lebar"
-                  name="lebar"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
-                  readonly
-                  value="Kepala Seksi"
-                />
-              </div>
-            </form>
+          <!--  -->
+          <div class="mb-4 -mt-1 flex flex-col">
+            <div class="font-semibold text-3xl text-gray-700">Profil</div>
+          </div>
+          <!--  -->
+          <div
+            class="relative overflow-y-auto h-[19vh] expand_profil hide-scrollbar"
+          >
+            <div class="mb-3">
+              <label
+                for="nama_lokasi"
+                class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
+                >Nama</label
+              >
+              <input
+                type="text"
+                id="nama_lokasi"
+                name="nama_lokasi"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
+                value="Fahmi"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="alamat"
+                class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
+                >Penempatan</label
+              >
+              <input
+                type="text"
+                id="lebar"
+                name="lebar"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
+                value="Kecamatan Cilandak"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="lebar"
+                class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
+                >Jabatan</label
+              >
+              <input
+                type="text"
+                id="lebar"
+                name="lebar"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
+                readonly
+                value="Kepala Seksi"
+              />
+            </div>
           </div>
         </div>
 
@@ -869,10 +876,13 @@
   document.addEventListener("DOMContentLoaded", function () {
     // Deklarasi elemen-elemen yang dibutuhkan
     const formInputAkses = document.querySelector(".form-input-akses");
+
     const tableRekap = document.querySelector(".table-rekap-hide");
 
     // expand_rekap
     const expandRekap = document.querySelector(".expand_rekap");
+    const expandForm = document.querySelector(".expand_form_input");
+    const expandProfil = document.querySelector(".expand_profil");
 
     const btnRekap = document.querySelector(".btn_rekap");
     const btnRekapImage = btnRekap.querySelector(".menu-image-rekap");
@@ -889,6 +899,8 @@
     const toggleButtonProfil = document.getElementById("toggleButtonProfil");
     const formContainerRekap = tableRekap;
     const formContainerRekapHide = expandRekap;
+    const formContainerFormInputHide = expandForm;
+    const formContainerProfilHide = expandProfil;
 
     const toggleButtonRekap = document.getElementById("toggleButtonRekap");
     const btnOpenTableDetail = document.querySelector(".btn_open_table_detail");
@@ -932,15 +944,19 @@
       }
     }
 
-    toggleButtonOpen.addEventListener("click", () =>
-      toggleHeight(formContainerFormInput, "40vh", "70vh")
-    );
-    toggleButtonFormInput.addEventListener("click", () =>
-      toggleHeight(formContainerFormInput, "40vh", "70vh")
-    );
-    toggleButtonProfil.addEventListener("click", () =>
-      toggleHeight(formContainerProfil, "25vh", "50vh")
-    );
+    // toggleButtonOpen.addEventListener("click", () =>
+    //   toggleHeight(formContainerFormInput, "40vh", "70vh")
+    // );
+
+    toggleButtonFormInput.addEventListener("click", function () {
+      toggleHeight(formContainerFormInput, "40vh", "75vh");
+      toggleHeight(formContainerFormInputHide, "36vh", "70vh");
+    });
+
+    toggleButtonProfil.addEventListener("click", function () {
+      toggleHeight(formContainerProfil, "30vh", "75vh");
+      toggleHeight(formContainerProfilHide, "19vh", "45vh");
+    });
 
     // Rekap
     toggleButtonRekap.addEventListener("click", function () {
