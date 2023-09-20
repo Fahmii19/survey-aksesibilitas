@@ -57,3 +57,13 @@ a.mapboxgl-ctrl-logo {
   font-family: "Inter";
   font-weight: 800;
 }
+
+/* Menyembuyikan scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome and Safari */
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}

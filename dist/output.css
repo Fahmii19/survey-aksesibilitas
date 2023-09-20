@@ -1066,6 +1066,10 @@ input:checked + .toggle-bg {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .inset-0 {
   top: 0px;
   right: 0px;
@@ -1105,12 +1109,12 @@ input:checked + .toggle-bg {
   z-index: 40;
 }
 
-.z-20 {
-  z-index: 20;
-}
-
 .z-10 {
   z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
 }
 
 .z-30 {
@@ -1139,8 +1143,16 @@ input:checked + .toggle-bg {
   margin-left: 0.75rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
+.-ml-3 {
+  margin-left: -0.75rem;
+}
+
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mb-5 {
@@ -1155,6 +1167,14 @@ input:checked + .toggle-bg {
   margin-top: 0.5rem;
 }
 
+.mt-1\.5 {
+  margin-top: 0.375rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mb-3 {
   margin-bottom: 0.75rem;
 }
@@ -1165,6 +1185,14 @@ input:checked + .toggle-bg {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
 }
 
 .block {
@@ -1223,8 +1251,12 @@ input:checked + .toggle-bg {
   height: 10vh;
 }
 
-.h-\[40vh\] {
-  height: 40vh;
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-\[30vh\] {
+  height: 30vh;
 }
 
 .h-1\.5 {
@@ -1235,6 +1267,18 @@ input:checked + .toggle-bg {
   height: 0.25rem;
 }
 
+.h-\[15vh\] {
+  height: 15vh;
+}
+
+.h-\[1\.2rem\] {
+  height: 1.2rem;
+}
+
+.h-\[1\.1rem\] {
+  height: 1.1rem;
+}
+
 .h-\[70vh\] {
   height: 70vh;
 }
@@ -1243,12 +1287,24 @@ input:checked + .toggle-bg {
   height: 1rem;
 }
 
+.h-\[40vh\] {
+  height: 40vh;
+}
+
 .h-\[25vh\] {
   height: 25vh;
 }
 
-.h-20 {
-  height: 5rem;
+.h-\[9vh\] {
+  height: 9vh;
+}
+
+.h-\[20vh\] {
+  height: 20vh;
+}
+
+.h-\[32vh\] {
+  height: 32vh;
 }
 
 .w-full {
@@ -1271,8 +1327,20 @@ input:checked + .toggle-bg {
   width: 1.25rem;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-14 {
   width: 3.5rem;
+}
+
+.w-\[1\.2rem\] {
+  width: 1.2rem;
+}
+
+.w-\[1\.1rem\] {
+  width: 1.1rem;
 }
 
 .w-4 {
@@ -1283,8 +1351,8 @@ input:checked + .toggle-bg {
   width: auto;
 }
 
-.w-20 {
-  width: 5rem;
+.w-\[19vw\] {
+  width: 19vw;
 }
 
 .w-1\/2 {
@@ -1373,8 +1441,8 @@ input:checked + .toggle-bg {
   grid-template-columns: 1fr 100px;
 }
 
-.grid-cols-\[50px\2c 1fr\2c 100px\] {
-  grid-template-columns: 50px 1fr 100px;
+.grid-cols-\[30px\2c 1fr\2c 60px\] {
+  grid-template-columns: 30px 1fr 60px;
 }
 
 .grid-cols-2 {
@@ -1391,6 +1459,10 @@ input:checked + .toggle-bg {
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-\[30px\2c 1fr\2c 100px\] {
+  grid-template-columns: 30px 1fr 100px;
 }
 
 .grid-rows-2 {
@@ -1579,14 +1651,14 @@ input:checked + .toggle-bg {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
-.bg-gray-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -1667,6 +1739,21 @@ input:checked + .toggle-bg {
   padding-right: 1.5rem;
 }
 
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1675,11 +1762,6 @@ input:checked + .toggle-bg {
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .px-5 {
@@ -1719,10 +1801,6 @@ input:checked + .toggle-bg {
   text-align: center;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1745,11 +1823,6 @@ input:checked + .toggle-bg {
 
 .text-\[2\.2em\] {
   font-size: 2.2em;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-lg {
@@ -1966,6 +2039,20 @@ a.mapboxgl-ctrl-logo {
   font-weight: 800;
 }
 
+/* Menyembuyikan scrollbar */
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome and Safari */
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -2004,6 +2091,11 @@ a.mapboxgl-ctrl-logo {
 .focus\:border-gray-700:focus {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
+}
+
+.focus\:border-gray-300:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .focus\:outline-none:focus {
