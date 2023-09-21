@@ -80,7 +80,7 @@ a.mapboxgl-ctrl-logo {
 
 /* layer */
 .custom-layer {
-  background-image: url("/src/images/layers.png"); /* Path ke gambar layer */
+  background-image: url("../src/images/layers.png");
   background-position: 50% !important;
   background-repeat: no-repeat !important;
   display: block !important;
@@ -91,7 +91,7 @@ a.mapboxgl-ctrl-logo {
 
 /* mylocation */
 .my-location-button .mapboxgl-ctrl-icon {
-  background-image: url("/src/images/my-location.png");
+  background-image: url("../src/images/my-location.png");
   background-position: 50% !important;
   background-repeat: no-repeat !important;
   display: block !important;
