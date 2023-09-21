@@ -2041,7 +2041,7 @@ a.mapboxgl-ctrl-logo {
 
 .mapboxgl-ctrl-top-right {
   right: 1vh !important;
-  top: 45vh !important;
+  top: 32vh !important;
 }
 
 .mapboxgl-ctrl-compass {
@@ -2051,32 +2051,54 @@ a.mapboxgl-ctrl-logo {
 /* layer */
 
 .custom-layer {
+  background-image: url("/src/images/layers.png");
+  /* Path ke gambar layer */
   background-position: 50% !important;
   background-repeat: no-repeat !important;
   display: block !important;
   background-size: cover !important;
-  width: 20px !important;
-  height: 20px !important;
-  margin-left: 14% !important;
+  width: 80% !important;
+  height: 80% !important;
 }
 
 /* mylocation */
 
-.my-location-button {
-  background-color: #ffffff;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+.my-location-button .mapboxgl-ctrl-icon {
   background-image: url("/src/images/my-location.png");
-  /* Asumsi Anda memiliki ikon dengan nama ini */
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  background-size: cover !important;
+  width: 70% !important;
+  height: 70% !important;
+}
+
+/* Kelompok kontrol kustom */
+
+.custom-control-group {
+  position: absolute;
+  top: 10px;
+  /* Atur sesuai kebutuhan */
+  right: 10px;
+  /* Atur sesuai kebutuhan */
+}
+
+.mapboxgl-ctrl-group {
+  background-color: transparent !important;
+}
+
+.mapboxgl-ctrl-group:not(:empty) {
+  box-shadow: none !important;
+}
+
+.mapboxgl-ctrl-group button {
+  background-color: white !important;
+  width: 50px !important;
+  height: 50px !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .hover\:border-gray-300:hover {

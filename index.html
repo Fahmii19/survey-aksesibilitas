@@ -872,53 +872,66 @@
 
     map.addControl(new mapboxgl.NavigationControl());
 
-    // Mendapatkan elemen yang berisi kelompok kontrol
-    var controlGroup = document.querySelector(".mapboxgl-ctrl-group");
+    var controlGroup = document.querySelector(
+      ".mapboxgl-ctrl-top-right .mapboxgl-ctrl-group"
+    );
 
-    // Membuat tombol kustom
-    var customButton = document.createElement("button");
-    customButton.className = "custom-control-button";
-    customButton.setAttribute("type", "button");
-    customButton.setAttribute("aria-label", "Custom Action");
-    customButton.innerHTML =
-      '<span class="mapboxgl-ctrl-icon custom-layer" aria-hidden="true" title="Custom Action"></span>';
-
-    var customIcon = customButton.querySelector(".mapboxgl-ctrl-icon");
-    customIcon.style.backgroundImage = 'url("/src/images/layers.png")';
-
-    customButton.addEventListener("click", function () {
-      alert("Custom button clicked!");
-    });
-
-    // Menambahkan tombol kustom ke kelompok kontrol
-    controlGroup.appendChild(customButton);
-
-    // Fungsi untuk memindahkan peta ke lokasi pengguna saat ini
-    function moveToCurrentLocation() {
-      // if ("geolocation" in navigator) {
-      //   navigator.geolocation.getCurrentPosition(function (position) {
-      //     map.flyTo({
-      //       center: [position.coords.longitude, position.coords.latitude],
-      //       zoom: 14,
-      //     });
-      //   });
-      // } else {
-      //   alert("Geolocation not available in your browser");
-      // }
-      alert("Custom button click moveToCurrentLocation");
+    var compass = controlGroup.querySelector(".mapboxgl-ctrl-compass");
+    if (compass) {
+      compass.style.setProperty("display", "none", "important");
     }
 
-    // Membuat tombol My Location
-    var myLocationButton = document.createElement("div");
-    myLocationButton.className = "my-location-button";
-    // position absolute agar tidak mengganggu posisi tombol kustom
-    myLocationButton.style.position = "absolute";
-    myLocationButton.style.marginTop = "4vw";
-    myLocationButton.title = "Go to my location";
-    myLocationButton.addEventListener("click", moveToCurrentLocation);
+    // Jika grup kontrol ditemukan
+    if (controlGroup) {
+      // Kode untuk tombol kustom Anda di sini
+      var customButton = document.createElement("button");
+      customButton.className = "mapboxgl-ctrl-icon custom-control-button";
 
-    // Menambahkan tombol My Location ke kelompok kontrol tepat di bawah tombol kustom
-    controlGroup.insertBefore(myLocationButton, customButton.nextSibling);
+      var customButton = document.createElement("button");
+      customButton.className = "custom-control-button";
+      customButton.setAttribute("type", "button");
+      customButton.setAttribute("aria-label", "Custom Layer Action");
+      customButton.innerHTML =
+        '<span class="mapboxgl-ctrl-icon custom-layer" aria-hidden="true" title="Custom Layer Action"></span>';
+
+      customButton.addEventListener("click", function () {
+        alert("Layer button clicked!");
+      });
+
+      var myLocationButton = document.createElement("button");
+      myLocationButton.className =
+        "mapboxgl-ctrl-icon custom-control-button my-location-button";
+      var myLocationButton = document.createElement("button");
+      myLocationButton.className = "custom-control-button my-location-button";
+      myLocationButton.setAttribute("type", "button");
+      myLocationButton.setAttribute("aria-label", "My Location");
+      myLocationButton.innerHTML =
+        '<span class="mapboxgl-ctrl-icon" aria-hidden="true" title="My Location"></span>';
+
+      myLocationButton.addEventListener("click", function () {
+        alert("My Location button clicked!");
+      });
+
+      // Dapatkan tombol zoom-in dan zoom-out
+      var zoomInButton = controlGroup.querySelector(".mapboxgl-ctrl-zoom-in");
+      var zoomOutButton = controlGroup.querySelector(".mapboxgl-ctrl-zoom-out");
+
+      // Hapus tombol zoom-in dan zoom-out dari DOM
+      controlGroup.removeChild(zoomInButton);
+      controlGroup.removeChild(zoomOutButton);
+
+      var separator = document.createElement("div");
+      separator.style.marginTop = "4vh";
+      separator.style.boxShadow = "none";
+
+      // Menambahkan tombol ke grup kontrol dalam urutan yang diinginkan
+      controlGroup.appendChild(myLocationButton);
+      controlGroup.appendChild(customButton);
+      controlGroup.appendChild(separator);
+      controlGroup.appendChild(zoomInButton);
+      controlGroup.appendChild(zoomOutButton);
+    }
+    //
   </script>
 </html>
 
