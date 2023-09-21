@@ -2048,6 +2048,8 @@ a.mapboxgl-ctrl-logo {
   display: none !important;
 }
 
+/* layer */
+
 .custom-layer {
   background-position: 50% !important;
   background-repeat: no-repeat !important;
@@ -2056,6 +2058,25 @@ a.mapboxgl-ctrl-logo {
   width: 20px !important;
   height: 20px !important;
   margin-left: 14% !important;
+}
+
+/* mylocation */
+
+.my-location-button {
+  background-color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-image: url("/src/images/my-location.png");
+  /* Asumsi Anda memiliki ikon dengan nama ini */
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hover\:border-gray-300:hover {
