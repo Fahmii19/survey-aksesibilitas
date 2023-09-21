@@ -749,7 +749,7 @@
           </div>
           <!--  -->
           <div
-            class="relative overflow-y-auto h-[19vh] expand_profil hide-scrollbar"
+            class="relative overflow-y-auto h-[19vh] expand_profil pb-3 hide-scrollbar"
           >
             <div class="mb-3">
               <label
@@ -869,11 +869,42 @@
       preserveDrawingBuffer: true,
       attributionControl: false,
     });
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // Button Custom
+
+    // Mendapatkan elemen yang berisi kelompok kontrol
+    var controlGroup = document.querySelector(".mapboxgl-ctrl-group");
+
+    // Membuat tombol kustom
+    var customButton = document.createElement("button");
+    customButton.className = "custom-control-button";
+    customButton.setAttribute("type", "button");
+    customButton.setAttribute("aria-label", "Custom Action");
+    customButton.innerHTML =
+      '<span class="mapboxgl-ctrl-icon custom-layer" aria-hidden="true" title="Custom Action"></span>';
+
+    // Menambahkan gambar ke tombol
+    var customIcon = customButton.querySelector(".mapboxgl-ctrl-icon");
+    customIcon.style.backgroundImage = 'url("/src/images/layers.png")';
+
+    // Menambahkan event listener untuk aksi tombol (jika diperlukan)
+    customButton.addEventListener("click", function () {
+      // Aksi yang Anda inginkan saat tombol ditekan
+      alert("Custom button clicked!");
+    });
+
+    // Menambahkan tombol kustom ke kelompok kontrol
+    controlGroup.appendChild(customButton);
   </script>
 </html>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // navigation
+    let mapboxCtrlElement = document.querySelector(".mapboxgl-ctrl-top-right");
+
     // Deklarasi elemen-elemen yang dibutuhkan
     const formInputAkses = document.querySelector(".form-input-akses");
 
@@ -944,24 +975,44 @@
       }
     }
 
-    // toggleButtonOpen.addEventListener("click", () =>
-    //   toggleHeight(formContainerFormInput, "40vh", "70vh")
-    // );
-
+    // Form Input
     toggleButtonFormInput.addEventListener("click", function () {
-      toggleHeight(formContainerFormInput, "40vh", "75vh");
+      toggleHeight(formContainerFormInput, "30vh", "74vh");
       toggleHeight(formContainerFormInputHide, "36vh", "70vh");
+
+      // navigation
+      if (formContainerFormInput.style.height === "74vh") {
+        mapboxCtrlElement.style.display = "none";
+      } else {
+        mapboxCtrlElement.style.display = "block";
+      }
     });
 
+    // Profil
     toggleButtonProfil.addEventListener("click", function () {
       toggleHeight(formContainerProfil, "30vh", "75vh");
       toggleHeight(formContainerProfilHide, "19vh", "45vh");
+
+      // navigation
+      if (formContainerProfil.style.height === "75vh") {
+        mapboxCtrlElement.style.display = "none";
+      } else {
+        mapboxCtrlElement.style.display = "block";
+      }
     });
 
     // Rekap
     toggleButtonRekap.addEventListener("click", function () {
       toggleHeight(formContainerRekap, "30vh", "75vh");
       toggleHeight(formContainerRekapHide, "20vh", "65vh");
+
+      // navigation
+      if (formContainerRekap.style.height === "75vh") {
+        mapboxCtrlElement.style.display = "none";
+      } else {
+        mapboxCtrlElement.style.display = "block";
+      }
     });
+    //
   });
 </script>

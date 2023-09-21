@@ -67,3 +67,24 @@ a.mapboxgl-ctrl-logo {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
+
+/* Navigator MapboxGL */
+
+.mapboxgl-ctrl-top-right {
+  right: 1vh !important;
+  top: 45vh !important;
+}
+
+.mapboxgl-ctrl-compass {
+  display: none !important;
+}
+
+.custom-layer {
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  background-size: cover !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-left: 14% !important;
+}

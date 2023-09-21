@@ -1151,12 +1151,12 @@ input:checked + .toggle-bg {
   margin-top: 1.75rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .-mt-1 {
@@ -1175,10 +1175,6 @@ input:checked + .toggle-bg {
   margin-top: 0.25rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1191,8 +1187,8 @@ input:checked + .toggle-bg {
   margin-bottom: 0.5rem;
 }
 
-.ml-12 {
-  margin-left: 3rem;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .block {
@@ -1267,8 +1263,8 @@ input:checked + .toggle-bg {
   height: 0.25rem;
 }
 
-.h-\[15vh\] {
-  height: 15vh;
+.h-\[20vh\] {
+  height: 20vh;
 }
 
 .h-\[1\.2rem\] {
@@ -1287,52 +1283,16 @@ input:checked + .toggle-bg {
   height: 1rem;
 }
 
-.h-\[40vh\] {
-  height: 40vh;
-}
-
-.h-\[25vh\] {
-  height: 25vh;
-}
-
-.h-\[9vh\] {
-  height: 9vh;
-}
-
-.h-\[20vh\] {
-  height: 20vh;
-}
-
-.h-\[32vh\] {
-  height: 32vh;
-}
-
-.h-\[21\.5vh\] {
-  height: 21.5vh;
-}
-
-.h-\[20\.5vh\] {
-  height: 20.5vh;
-}
-
-.h-\[36vh\] {
-  height: 36vh;
-}
-
 .h-\[26vh\] {
   height: 26vh;
 }
 
-.h-\[29vh\] {
-  height: 29vh;
-}
-
-.h-\[0vh\] {
-  height: 0vh;
-}
-
 .h-\[19vh\] {
   height: 19vh;
+}
+
+.h-\[9vh\] {
+  height: 9vh;
 }
 
 .w-full {
@@ -1487,10 +1447,6 @@ input:checked + .toggle-bg {
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-cols-\[30px\2c 1fr\2c 100px\] {
-  grid-template-columns: 30px 1fr 100px;
 }
 
 .grid-rows-2 {
@@ -1659,11 +1615,6 @@ input:checked + .toggle-bg {
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 
-.border-green-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(14 159 110 / var(--tw-border-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1828,10 +1779,6 @@ input:checked + .toggle-bg {
 
 .pb-8 {
   padding-bottom: 2rem;
-}
-
-.pb-1 {
-  padding-bottom: 0.25rem;
 }
 
 .text-center {
@@ -2088,6 +2035,27 @@ a.mapboxgl-ctrl-logo {
   /* Firefox */
   -ms-overflow-style: none;
   /* IE and Edge */
+}
+
+/* Navigator MapboxGL */
+
+.mapboxgl-ctrl-top-right {
+  right: 1vh !important;
+  top: 45vh !important;
+}
+
+.mapboxgl-ctrl-compass {
+  display: none !important;
+}
+
+.custom-layer {
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  background-size: cover !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-left: 14% !important;
 }
 
 .hover\:border-gray-300:hover {
