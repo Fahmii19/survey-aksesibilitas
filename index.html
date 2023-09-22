@@ -29,10 +29,13 @@
       </div>
 
       <!-- Header -->
+      <!-- baru breakpont sm -->
       <div
-        class="absolute top-0 grid grid-cols-[1fr,100px] items-center text-black px-6 bg-slate-50 w-full h-[10vh]"
+        class="absolute top-0 grid grid-cols-[1fr,100px] items-center text-black px-6 bg-slate-50 w-full sm:h-[10vh]"
       >
-        <div class="font-bold text-[2.2em] font-inter_bold -ml-3 mt-7">
+        <div
+          class="font-bold xs:text-[2.2em] sm:text-[2.2em] md:text-[2.2em] lg:text-xl xl:text-2xl font-inter_bold -ml-3 mt-7"
+        >
           Aksesibilitas
         </div>
         <div class="flex justify-end mt-7">
@@ -64,7 +67,6 @@
             class="relative overflow-y-auto h-[20vh] expand_rekap hide-scrollbar"
           >
             <!-- dumy1 -->
-
             <div class="flex flex-col">
               <!-- Data -->
               <div
@@ -73,7 +75,11 @@
                 <div
                   class="flex w-[1.2rem] h-[1.2rem] mt-1.5 justify-center items-center btn_open_table_detail"
                 >
-                  <img src="./src/images/open_collapse.png" alt="Collapse" />
+                  <img
+                    id="collapseImage"
+                    src="./src/images/open_collapse.png"
+                    alt="Collapse"
+                  />
                 </div>
                 <div class="flex justify-center items-center w-full">
                   Taman Pondok Indah Pinggir Kali
@@ -645,7 +651,7 @@
 
         <!-- Group Menu -->
         <div
-          class="w-full p-5 px-6 items-center grid grid-cols-3 bg-white shadow-3xl text-gray-400 cursor-pointer z-10"
+          class="w-full p-5 px-6 grid grid-cols-3 bg-white shadow-3xl text-gray-400 cursor-pointer z-10"
         >
           <!-- Menu1 -->
           <div class="flex flex-col items-center">
@@ -659,10 +665,11 @@
               </div>
             </div>
           </div>
+
           <!-- Menu2 -->
-          <div class="flex flex-col items-center">
+          <div class="flex flex-col items-center relative">
             <div
-              class="absolute bottom-5 shadow-2xl text-center flex items-center justify-center rounded-full text-3xl w-[19vw] h-[9vh] p-2 text-white bg-[#2A64D9] transition ease-in duration-200"
+              class="bottom-5 text-center flex items-center justify-center rounded-full text-3xl p-[3vh] text-white bg-[#2A64D9] transition ease-in duration-200 absolute"
               id="toggleButtonOpen"
             >
               <svg
@@ -682,6 +689,7 @@
               </svg>
             </div>
           </div>
+
           <!-- Menu3 -->
           <div class="flex flex-col items-center">
             <div class="inline-flex flex-col items-center justify-center">
@@ -898,5 +906,20 @@
         mapboxCtrlElement.style.zIndex = "5";
       }
     });
+    //
+    const collapseImage = document.getElementById("collapseImage");
+
+    btnOpenTableDetail.addEventListener("click", function () {
+      // Toggle table detail visibility
+      // tableDetail.classList.toggle("hidden");
+
+      // Toggle collapse icon
+      if (collapseImage.src.endsWith("open_collapse.png")) {
+        collapseImage.src = "./src/images/close_collapse.png";
+      } else {
+        collapseImage.src = "./src/images/open_collapse.png";
+      }
+    });
+    //
   });
 </script>
