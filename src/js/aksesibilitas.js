@@ -128,5 +128,38 @@ document.addEventListener("DOMContentLoaded", function () {
       collapseImage.src = "./src/images/open_collapse.png";
     }
   });
+
+  // Gesture scroll up untuk menampilkan konten
+
+  const tableRekapElement = document.querySelector(".table-rekap-hide");
+
+  tableRekapElement.addEventListener("touchstart", handleTouchStart);
+  tableRekapElement.addEventListener("touchmove", handleTouchMove);
+
+  let yDown = null;
+
+  function handleTouchStart(evt) {
+    yDown = evt.touches[0].clientY;
+  }
+
+  function handleTouchMove(evt) {
+    if (!yDown) {
+      return;
+    }
+
+    let yUp = evt.touches[0].clientY;
+    let yDiff = yDown - yUp;
+
+    if (yDiff > 0) {
+      // Logika ketika digeser ke atas
+      tableRekapElement.classList.add("hidden"); // misalnya kita sembunyikan elemen ini
+    } else {
+      // Logika ketika digeser ke bawah
+      tableRekapElement.classList.remove("hidden"); // misalnya kita tampilkan kembali elemen ini
+    }
+
+    yDown = null;
+  }
+
   //
 });
