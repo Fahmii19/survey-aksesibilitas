@@ -2,34 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Small devices (ponsel) - di bawah 768px */
-@media (max-width: 767px) {
-  /* styles */
-}
-
-/* Medium devices (tablet) - di atas 768px dan di bawah 992px */
-@media (min-width: 768px) and (max-width: 991px) {
-  /* styles */
-}
-
-/* Large devices (laptop, desktop) - di atas 992px dan di bawah 1200px */
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* styles */
-}
-
-/* Extra large devices (monitor besar) - di atas 1200px */
-@media (min-width: 1200px) {
-  /* styles */
-}
-
+/* Global Styles */
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* Map Container */
 .map-container {
   position: relative;
   flex-grow: 1;
@@ -43,11 +26,11 @@ html {
   right: 0;
 }
 
+/* Logo and Scrollbar */
 a.mapboxgl-ctrl-logo {
   display: none !important;
 }
 
-/* Menyembuyikan scrollbar */
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome and Safari */
 }
@@ -67,33 +50,11 @@ a.mapboxgl-ctrl-logo {
   display: none !important;
 }
 
-/* layer */
-.custom-layer {
-  background-image: url("../src/images/layers.png");
-  background-position: 50% !important;
-  background-repeat: no-repeat !important;
-  display: block !important;
-  background-size: cover !important;
-  width: 80% !important;
-  height: 80% !important;
-}
-
-/* mylocation */
-.my-location-button .mapboxgl-ctrl-icon {
-  background-image: url("../src/images/my-location.png");
-  background-position: 50% !important;
-  background-repeat: no-repeat !important;
-  display: block !important;
-  background-size: cover !important;
-  width: 70% !important;
-  height: 70% !important;
-}
-
-/* Kelompok kontrol kustom */
+/* Custom Control Group */
 .custom-control-group {
   position: absolute;
-  top: 10px; /* Atur sesuai kebutuhan */
-  right: 10px; /* Atur sesuai kebutuhan */
+  top: 10px;
+  right: 10px;
 }
 
 .mapboxgl-ctrl-group {
@@ -106,10 +67,48 @@ a.mapboxgl-ctrl-logo {
 
 .mapboxgl-ctrl-group button {
   background-color: white !important;
-  width: 50px !important;
-  height: 50px !important;
+  width: 35px !important;
+  height: 35px !important;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+}
+
+/* Layer and Location Icons */
+.custom-layer {
+  background-image: url("../src/images/layers.png");
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  background-size: cover !important;
+  width: 70% !important;
+  height: 70% !important;
+}
+
+.my-location-button .mapboxgl-ctrl-icon {
+  background-image: url("../src/images/my-location.png");
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  background-size: cover !important;
+  width: 70% !important;
+  height: 70% !important;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  /* styles for Small devices (ponsel) */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* styles for Medium devices (tablet) */
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* styles for Large devices (laptop, desktop) */
+}
+
+@media (min-width: 1200px) {
+  /* styles for Extra large devices (monitor besar) */
 }

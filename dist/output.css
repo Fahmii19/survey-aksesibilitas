@@ -1677,10 +1677,6 @@ input:checked + .toggle-bg {
   padding: 0.5rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-2\.5 {
   padding: 0.625rem;
 }
@@ -1691,6 +1687,10 @@ input:checked + .toggle-bg {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-3 {
@@ -1773,12 +1773,16 @@ input:checked + .toggle-bg {
   padding-top: 1rem;
 }
 
-.pt-2 {
-  padding-top: 0.5rem;
+.pb-\[6vh\] {
+  padding-bottom: 6vh;
 }
 
 .pb-8 {
   padding-bottom: 2rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .text-center {
@@ -1967,14 +1971,7 @@ input:checked + .toggle-bg {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-/* .ubuntu_light {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-}
-.ubuntu_bold {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-} */
+/* Global Styles */
 
 body,
 html {
@@ -1982,7 +1979,10 @@ html {
   padding: 0;
   height: 100%;
   width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
+
+/* Map Container */
 
 .map-container {
   position: relative;
@@ -1997,33 +1997,11 @@ html {
   right: 0;
 }
 
+/* Logo and Scrollbar */
+
 a.mapboxgl-ctrl-logo {
   display: none !important;
 }
-
-/* @font-face {
-  font-family: "SF Pro";
-  src: url("/src/font/sf-pro-display_regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-} */
-
-.font-inter {
-  font-family: "Inter";
-  font-weight: 400;
-}
-
-.font-inter_semibold {
-  font-family: "Inter";
-  font-weight: 600;
-}
-
-.font-inter_bold {
-  font-family: "Inter";
-  font-weight: 800;
-}
-
-/* Menyembuyikan scrollbar */
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -2048,38 +2026,12 @@ a.mapboxgl-ctrl-logo {
   display: none !important;
 }
 
-/* layer */
-
-.custom-layer {
-  background-image: url("../src/images/layers.png");
-  background-position: 50% !important;
-  background-repeat: no-repeat !important;
-  display: block !important;
-  background-size: cover !important;
-  width: 80% !important;
-  height: 80% !important;
-}
-
-/* mylocation */
-
-.my-location-button .mapboxgl-ctrl-icon {
-  background-image: url("../src/images/my-location.png");
-  background-position: 50% !important;
-  background-repeat: no-repeat !important;
-  display: block !important;
-  background-size: cover !important;
-  width: 70% !important;
-  height: 70% !important;
-}
-
-/* Kelompok kontrol kustom */
+/* Custom Control Group */
 
 .custom-control-group {
   position: absolute;
   top: 10px;
-  /* Atur sesuai kebutuhan */
   right: 10px;
-  /* Atur sesuai kebutuhan */
 }
 
 .mapboxgl-ctrl-group {
@@ -2092,12 +2044,52 @@ a.mapboxgl-ctrl-logo {
 
 .mapboxgl-ctrl-group button {
   background-color: white !important;
-  width: 50px !important;
-  height: 50px !important;
+  width: 35px !important;
+  height: 35px !important;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+}
+
+/* Layer and Location Icons */
+
+.custom-layer {
+  background-image: url("../src/images/layers.png");
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  background-size: cover !important;
+  width: 70% !important;
+  height: 70% !important;
+}
+
+.my-location-button .mapboxgl-ctrl-icon {
+  background-image: url("../src/images/my-location.png");
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  background-size: cover !important;
+  width: 70% !important;
+  height: 70% !important;
+}
+
+/* Media Queries */
+
+@media (max-width: 767px) {
+  /* styles for Small devices (ponsel) */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* styles for Medium devices (tablet) */
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* styles for Large devices (laptop, desktop) */
+}
+
+@media (min-width: 1200px) {
+  /* styles for Extra large devices (monitor besar) */
 }
 
 .hover\:border-gray-300:hover {
