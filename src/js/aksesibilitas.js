@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Form Input
   toggleButtonFormInput.addEventListener("click", function () {
-    toggleHeight(formContainerFormInput, "30vh", "81vh");
-    toggleHeight(formContainerFormInputHide, "19vh", "70vh");
+    toggleHeight(formContainerFormInput, "30vh", "74vh");
+    toggleHeight(formContainerFormInputHide, "19vh", "63vh");
 
     // Mengganti 'display' dengan 'z-index'
     if (formContainerFormInput.style.height === "74vh") {
