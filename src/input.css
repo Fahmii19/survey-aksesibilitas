@@ -10,6 +10,11 @@ html {
   height: 100%;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
+  overflow-y: hidden !important;
+}
+
+main {
+  height: calc(100vh - 60px);
 }
 
 /* Map Container */
