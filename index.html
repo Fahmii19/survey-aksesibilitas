@@ -34,7 +34,7 @@
         class="absolute top-0 grid grid-cols-[1fr,100px] items-center text-black px-6 bg-slate-50 w-full sm:h-[10vh]"
       >
         <div
-          class="font-bold xs:text-[2.2em] sm:text-[2.2em] md:text-[2.2em] lg:text-xl xl:text-2xl font-inter_bold -ml-3 mt-7"
+          class="font-bold mt-7 xs:text-[2.2em] sm:text-[2.2em] md:text-[2.2em] lg:text-xl xl:text-2xl font-inter_bold"
         >
           Aksesibilitas
         </div>
@@ -418,7 +418,9 @@
                       </div>
                     </div>
 
-                    <div class="max-w-screen-lg mx-auto grid grid-rows-2 mb-4">
+                    <div
+                      class="max-w-screen-lg mx-auto grid grid-rows-2 mb-3.5"
+                    >
                       <div class="grid grid-cols-2 gap-x-5">
                         <div>
                           <label
@@ -778,40 +780,25 @@
 
         <!-- Form Input -->
         <div
-          class="pb-[4vh] text-black px-6 pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[30vh] transition-all ease-in-out duration-300 form-input-akses hidden"
+          class="pb-[4vh] text-black pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[30vh] transition-all ease-in-out duration-300 form-input-akses hidden"
         >
           <!--  -->
-          <div class="flex justify-center mb-3">
+          <div class="flex justify-center px-6 mb-3">
             <div
               class="w-14 h-1.5 bg-gray-300 rounded-full cursor-pointer sticky top-0 z-10"
               id="toggleButtonFormInput"
             ></div>
           </div>
-          <!-- expand_rekap  -->
-
-          <div class="mb-5 -mt-1 flex flex-col">
-            <div class="font-semibold text-3xl text-gray-700">Titik Survey</div>
+          <!--  -->
+          <div class="mb-4 -mt-1 flex flex-col px-6">
+            <div class="font-semibold text-3xl text-gray-700">Form Input</div>
           </div>
-
+          <!--  -->
           <div
-            class="relative overflow-y-auto h-[26vh] expand_form_input hide-scrollbar pb-[12.5vh]"
+            class="relative overflow-y-auto h-[26vh] expand_form_input hide-scrollbar px-6 pb-11"
           >
+            <!-- Form -->
             <form>
-              <div class="mb-3">
-                <label
-                  for="nama_lokasi"
-                  class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
-                  >Nama Lokasi</label
-                >
-                <input
-                  type="text"
-                  id="nama_lokasi"
-                  name="nama_lokasi"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                  placeholder="Sungai Muara Baru"
-                  required
-                />
-              </div>
               <div class="mb-3">
                 <label
                   for="alamat"
@@ -823,8 +810,8 @@
                   id="alamat"
                   name="alamat"
                   class="bg-gray-200 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                  placeholder="Penjaringan, Jakarta Utara"
-                  readonly
+                  value="Jalan manggis"
+                  readonly=""
                 />
               </div>
               <div class="mb-3">
@@ -838,8 +825,7 @@
                   id="lebar"
                   name="lebar"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                  placeholder="10 m	"
-                  required
+                  required=""
                 />
               </div>
               <div class="mb-3">
@@ -853,7 +839,7 @@
                   name="jenis"
                 >
                   <option value="">Pilih</option>
-                  <option selected value="">Permukaan</option>
+                  <option value="">Permukaan</option>
                   <option value="">Underground</option>
                   <option value="">Di atas</option>
                 </select>
@@ -871,7 +857,7 @@
                   <option value="">Pilih</option>
                   <option value="">Arteri</option>
                   <option value="">Kolektor</option>
-                  <option selected value="">Lingkungan</option>
+                  <option value="">Lingkungan</option>
                 </select>
               </div>
               <div class="mb-3">
@@ -888,8 +874,7 @@
                       type="radio"
                       value=""
                       name="status"
-                      class="w-4 h-4 text-blue-600 text-lg bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
-                      checked
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
                     />
                     <label for="ada" class="ml-2 text-lg">Ada</label>
                   </div>
@@ -899,7 +884,7 @@
                       type="radio"
                       value=""
                       name="status"
-                      class="w-4 h-4 text-blue-600 text-lg bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
                     />
                     <label for="tidak-ada" class="ml-2 text-lg"
                       >Tidak Ada</label
@@ -908,8 +893,8 @@
                 </div>
               </div>
 
-              <div class="max-w-screen-lg mx-auto grid grid-rows-2 mb-3">
-                <div class="grid grid-cols-2 gap-x-5 mb-3">
+              <div class="max-w-screen-lg mx-auto grid grid-rows-2 mb-4">
+                <div class="grid grid-cols-2 gap-x-5">
                   <div>
                     <label
                       class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
@@ -1011,54 +996,58 @@
               <div class="flex justify-center">
                 <div class="">
                   <button
+                    id="btn_table_detail"
                     type="button"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-lg px-10 py-2.5 text-center mr-2 mb-2"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-lg px-10 py-2.5 text-center"
                   >
                     Simpan
                   </button>
                 </div>
               </div>
             </form>
+            <!--  -->
           </div>
         </div>
 
         <!-- Profil -->
         <div
-          class="pb-[4vh] text-black px-6 pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[30vh] transition-all ease-in-out duration-300 form-profil hidden"
+          class="pb-[4vh] text-black pt-4 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[30vh] transition-all ease-in-out duration-300 form-profil hidden"
         >
           <!--  -->
-          <div class="flex justify-center mb-3">
+          <div class="flex justify-center px-6 mb-3">
             <div
               class="w-14 h-1.5 bg-gray-300 rounded-full cursor-pointer sticky top-0 z-10"
               id="toggleButtonProfil"
             ></div>
           </div>
           <!--  -->
-          <div class="mb-4 -mt-1 flex flex-col">
+          <div class="mb-4 -mt-1 flex flex-col px-6">
             <div class="font-semibold text-3xl text-gray-700">Profil</div>
           </div>
           <!--  -->
           <div
-            class="relative overflow-y-auto h-[19vh] expand_profil hide-scrollbar"
+            class="relative overflow-y-auto h-[20vh] expand_profil hide-scrollbar px-6 pb-11"
           >
+            <!-- Form -->
             <div class="mb-3">
               <label
-                for="nama_lokasi"
+                for="lebar"
                 class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
                 >Nama</label
               >
               <input
                 type="text"
-                id="nama_lokasi"
-                name="nama_lokasi"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
+                id="lebar"
+                name="lebar"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                value="Kecamatan Cilandak"
                 value="Fahmi"
                 readonly
               />
             </div>
             <div class="mb-3">
               <label
-                for="alamat"
+                for="lebar"
                 class="block mb-1 text-lg font-medium text-gray-900 tracking-wide"
                 >Penempatan</label
               >
@@ -1066,7 +1055,7 @@
                 type="text"
                 id="lebar"
                 name="lebar"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
                 value="Kecamatan Cilandak"
                 readonly
               />
@@ -1081,11 +1070,13 @@
                 type="text"
                 id="lebar"
                 name="lebar"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-300 focus:ring-0"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-lg block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
                 readonly
                 value="Jabatan"
               />
             </div>
+
+            <!--  -->
           </div>
         </div>
 
