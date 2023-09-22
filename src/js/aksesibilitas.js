@@ -132,34 +132,34 @@ document.addEventListener("DOMContentLoaded", function () {
   // Gesture scroll up untuk menampilkan konten
 
   const tableRekapElement = document.querySelector(".table-rekap-hide");
+  let startY = 0; // posisi awal touch
+  let currentY = 0; // posisi touch saat bergerak
+  let isDragging = false;
 
-  tableRekapElement.addEventListener("touchstart", handleTouchStart);
-  tableRekapElement.addEventListener("touchmove", handleTouchMove);
+  tableRekapElement.addEventListener("touchstart", function (event) {
+    isDragging = true;
+    startY = event.touches[0].clientY;
+  });
 
-  let yDown = null;
+  tableRekapElement.addEventListener("touchmove", function (event) {
+    if (!isDragging) return;
+    currentY = event.touches[0].clientY;
+    let diffY = startY - currentY;
 
-  function handleTouchStart(evt) {
-    yDown = evt.touches[0].clientY;
-  }
-
-  function handleTouchMove(evt) {
-    if (!yDown) {
-      return;
+    if (diffY > 50) {
+      // asumsi threshold 50px untuk drag ke atas
+      // Menutup konten
+      tableRekapElement.style.height = "0"; // Anda bisa mengganti ini dengan logic Anda sendiri
+    } else if (diffY < -50) {
+      // asumsi threshold -50px untuk drag ke bawah
+      // Membuka konten
+      tableRekapElement.style.height = "auto"; // Anda bisa mengganti ini dengan logic Anda sendiri
     }
+  });
 
-    let yUp = evt.touches[0].clientY;
-    let yDiff = yDown - yUp;
-
-    if (yDiff > 0) {
-      // Logika ketika digeser ke atas
-      tableRekapElement.classList.add("hidden"); // misalnya kita sembunyikan elemen ini
-    } else {
-      // Logika ketika digeser ke bawah
-      tableRekapElement.classList.remove("hidden"); // misalnya kita tampilkan kembali elemen ini
-    }
-
-    yDown = null;
-  }
+  tableRekapElement.addEventListener("touchend", function () {
+    isDragging = false;
+  });
 
   //
 });
