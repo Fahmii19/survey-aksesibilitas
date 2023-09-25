@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tableRekapElement.style.transition = "height 0.3s"; // Anda bisa mengatur durasi sesuai kebutuhan
 
     // Jika tinggi lebih dari 40vh setelah menyeret, perluas ke 80vh
-    if (parseFloat(tableRekapElement.style.height) > 40) {
+    if (parseFloat(tableRekapElement.style.height) > 50) {
       tableRekapElement.style.height = "80vh";
       hideToggleButtonRekap.style.display = "none";
     } else {
