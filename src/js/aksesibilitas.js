@@ -148,8 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
   tableRekapElement.addEventListener("touchmove", function (event) {
     if (!isDragging) return;
     touchMoveY = event.touches[0].clientY;
-    const diffY = ((touchStartY - touchMoveY) / window.innerHeight) * 100; // Dikonversi ke vh
-
     // Kita tidak perlu mengubah tinggi saat "touchmove", karena kita hanya ingin mengubahnya saat "touchend"
   });
 
@@ -161,6 +159,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (diffY > 10) {
       // Cek jika telah digeser ke atas lebih dari 10vh
       tableRekapElement.style.height = maxHeight + "vh"; // Atur tinggi menjadi 75vh
+    } else if (diffY < -10) {
+      // Cek jika telah digeser ke bawah lebih dari 10vh
+      tableRekapElement.style.height = initialHeight + "vh"; // Kembalikan ke tinggi awal
     }
   });
 
