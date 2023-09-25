@@ -1089,6 +1089,14 @@ input:checked + .toggle-bg {
   right: 0px;
 }
 
+.-top-0 {
+  top: -0px;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1300,6 +1308,10 @@ input:checked + .toggle-bg {
 
 .w-9 {
   width: 2.25rem;
+}
+
+.w-7 {
+  width: 1.75rem;
 }
 
 .max-w-screen-lg {
@@ -2173,6 +2185,11 @@ a.mapboxgl-ctrl-logo {
   .xs\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .xs\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
