@@ -135,10 +135,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let startY = 0; // posisi awal touch
   let currentY = 0; // posisi touch saat bergerak
   let isDragging = false;
+  let initialHeight = "20vh"; // Anda bisa mengganti ini dengan tinggi awal yang sesuai
 
   tableRekapElement.addEventListener("touchstart", function (event) {
     isDragging = true;
     startY = event.touches[0].clientY;
+    initialHeight = tableRekapElement.style.height || initialHeight;
   });
 
   tableRekapElement.addEventListener("touchmove", function (event) {
@@ -146,14 +148,15 @@ document.addEventListener("DOMContentLoaded", function () {
     currentY = event.touches[0].clientY;
     let diffY = startY - currentY;
 
-    if (diffY > 50) {
-      // asumsi threshold 50px untuk drag ke atas
+    // Anda bisa mengatur nilai threshold yang sesuai dengan preferensi Anda
+    const threshold = 50;
+
+    if (diffY > threshold) {
       // Menutup konten
-      tableRekapElement.style.height = "0"; // Anda bisa mengganti ini dengan logic Anda sendiri
-    } else if (diffY < -50) {
-      // asumsi threshold -50px untuk drag ke bawah
+      tableRekapElement.style.height = "0";
+    } else if (diffY < -threshold) {
       // Membuka konten
-      tableRekapElement.style.height = "auto"; // Anda bisa mengganti ini dengan logic Anda sendiri
+      tableRekapElement.style.height = initialHeight;
     }
   });
 
