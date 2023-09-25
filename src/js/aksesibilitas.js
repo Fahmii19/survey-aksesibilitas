@@ -135,12 +135,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let touchStartY = 0;
   let touchMoveY = 0;
   let isDragging = false;
-  let initialHeight = "20vh"; // Anda bisa mengganti ini dengan tinggi awal yang sesuai
+  let initialHeight = "30vh"; // Posisi awal
+  const maxHeight = 75; // Maksimum tinggi scroll dalam vh
+
+  tableRekapElement.style.height = initialHeight;
 
   tableRekapElement.addEventListener("touchstart", function (event) {
     isDragging = true;
     touchStartY = event.touches[0].clientY;
-    initialHeight = tableRekapElement.style.height || initialHeight;
   });
 
   tableRekapElement.addEventListener("touchmove", function (event) {
@@ -154,9 +156,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Menghitung tinggi yang baru berdasarkan pergerakan
     const newHeight = parseFloat(initialHeight) + diffY;
 
-    // Membatasi tinggi agar tidak lebih kecil dari 0
-    if (newHeight >= 0) {
-      tableRekapElement.style.height = newHeight + "px";
+    // Memastikan tinggi tidak melebihi maksimum
+    if (newHeight >= parseFloat(initialHeight) && newHeight <= maxHeight) {
+      tableRekapElement.style.height = newHeight + "vh";
     }
   });
 
