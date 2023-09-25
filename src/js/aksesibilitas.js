@@ -135,10 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let touchStartY = 0;
   let touchMoveY = 0;
   let isDragging = false;
-  let initialHeight = "30vh"; // Posisi awal
-  const maxHeight = 75; // Maksimum tinggi scroll dalam vh
+  const initialHeight = 30; // Posisi awal dalam vh, tanpa satuan "vh"
+  const maxHeight = 75; // Maksimum tinggi dalam vh
 
-  tableRekapElement.style.height = initialHeight;
+  tableRekapElement.style.height = initialHeight + "vh";
 
   tableRekapElement.addEventListener("touchstart", function (event) {
     isDragging = true;
@@ -148,30 +148,19 @@ document.addEventListener("DOMContentLoaded", function () {
   tableRekapElement.addEventListener("touchmove", function (event) {
     if (!isDragging) return;
     touchMoveY = event.touches[0].clientY;
-    const diffY = touchStartY - touchMoveY;
+    const diffY = ((touchStartY - touchMoveY) / window.innerHeight) * 100; // Dikonversi ke vh
 
-    // Anda bisa mengatur nilai threshold yang sesuai dengan preferensi Anda
-    const threshold = 50;
-
-    // Menghitung tinggi yang baru berdasarkan pergerakan
-    const newHeight = parseFloat(initialHeight) + diffY;
-
-    // Memastikan tinggi tidak melebihi maksimum atau lebih rendah dari 0
-    if (newHeight >= 0 && newHeight <= maxHeight) {
-      tableRekapElement.style.height = newHeight + "vh";
-    }
+    // Kita tidak perlu mengubah tinggi saat "touchmove", karena kita hanya ingin mengubahnya saat "touchend"
   });
 
   tableRekapElement.addEventListener("touchend", function () {
     isDragging = false;
 
-    // Menutup elemen hanya jika digeser ke bawah dengan cukup jauh (misalnya, lebih dari 15vh)
-    const currentHeight = parseFloat(tableRekapElement.style.height);
-    if (
-      currentHeight > parseFloat(initialHeight) &&
-      currentHeight < parseFloat(initialHeight) - 15
-    ) {
-      tableRekapElement.style.height = "0";
+    const diffY = ((touchStartY - touchMoveY) / window.innerHeight) * 100;
+
+    if (diffY > 10) {
+      // Cek jika telah digeser ke atas lebih dari 10vh
+      tableRekapElement.style.height = maxHeight + "vh"; // Atur tinggi menjadi 75vh
     }
   });
 
