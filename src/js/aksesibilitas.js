@@ -133,36 +133,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const tableRekapElement = document.querySelector(".table-rekap-hide");
   let touchStartY = 0;
-  let touchMoveY = 0;
-  let isDragging = false;
-  const initialHeight = 30; // Posisi awal dalam vh, tanpa satuan "vh"
-  const maxHeight = 75; // Maksimum tinggi dalam vh
+  let initialTableHeight = 30; // Dalam vh
 
-  tableRekapElement.style.height = initialHeight + "vh";
+  tableRekapElement.style.height = initialTableHeight + "vh";
 
   tableRekapElement.addEventListener("touchstart", function (event) {
-    isDragging = true;
     touchStartY = event.touches[0].clientY;
+    initialTableHeight = parseFloat(tableRekapElement.style.height);
   });
 
   tableRekapElement.addEventListener("touchmove", function (event) {
-    if (!isDragging) return;
-    touchMoveY = event.touches[0].clientY;
-    // Kita tidak perlu mengubah tinggi saat "touchmove", karena kita hanya ingin mengubahnya saat "touchend"
+    const touchCurrentY = event.touches[0].clientY;
+    const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100; // Menghitung perbedaan dalam vh
+
+    let newHeight = initialTableHeight + diffY;
+    newHeight = Math.min(Math.max(0, newHeight), 75); // Memastikan tidak kurang dari 0 dan tidak lebih dari 75
+
+    tableRekapElement.style.height = newHeight + "vh";
   });
 
   tableRekapElement.addEventListener("touchend", function () {
-    isDragging = false;
-
-    const diffY = ((touchStartY - touchMoveY) / window.innerHeight) * 100;
-
-    if (diffY > 10) {
-      // Cek jika telah digeser ke atas lebih dari 10vh
-      tableRekapElement.style.height = maxHeight + "vh"; // Atur tinggi menjadi 75vh
-    } else if (diffY < -10) {
-      // Cek jika telah digeser ke bawah lebih dari 10vh
-      tableRekapElement.style.height = initialHeight + "vh"; // Kembalikan ke tinggi awal
-    }
+    // Anda dapat menambahkan logika tambahan di sini jika diperlukan
   });
 
   //
