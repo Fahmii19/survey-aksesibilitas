@@ -23,6 +23,10 @@ html {
   transition: filter 0.5s, opacity 0.5s;
 }
 
+.expanded-top {
+  height: 80vh; /* Tinggi yang Anda inginkan untuk div atas */
+}
+
 main {
   height: calc(100vh - 60px);
 }
