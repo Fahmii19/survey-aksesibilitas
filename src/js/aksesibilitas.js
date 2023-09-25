@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Rekap
   toggleButtonRekap.addEventListener("click", function () {
-    toggleHeight(formContainerRekap, "30vh", "90vh");
+    toggleHeight(formContainerRekap, "30vh", "75vh");
     toggleHeight(formContainerRekapHide, "20vh", "65vh");
 
     // Mengganti 'display' dengan 'z-index'
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100; // Menghitung perbedaan dalam vh
 
     let newHeight = initialTableHeight + diffY;
-    newHeight = Math.min(Math.max(30, newHeight), 80); // Memastikan tidak kurang dari 0 dan tidak lebih dari 80
+    newHeight = Math.min(Math.max(30, newHeight), 90); // Memastikan tidak kurang dari 0 dan tidak lebih dari 80
 
     tableRekapElement.style.height = newHeight + "vh";
   });
