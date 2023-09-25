@@ -132,31 +132,31 @@ document.addEventListener("DOMContentLoaded", function () {
   // Gesture scroll up untuk menampilkan konten
 
   const tableRekapElement = document.querySelector(".table-rekap-hide");
-  let startY = 0; // posisi awal touch
-  let currentY = 0; // posisi touch saat bergerak
+  let touchStartY = 0;
+  let touchMoveY = 0;
   let isDragging = false;
-  let initialHeight = "75vh"; // Anda bisa mengganti ini dengan tinggi awal yang sesuai
+  let initialHeight = "20vh"; // Anda bisa mengganti ini dengan tinggi awal yang sesuai
 
   tableRekapElement.addEventListener("touchstart", function (event) {
     isDragging = true;
-    startY = event.touches[0].clientY;
+    touchStartY = event.touches[0].clientY;
     initialHeight = tableRekapElement.style.height || initialHeight;
   });
 
   tableRekapElement.addEventListener("touchmove", function (event) {
     if (!isDragging) return;
-    currentY = event.touches[0].clientY;
-    let diffY = startY - currentY;
+    touchMoveY = event.touches[0].clientY;
+    const diffY = touchStartY - touchMoveY;
 
     // Anda bisa mengatur nilai threshold yang sesuai dengan preferensi Anda
     const threshold = 50;
 
-    if (diffY > threshold) {
-      // Menutup konten
-      tableRekapElement.style.height = "0";
-    } else if (diffY < -threshold) {
-      // Membuka konten
-      tableRekapElement.style.height = initialHeight;
+    // Menghitung tinggi yang baru berdasarkan pergerakan
+    const newHeight = parseFloat(initialHeight) + diffY;
+
+    // Membatasi tinggi agar tidak lebih kecil dari 0
+    if (newHeight >= 0) {
+      tableRekapElement.style.height = newHeight + "px";
     }
   });
 
