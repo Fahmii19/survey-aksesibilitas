@@ -1093,10 +1093,6 @@ input:checked + .toggle-bg {
   right: 0px;
 }
 
-.-top-0 {
-  top: -0px;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1691,21 +1687,16 @@ input:checked + .toggle-bg {
   line-height: 1.25rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-medium {
   font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .leading-9 {
@@ -2157,11 +2148,6 @@ a.mapboxgl-ctrl-logo {
     padding-right: 2.5rem;
   }
 
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -2169,11 +2155,6 @@ a.mapboxgl-ctrl-logo {
 }
 
 @media (min-width: 768px) {
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
