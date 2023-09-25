@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Rekap
   toggleButtonRekap.addEventListener("click", function () {
-    toggleHeight(formContainerRekap, "30vh", "75vh");
+    toggleHeight(formContainerRekap, "30vh", "90vh");
     toggleHeight(formContainerRekapHide, "20vh", "65vh");
 
     // Mengganti 'display' dengan 'z-index'
