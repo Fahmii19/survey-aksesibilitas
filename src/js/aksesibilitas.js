@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let startY = 0; // posisi awal touch
   let currentY = 0; // posisi touch saat bergerak
   let isDragging = false;
-  let initialHeight = "20vh"; // Anda bisa mengganti ini dengan tinggi awal yang sesuai
+  let initialHeight = "75vh"; // Anda bisa mengganti ini dengan tinggi awal yang sesuai
 
   tableRekapElement.addEventListener("touchstart", function (event) {
     isDragging = true;
