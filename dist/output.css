@@ -1318,6 +1318,10 @@ input:checked + .toggle-bg {
   height: 80vh;
 }
 
+.h-\[vh\] {
+  height: vh;
+}
+
 .w-full {
   width: 100%;
 }
