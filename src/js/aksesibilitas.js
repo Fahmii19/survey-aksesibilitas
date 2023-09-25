@@ -120,11 +120,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Rekap
   toggleButtonRekap.addEventListener("click", function () {
-    toggleHeight(formContainerRekap, "30vh", "80vh");
+    toggleHeight(formContainerRekap, "30vh", "84vh");
     toggleHeight(formContainerRekapHide, "20vh", "65vh");
 
     // Mengganti 'display' dengan 'z-index'
-    if (formContainerRekap.style.height === "80vh") {
+    if (formContainerRekap.style.height === "84vh") {
       mapboxCtrlElement.style.zIndex = "-1";
       hideToggleButtonRekap.style.display = "none";
     } else {
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100; // Menghitung perbedaan dalam vh
 
     let newHeight = initialTableHeight + diffY;
-    newHeight = Math.min(Math.max(30, newHeight), 80); // Memastikan tidak kurang dari 30 dan tidak lebih dari 80
+    newHeight = Math.min(Math.max(30, newHeight), 84); // Memastikan tidak kurang dari 30 dan tidak lebih dari 80
 
     tableRekapElement.style.height = newHeight + "vh";
   });
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Jika tinggi lebih dari 40vh setelah menyeret, perluas ke 80vh
     if (parseFloat(tableRekapElement.style.height) > 55) {
-      tableRekapElement.style.height = "80vh";
+      tableRekapElement.style.height = "84vh";
       hideToggleButtonRekap.style.display = "none";
     } else {
       // Jika tidak, kembalikan ke 30vh
