@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const diffY =
           ((touchStartY - touchCurrentY) / window.innerHeight) * 100;
         let newHeight = initialTableHeight + diffY;
-        newHeight = Math.min(Math.max(30, newHeight), 84);
+        newHeight = Math.min(Math.max(30, newHeight), 90);
         tableRekapElement.style.height = newHeight + "vh";
       });
 
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const hideToggleButtonRekap =
           document.querySelector("#toggleButtonRekap");
         if (parseFloat(tableRekapElement.style.height) > 55) {
-          tableRekapElement.style.height = "84vh";
+          tableRekapElement.style.height = "90vh";
           if (hideToggleButtonRekap)
             hideToggleButtonRekap.style.display = "none";
         } else {
