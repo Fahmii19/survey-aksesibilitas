@@ -140,6 +140,8 @@ document.addEventListener("DOMContentLoaded", function () {
   tableRekapElement.addEventListener("touchstart", function (event) {
     touchStartY = event.touches[0].clientY;
     initialTableHeight = parseFloat(tableRekapElement.style.height);
+    // Menghapus transisi saat menyeret untuk mendapatkan respons langsung
+    tableRekapElement.style.transition = "none";
   });
 
   tableRekapElement.addEventListener("touchmove", function (event) {
@@ -147,13 +149,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100; // Menghitung perbedaan dalam vh
 
     let newHeight = initialTableHeight + diffY;
-    newHeight = Math.min(Math.max(0, newHeight), 75); // Memastikan tidak kurang dari 0 dan tidak lebih dari 75
+    newHeight = Math.min(Math.max(30, newHeight), 80); // Memastikan tidak kurang dari 0 dan tidak lebih dari 80
 
     tableRekapElement.style.height = newHeight + "vh";
   });
 
   tableRekapElement.addEventListener("touchend", function () {
-    // Anda dapat menambahkan logika tambahan di sini jika diperlukan
+    // Mengembalikan transisi saat selesai menyeret
+    tableRekapElement.style.transition = "";
   });
 
   //
