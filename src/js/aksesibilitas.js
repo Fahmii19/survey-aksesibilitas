@@ -156,14 +156,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // Menghitung tinggi yang baru berdasarkan pergerakan
     const newHeight = parseFloat(initialHeight) + diffY;
 
-    // Memastikan tinggi tidak melebihi maksimum
-    if (newHeight >= parseFloat(initialHeight) && newHeight <= maxHeight) {
+    // Memastikan tinggi tidak melebihi maksimum atau lebih rendah dari 0
+    if (newHeight >= 0 && newHeight <= maxHeight) {
       tableRekapElement.style.height = newHeight + "vh";
     }
   });
 
   tableRekapElement.addEventListener("touchend", function () {
     isDragging = false;
+
+    // Menutup elemen hanya jika digeser ke bawah dengan cukup jauh (misalnya, lebih dari 15vh)
+    const currentHeight = parseFloat(tableRekapElement.style.height);
+    if (
+      currentHeight > parseFloat(initialHeight) &&
+      currentHeight < parseFloat(initialHeight) - 15
+    ) {
+      tableRekapElement.style.height = "0";
+    }
   });
 
   //
