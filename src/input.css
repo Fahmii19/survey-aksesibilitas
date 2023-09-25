@@ -17,6 +17,12 @@ html {
   transition: height 0.3s ease;
 }
 
+.blurred {
+  filter: blur(5px);
+  opacity: 0;
+  transition: filter 0.5s, opacity 0.5s;
+}
+
 main {
   height: calc(100vh - 60px);
 }

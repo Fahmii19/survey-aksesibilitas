@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnOpenTableDetail = document.querySelector(".btn_open_table_detail");
   const tableDetail = document.querySelector(".table-detail");
 
+  const hideToggleButtonRekap = document.querySelector("#toggleButtonRekap");
+
   btnOpenTableDetail.addEventListener("click", function () {
     tableDetail.classList.toggle("hidden");
   });
@@ -47,11 +49,25 @@ document.addEventListener("DOMContentLoaded", function () {
     btnProfilImage.src = "./src/images/user.png";
   }
 
+  // btnRekap.addEventListener("click", function () {
+  //   resetAll();
+  //   tableRekap.classList.remove("hidden");
+  //   tableRekap.style.zIndex = "6";
+  //   btnRekapImage.src = "./src/images/active_rekap.png";
+  // });
+
   btnRekap.addEventListener("click", function () {
-    resetAll();
-    tableRekap.classList.remove("hidden");
-    tableRekap.style.zIndex = "6";
-    btnRekapImage.src = "./src/images/active_rekap.png";
+    if (tableRekap.classList.contains("hidden")) {
+      // Tampilkan elemen
+      tableRekap.classList.remove("hidden");
+      tableRekap.style.zIndex = "6";
+      btnRekapImage.src = "./src/images/active_rekap.png";
+    } else {
+      // Sembunyikan elemen
+      tableRekap.classList.add("hidden");
+      tableRekap.style.zIndex = "1"; // Anda bisa mengatur ke nilai default yang Anda inginkan.
+      btnRekapImage.src = "./src/images/rekap.png"; // Asumsi Anda memiliki gambar untuk keadaan non-aktif. Gantilah dengan path gambar yang sesuai.
+    }
   });
 
   btnInput.addEventListener("click", function () {
@@ -104,12 +120,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Rekap
   toggleButtonRekap.addEventListener("click", function () {
-    toggleHeight(formContainerRekap, "30vh", "75vh");
+    toggleHeight(formContainerRekap, "30vh", "80vh");
     toggleHeight(formContainerRekapHide, "20vh", "65vh");
 
     // Mengganti 'display' dengan 'z-index'
-    if (formContainerRekap.style.height === "75vh") {
+    if (formContainerRekap.style.height === "80vh") {
       mapboxCtrlElement.style.zIndex = "-1";
+      hideToggleButtonRekap.style.display = "none";
     } else {
       mapboxCtrlElement.style.zIndex = "5";
     }
@@ -149,14 +166,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100; // Menghitung perbedaan dalam vh
 
     let newHeight = initialTableHeight + diffY;
-    newHeight = Math.min(Math.max(30, newHeight), 85); // Memastikan tidak kurang dari 0 dan tidak lebih dari 80
+    newHeight = Math.min(Math.max(30, newHeight), 80); // Memastikan tidak kurang dari 30 dan tidak lebih dari 80
 
     tableRekapElement.style.height = newHeight + "vh";
   });
 
   tableRekapElement.addEventListener("touchend", function () {
     // Mengembalikan transisi saat selesai menyeret
-    tableRekapElement.style.transition = "";
+    tableRekapElement.style.transition = "height 0.3s"; // Anda bisa mengatur durasi sesuai kebutuhan
+
+    // Jika tinggi lebih dari 40vh setelah menyeret, perluas ke 80vh
+    if (parseFloat(tableRekapElement.style.height) > 40) {
+      tableRekapElement.style.height = "80vh";
+      hideToggleButtonRekap.style.display = "none";
+    } else {
+      // Jika tidak, kembalikan ke 30vh
+      tableRekapElement.style.height = "30vh";
+      hideToggleButtonRekap.style.display = "block";
+    }
   });
 
   //
