@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnProfilImage) btnProfilImage.src = "./src/images/user.png";
 
     // Rekap
-    if (rekapContainer) rekapContainer.style.height = "40vh";
+    if (rekapContainer) rekapContainer.style.height = "45vh";
     if (tableRekapElement) {
       tableRekapElement.classList.add("rounded-tl-[15px]");
       tableRekapElement.classList.add("rounded-tr-[15px]");
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (toggleButtonFormInput && formInputAkses) {
     toggleButtonFormInput.addEventListener("click", function () {
-      toggleHeight(formInputAkses, "40vh", "74vh");
+      toggleHeight(formInputAkses, "45vh", "74vh");
       if (formInputAkses.style.height === "74vh" && mapboxCtrlElement) {
         mapboxCtrlElement.style.zIndex = "-1";
       } else if (mapboxCtrlElement) {
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (toggleButtonProfil && formProfil) {
     toggleButtonProfil.addEventListener("click", function () {
-      toggleHeight(formProfil, "40vh", "75vh");
+      toggleHeight(formProfil, "45vh", "75vh");
 
       if (formProfil.style.height === "75vh" && mapboxCtrlElement) {
         mapboxCtrlElement.style.zIndex = "-1";
@@ -113,13 +113,15 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleHeight(formContainerRekapHide, "20vh", "13vh");
 
     toggleButtonRekap.addEventListener("click", function () {
+      expandRekap.style.height = "62vh";
+
       if (rekapContainer.style.height !== "90vh") {
         rekapContainer.style.height = "90vh";
         tableRekapElement.classList.remove("rounded-tl-[15px]");
         tableRekapElement.classList.remove("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "none";
       } else {
-        rekapContainer.style.height = "40vh";
+        rekapContainer.style.height = "45vh";
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "block";
@@ -174,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
         parseFloat(tableRekapElement.style.height) < 55 &&
         parseFloat(tableRekapElement.style.height) >= 20
       ) {
-        tableRekapElement.style.height = "40vh";
+        tableRekapElement.style.height = "45vh";
         expandRekap.style.height = "13vh";
       } else if (parseFloat(tableRekapElement.style.height) < 20) {
         tableRekapElement.style.height = "0vh"; // Mengatur tinggi ke 0 saat kurang dari 20
@@ -186,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event handler untuk mengembalikan tinggi ke 40 saat diklik
     // tableRekapElement.addEventListener("click", function () {
     //   tableRekapElement.style.transition = "height 0.3s";
-    //   tableRekapElement.style.height = "40vh";
+    //   tableRekapElement.style.height = "45vh";
     //   tableRekapElement.classList.remove("hidden");
 
     //   resetAll();
