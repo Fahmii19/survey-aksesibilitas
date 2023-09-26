@@ -1174,6 +1174,18 @@ input:checked + .toggle-bg {
   margin-bottom: 1.5rem;
 }
 
+.-ml-3 {
+  margin-left: -0.75rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1234,8 +1246,8 @@ input:checked + .toggle-bg {
   height: 80vh;
 }
 
-.h-\[40vh\] {
-  height: 40vh;
+.h-\[45vh\] {
+  height: 45vh;
 }
 
 .h-1 {
@@ -1270,8 +1282,20 @@ input:checked + .toggle-bg {
   height: 100vh;
 }
 
-.h-\[45vh\] {
-  height: 45vh;
+.h-\[30vh\] {
+  height: 30vh;
+}
+
+.h-1\.5 {
+  height: 0.375rem;
+}
+
+.h-\[26vh\] {
+  height: 26vh;
+}
+
+.h-\[19vh\] {
+  height: 19vh;
 }
 
 .w-full {
@@ -1300,6 +1324,14 @@ input:checked + .toggle-bg {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-1\/2 {
@@ -1667,16 +1699,24 @@ input:checked + .toggle-bg {
   padding-top: 0.5rem;
 }
 
-.pb-11 {
-  padding-bottom: 2.75rem;
-}
-
 .pb-5 {
   padding-bottom: 1.25rem;
 }
 
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pb-\[12\.5vh\] {
+  padding-bottom: 12.5vh;
+}
+
+.pb-11 {
+  padding-bottom: 2.75rem;
 }
 
 .text-center {
@@ -2027,6 +2067,11 @@ a.mapboxgl-ctrl-logo {
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
+.focus\:border-gray-300:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -2163,9 +2208,17 @@ a.mapboxgl-ctrl-logo {
 }
 
 @media (min-width: 320px) {
+  .xs\:pb-0 {
+    padding-bottom: 0px;
+  }
+
   .xs\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .xs\:text-\[2\.2em\] {
+    font-size: 2.2em;
   }
 }
 
@@ -2174,32 +2227,77 @@ a.mapboxgl-ctrl-logo {
     height: auto;
   }
 
+  .sm\:h-\[10vh\] {
+    height: 10vh;
+  }
+
   .sm\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .sm\:pb-11 {
+    padding-bottom: 2.75rem;
+  }
+
+  .sm\:pb-2 {
+    padding-bottom: 0.5rem;
   }
 
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .sm\:text-\[2\.2em\] {
+    font-size: 2.2em;
+  }
 }
 
 @media (min-width: 768px) {
+  .md\:pb-11 {
+    padding-bottom: 2.75rem;
+  }
+
+  .md\:pb-6 {
+    padding-bottom: 1.5rem;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .md\:text-\[2\.2em\] {
+    font-size: 2.2em;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:pb-11 {
+    padding-bottom: 2.75rem;
+  }
+
+  .lg\:pb-10 {
+    padding-bottom: 2.5rem;
+  }
+
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 1280px) {
+  .xl\:pb-11 {
+    padding-bottom: 2.75rem;
+  }
+
   .xl\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
