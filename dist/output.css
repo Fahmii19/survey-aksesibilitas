@@ -1270,10 +1270,6 @@ input:checked + .toggle-bg {
   height: 100vh;
 }
 
-.h-7 {
-  height: 1.75rem;
-}
-
 .w-full {
   width: 100%;
 }
@@ -1495,11 +1491,6 @@ input:checked + .toggle-bg {
 
 .border-0 {
   border-width: 0px;
-}
-
-.border-green-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(14 159 110 / var(--tw-border-opacity));
 }
 
 .border-gray-300 {
@@ -1783,17 +1774,6 @@ input:checked + .toggle-bg {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-blue-500\/50 {
-  --tw-shadow-color: rgb(63 131 248 / 0.5);
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1967,8 +1947,8 @@ a.mapboxgl-ctrl-logo {
   background-repeat: no-repeat !important;
   display: block !important;
   background-size: cover !important;
-  width: 70% !important;
-  height: 70% !important;
+  width: 65% !important;
+  height: 65% !important;
 }
 
 .my-location-button .mapboxgl-ctrl-icon {
@@ -1977,8 +1957,8 @@ a.mapboxgl-ctrl-logo {
   background-repeat: no-repeat !important;
   display: block !important;
   background-size: cover !important;
-  width: 70% !important;
-  height: 70% !important;
+  width: 65% !important;
+  height: 65% !important;
 }
 
 /* Media Queries */

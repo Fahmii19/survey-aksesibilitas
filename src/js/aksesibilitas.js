@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
     btnRekap.addEventListener("click", function () {
       if (tableRekapElement.classList.contains("hidden")) {
         resetAll();
+        tableDetail.classList.add("hidden");
+
         tableRekapElement.classList.remove("hidden");
         btnRekapImage.src = "./src/images/active_rekap.png";
       } else {
@@ -92,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (toggleButtonProfil && formProfil) {
     toggleButtonProfil.addEventListener("click", function () {
       toggleHeight(formProfil, "40vh", "75vh");
+
       if (formProfil.style.height === "75vh" && mapboxCtrlElement) {
         mapboxCtrlElement.style.zIndex = "-1";
       } else if (mapboxCtrlElement) {
