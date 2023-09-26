@@ -32,22 +32,35 @@
       <div class="relative h-[100vh] flex flex-col">
         <!-- Header  -->
         <div
-          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto"
+          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] mb-7 items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto"
         >
           <div
+            class="h-9 font-bold mt-7 -mb-1 xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold flex items-center"
+          >
+            Aksesibilitas
+          </div>
+          <div class="h-9 mt-7 -mb-1 flex items-center justify-end">
+            <img
+              src="./src/images/logout2.png"
+              alt="Logout"
+              style="height: 100%"
+            />
+          </div>
+
+          <!-- <div
             class="font-bold mt-7 -mb-1 xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold"
           >
             Aksesibilitas
           </div>
-          <div class="flex justify-end mt-6 mb-2">
-            <div class="flex w-9 h-auto items-center justify-center">
+          <div class="flex justify-end mt-9 mb-2">
+            <div class="flex w-7 h-auto items-center justify-center">
               <img
                 src="./src/images/logout2.png"
                 alt="Logout"
                 style="height: 100%"
               />
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- Konten -->
         <div class="border border-green-500 h-[80vh]">
@@ -73,7 +86,7 @@
               <div class="flex flex-col mb-1">
                 <!-- Data -->
                 <div
-                  class="text-black text-md grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
+                  class="text-black text-sm grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
                 >
                   <div
                     class="flex justify-start items-center w-full btn_open_table_detail"
@@ -97,14 +110,14 @@
                       <div class="mb-3">
                         <label
                           for="alamat"
-                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                           >Alamat Lokasi</label
                         >
                         <input
                           type="text"
                           id="alamat"
                           name="alamat"
-                          class="bg-gray-200 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
                           value="Jalan manggis"
                           readonly=""
                         />
@@ -112,25 +125,25 @@
                       <div class="mb-3">
                         <label
                           for="lebar"
-                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                           >Lebar Jalan</label
                         >
                         <input
                           type="text"
                           id="lebar"
                           name="lebar"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
                           required=""
                         />
                       </div>
                       <div class="mb-3">
                         <label
                           for="jenis"
-                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                           >Jenis Jalan</label
                         >
                         <select
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
                           name="jenis"
                         >
                           <option value="">Pilih</option>
@@ -142,11 +155,11 @@
                       <div class="mb-3">
                         <label
                           for="kelas"
-                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                           >Kelas Jalan</label
                         >
                         <select
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
                           name="kelas"
                         >
                           <option value="">Pilih</option>
@@ -158,7 +171,7 @@
                       <div class="mb-3">
                         <label
                           for="kelas"
-                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                           >Pedestrian</label
                         >
 
@@ -171,7 +184,7 @@
                               name="status"
                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
                             />
-                            <label for="ada" class="ml-2 text-md">Ada</label>
+                            <label for="ada" class="ml-2 text-sm">Ada</label>
                           </div>
                           <div class="flex items-center">
                             <input
@@ -181,7 +194,7 @@
                               name="status"
                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
                             />
-                            <label for="tidak-ada" class="ml-2 text-md"
+                            <label for="tidak-ada" class="ml-2 text-sm"
                               >Tidak Ada</label
                             >
                           </div>
@@ -194,7 +207,7 @@
                         <div class="grid grid-cols-2 gap-x-5 mb-2">
                           <div>
                             <label
-                              class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                               >Foto Depan</label
                             >
                             <div class="relative">
@@ -220,7 +233,7 @@
                           </div>
                           <div>
                             <label
-                              class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                               >Foto Seberang</label
                             >
                             <div class="relative">
@@ -249,7 +262,7 @@
                         <div class="grid grid-cols-2 gap-x-5">
                           <div>
                             <label
-                              class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                               >Foto Kiri</label
                             >
                             <div class="relative">
@@ -272,7 +285,7 @@
                           </div>
                           <div>
                             <label
-                              class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
                               >Foto Kanan</label
                             >
                             <div class="relative">
@@ -304,7 +317,7 @@
                           <button
                             id="btn_table_detail"
                             type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-md px-10 py-2.5 text-center"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-sm px-10 py-2.5 text-center"
                           >
                             Simpan
                           </button>
@@ -318,7 +331,7 @@
               <div class="flex flex-col mb-1">
                 <!-- Data -->
                 <div
-                  class="text-black text-md grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
+                  class="text-black text-sm grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
                 >
                   <div
                     class="flex justify-start items-center w-full btn_open_table_detail"

@@ -1,12 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const mapboxCtrlElement = document.querySelector(".mapboxgl-ctrl-top-right");
-
-  if (mapboxCtrlElement) {
-    mapboxCtrlElement.style.zIndex = "5"; // Set default z-index
-  }
-
   const formInputAkses = document.querySelector(".form-input-akses");
-  const tableRekap = document.querySelector(".table-rekap-hide");
   const btnRekap = document.querySelector(".btn_rekap");
   const btnRekapImage = btnRekap
     ? btnRekap.querySelector(".menu-image-rekap")
@@ -44,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function resetAll() {
-    if (tableRekap) tableRekap.classList.add("hidden");
+    if (tableRekapElement) tableRekapElement.classList.add("hidden");
     if (formInputAkses) formInputAkses.classList.add("hidden");
     if (formProfil) formProfil.classList.add("hidden");
     if (mapboxCtrlElement) mapboxCtrlElement.style.zIndex = "5";
@@ -53,39 +47,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Rekap
     if (rekapContainer) rekapContainer.style.height = "40vh";
-    tableRekapElement.classList.add("rounded-tl-[15px]");
-    tableRekapElement.classList.add("rounded-tr-[15px]");
-    toggleButtonRekap.style.display = "block";
+    if (tableRekapElement) {
+      tableRekapElement.classList.add("rounded-tl-[15px]");
+      tableRekapElement.classList.add("rounded-tr-[15px]");
+    }
+    if (toggleButtonRekap) toggleButtonRekap.style.display = "block";
   }
 
-  if (btnRekap && tableRekap && btnRekapImage) {
+  if (btnRekap && tableRekapElement && btnRekapImage) {
     btnRekap.addEventListener("click", function () {
-      if (tableRekap.classList.contains("hidden")) {
+      if (tableRekapElement.classList.contains("hidden")) {
         resetAll();
-        tableRekap.classList.remove("hidden");
+        tableRekapElement.classList.remove("hidden");
         btnRekapImage.src = "./src/images/active_rekap.png";
       } else {
-        tableRekap.classList.add("hidden");
+        tableRekapElement.classList.add("hidden");
         btnRekapImage.src = "./src/images/rekap.png";
       }
     });
   }
 
-  if (btnInput && formInputAkses) {
-    btnInput.addEventListener("click", function () {
-      resetAll();
-      formInputAkses.classList.remove("hidden");
-    });
-  }
-
-  if (btnProfil && formProfil && btnProfilImage) {
-    btnProfil.addEventListener("click", function () {
-      resetAll();
-      formProfil.classList.remove("hidden");
-      btnProfilImage.src = "./src/images/active_user.png";
-    });
-  }
-
+  // Function to toggle height
   function toggleHeight(element, initialHeight, toggledHeight) {
     if (element) {
       if (element.style.height === initialHeight || !element.style.height) {
@@ -123,37 +105,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toggleButtonRekap.addEventListener("click", function () {
       if (rekapContainer.style.height !== "90vh") {
-        // tinggi jadi 90vh
         rekapContainer.style.height = "90vh";
-        // hapus tinggi dan rounded
         tableRekapElement.classList.remove("rounded-tl-[15px]");
         tableRekapElement.classList.remove("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "none";
       } else {
         rekapContainer.style.height = "40vh";
+        tableRekapElement.classList.add("rounded-tl-[15px]");
+        tableRekapElement.classList.add("rounded-tr-[15px]");
+        toggleButtonRekap.style.display = "block";
       }
     });
   }
 
-  // Gesture
+  // Gesture handling
 
   if (tableRekapElement) {
     let touchStartY = 0;
     let initialTableHeight = 40; // Tinggi awal dalam vh
-    let isDragging = false;
-
     tableRekapElement.style.height = initialTableHeight + "vh";
 
     tableRekapElement.addEventListener("touchstart", function (event) {
-      isDragging = true;
       touchStartY = event.touches[0].clientY;
       initialTableHeight = parseFloat(tableRekapElement.style.height);
       tableRekapElement.style.transition = "none";
     });
 
     tableRekapElement.addEventListener("touchmove", function (event) {
-      if (!isDragging) return;
-
       const touchCurrentY = event.touches[0].clientY;
       const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100;
       let newHeight = initialTableHeight + diffY;
@@ -168,27 +146,29 @@ document.addEventListener("DOMContentLoaded", function () {
       if (newHeight <= 55) {
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
+        toggleButtonRekap.style.display = "block";
       } else {
         tableRekapElement.classList.remove("rounded-tl-[15px]");
         tableRekapElement.classList.remove("rounded-tr-[15px]");
+        toggleButtonRekap.style.display = "none";
       }
     });
 
     tableRekapElement.addEventListener("touchend", function () {
-      isDragging = false;
       tableRekapElement.style.transition = "height 0.3s";
+      // const hideToggleButtonRekap =
+      //   document.querySelector("#toggleButtonRekap");
 
       // Tentukan tinggi akhir berdasarkan kondisi
       if (parseFloat(tableRekapElement.style.height) > 55) {
         tableRekapElement.style.height = "90vh";
+
+        // if (hideToggleButtonRekap) hideToggleButtonRekap.style.display = "none";
       } else {
         tableRekapElement.style.height = "40vh";
+        // if (hideToggleButtonRekap)
+        //   hideToggleButtonRekap.style.display = "block";
       }
-    });
-
-    // Tambahkan event listener untuk menghentikan perubahan tinggi saat menggulir di dalam elemen expandRekap
-    expandRekapElement.addEventListener("touchmove", function (event) {
-      event.stopPropagation();
     });
   }
 });
