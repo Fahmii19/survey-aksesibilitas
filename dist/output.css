@@ -1749,6 +1749,10 @@ input:checked + .toggle-bg {
   padding-bottom: 12.5vh;
 }
 
+.pb-14 {
+  padding-bottom: 3.5rem;
+}
+
 .text-center {
   text-align: center;
 }
