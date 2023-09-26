@@ -135,20 +135,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Gestute
+  // Gesture
 
   if (tableRekapElement) {
     let touchStartY = 0;
     let initialTableHeight = 40; // Tinggi awal dalam vh
+    let isDragging = false;
+
     tableRekapElement.style.height = initialTableHeight + "vh";
 
     tableRekapElement.addEventListener("touchstart", function (event) {
+      isDragging = true;
       touchStartY = event.touches[0].clientY;
       initialTableHeight = parseFloat(tableRekapElement.style.height);
       tableRekapElement.style.transition = "none";
     });
 
     tableRekapElement.addEventListener("touchmove", function (event) {
+      if (!isDragging) return;
+
       const touchCurrentY = event.touches[0].clientY;
       const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100;
       let newHeight = initialTableHeight + diffY;
@@ -163,29 +168,27 @@ document.addEventListener("DOMContentLoaded", function () {
       if (newHeight <= 55) {
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
-        toggleButtonRekap.style.display = "block";
       } else {
         tableRekapElement.classList.remove("rounded-tl-[15px]");
         tableRekapElement.classList.remove("rounded-tr-[15px]");
-        toggleButtonRekap.style.display = "none";
       }
     });
 
     tableRekapElement.addEventListener("touchend", function () {
+      isDragging = false;
       tableRekapElement.style.transition = "height 0.3s";
-      // const hideToggleButtonRekap =
-      //   document.querySelector("#toggleButtonRekap");
 
       // Tentukan tinggi akhir berdasarkan kondisi
       if (parseFloat(tableRekapElement.style.height) > 55) {
         tableRekapElement.style.height = "90vh";
-
-        // if (hideToggleButtonRekap) hideToggleButtonRekap.style.display = "none";
       } else {
         tableRekapElement.style.height = "40vh";
-        // if (hideToggleButtonRekap)
-        //   hideToggleButtonRekap.style.display = "block";
       }
+    });
+
+    // Tambahkan event listener untuk menghentikan perubahan tinggi saat menggulir di dalam elemen expandRekap
+    expandRekapElement.addEventListener("touchmove", function (event) {
+      event.stopPropagation();
     });
   }
 });
