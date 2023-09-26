@@ -32,7 +32,7 @@
       <div class="relative h-[100vh] flex flex-col">
         <!-- Header  -->
         <div
-          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] mb-7 items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto"
+          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto"
         >
           <div
             class="h-9 font-bold mt-7 -mb-1 xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold flex items-center"
@@ -63,11 +63,10 @@
           </div> -->
         </div>
         <!-- Konten -->
-        <div class="h-[80vh]">
+        <div class="h-[80vh] relative">
           <!-- Rekap -->
           <div
-            id="rekapContainer"
-            class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 table-rekap-hide absolute bottom-0 z-10 hidden"
+            class="bg-white transition-all ease-in-out duration-300 table-rekap-hide absolute z-10 border border-red-500 w-full h-full"
           >
             <!--  -->
             <div class="flex justify-center px-6 mb-3">
@@ -337,57 +336,12 @@
 
         <!-- Navigasi  -->
         <div
-          class="h-[10vh] w-full fixed bottom-0 p-5 px-6 grid grid-cols-3 bg-white shadow-3xl text-gray-400 cursor-pointer z-10"
+          class="h-[10vh] w-full fixed bottom-0 p-5 px-6 grid grid-cols-3 border border-blue-500 shadow-3xl text-gray-400 cursor-pointer z-10"
         >
-          <!-- Menu1 -->
-          <div class="flex flex-col items-center">
-            <div class="inline-flex flex-col items-center justify-center">
-              <div class="flex w-8 h-8 items-center justify-center btn_rekap">
-                <img
-                  src="./src/images/rekap.png"
-                  alt=""
-                  class="menu-image-rekap"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Menu2 -->
-          <div class="flex flex-col items-center relative">
-            <div
-              class="bottom-5 text-center flex items-center justify-center rounded-full text-3xl p-[3vh] text-white bg-[#2A64D9] transition ease-in duration-200 absolute"
-              id="toggleButtonOpen"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 1v16M1 9h16"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Menu3 -->
-          <div class="flex flex-col items-center">
-            <div class="inline-flex flex-col items-center justify-center">
-              <div class="flex w-8 h-8 items-center justify-center btn_profil">
-                <img
-                  src="./src/images/user.png"
-                  alt=""
-                  class="menu-image-profil"
-                />
-              </div>
-            </div>
-          </div>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
+          ea temporibus, quidem error maiores neque nisi suscipit voluptatum
+          quae ratione ex accusamus minus? Ratione cupiditate nostrum id
+          quibusdam quos laborum.
         </div>
       </div>
     </div>
@@ -397,6 +351,6 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"
     defer
   ></script>
-  <script src="./src/js/aksesibilitas.js" defer></script>
+  <!-- <script src="./src/js/aksesibilitas.js" defer></script> -->
   <script src="./src/js/peta.js" defer></script>
 </html>
