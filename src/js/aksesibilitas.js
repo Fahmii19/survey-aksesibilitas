@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ? btnProfil.querySelector(".menu-image-profil")
     : null;
   const toggleButtonFormInput = document.getElementById(
-    "toggleButtonFormInput"
+    "#toggleButtonFormInput"
   );
   const toggleButtonProfil = document.getElementById("toggleButtonProfil");
   const toggleButtonRekap = document.getElementById("toggleButtonRekap");
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnRekapImage) btnRekapImage.src = "./src/images/rekap.png";
     if (btnProfilImage) btnProfilImage.src = "./src/images/user.png";
 
-    // Rekap
+    // Reset Rekap
     if (rekapContainer) rekapContainer.style.height = "45vh";
     if (tableRekapElement) {
       tableRekapElement.classList.add("rounded-tl-[15px]");
