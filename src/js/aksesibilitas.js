@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (tableRekapElement) {
     let touchStartY = 0;
-    let initialTableHeight = 40; // Tinggi awal dalam vh
+    let initialTableHeight = 0; // Tinggi awal dalam vh
     tableRekapElement.style.height = initialTableHeight + "vh";
 
     tableRekapElement.addEventListener("touchstart", function (event) {
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let newHeight = initialTableHeight + diffY;
 
       // Batasi tinggi minimum dan maksimum
-      newHeight = Math.min(Math.max(30, newHeight), 90);
+      newHeight = Math.min(Math.max(0, newHeight), 90);
 
       // Perubahan tinggi elemen
       tableRekapElement.style.height = newHeight + "vh";
@@ -165,19 +165,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     tableRekapElement.addEventListener("touchend", function () {
       tableRekapElement.style.transition = "height 0.3s";
-      // const hideToggleButtonRekap =
-      //   document.querySelector("#toggleButtonRekap");
 
       // Tentukan tinggi akhir berdasarkan kondisi
       if (parseFloat(tableRekapElement.style.height) > 55) {
         tableRekapElement.style.height = "90vh";
-
-        // if (hideToggleButtonRekap) hideToggleButtonRekap.style.display = "none";
-      } else {
+      } else if (
+        parseFloat(tableRekapElement.style.height) < 55 &&
+        parseFloat(tableRekapElement.style.height) >= 20
+      ) {
         tableRekapElement.style.height = "40vh";
-        // if (hideToggleButtonRekap)
-        //   hideToggleButtonRekap.style.display = "block";
+      } else if (parseFloat(tableRekapElement.style.height) < 20) {
+        tableRekapElement.style.height = "0vh"; // Mengatur tinggi ke 0 saat kurang dari 20
+        // btnRekapImage.src = "./src/images/rekap.png"; // Mengganti gambar menjadi "rekap.png"
+        resetAll();
       }
     });
+
+    // Event handler untuk mengembalikan tinggi ke 40 saat diklik
+    // tableRekapElement.addEventListener("click", function () {
+    //   tableRekapElement.style.transition = "height 0.3s";
+    //   tableRekapElement.style.height = "40vh";
+    //   tableRekapElement.classList.remove("hidden");
+
+    //   resetAll();
+    // });
   }
 });
