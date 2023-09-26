@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const collapseImage = document.getElementById("collapseImage");
   const tableRekapElement = document.querySelector(".table-rekap-hide");
 
+  // rekap
+  const expandRekap = document.querySelector(".expand_rekap");
+  const formContainerRekapHide = expandRekap;
+
   if (btnOpenTableDetail && tableDetail) {
     btnOpenTableDetail.addEventListener("click", function () {
       tableDetail.classList.toggle("hidden");
@@ -46,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (mapboxCtrlElement) mapboxCtrlElement.style.zIndex = "5";
     if (btnRekapImage) btnRekapImage.src = "./src/images/rekap.png";
     if (btnProfilImage) btnProfilImage.src = "./src/images/user.png";
+
+    // Rekap
+    if (rekapContainer) rekapContainer.style.height = "40vh";
+    tableRekapElement.classList.add("rounded-tl-[15px]");
+    tableRekapElement.classList.add("rounded-tr-[15px]");
+    toggleButtonRekap.style.display = "block";
   }
 
   if (btnRekap && tableRekap && btnRekapImage) {
@@ -88,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (toggleButtonFormInput && formInputAkses) {
     toggleButtonFormInput.addEventListener("click", function () {
-      toggleHeight(formInputAkses, "30vh", "74vh");
+      toggleHeight(formInputAkses, "40vh", "74vh");
       if (formInputAkses.style.height === "74vh" && mapboxCtrlElement) {
         mapboxCtrlElement.style.zIndex = "-1";
       } else if (mapboxCtrlElement) {
@@ -99,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (toggleButtonProfil && formProfil) {
     toggleButtonProfil.addEventListener("click", function () {
-      toggleHeight(formProfil, "30vh", "75vh");
+      toggleHeight(formProfil, "40vh", "75vh");
       if (formProfil.style.height === "75vh" && mapboxCtrlElement) {
         mapboxCtrlElement.style.zIndex = "-1";
       } else if (mapboxCtrlElement) {
@@ -109,9 +119,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (toggleButtonRekap && rekapContainer) {
+    toggleHeight(formContainerRekapHide, "20vh", "13vh");
+
     toggleButtonRekap.addEventListener("click", function () {
       if (rekapContainer.style.height !== "90vh") {
+        // tinggi jadi 90vh
         rekapContainer.style.height = "90vh";
+        // hapus tinggi dan rounded
+        tableRekapElement.classList.remove("rounded-tl-[15px]");
+        tableRekapElement.classList.remove("rounded-tr-[15px]");
+        toggleButtonRekap.style.display = "none";
       } else {
         rekapContainer.style.height = "40vh";
       }
@@ -165,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // if (hideToggleButtonRekap) hideToggleButtonRekap.style.display = "none";
       } else {
-        tableRekapElement.style.height = "30vh";
+        tableRekapElement.style.height = "40vh";
         // if (hideToggleButtonRekap)
         //   hideToggleButtonRekap.style.display = "block";
       }

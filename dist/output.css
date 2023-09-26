@@ -1174,6 +1174,14 @@ input:checked + .toggle-bg {
   margin-top: 0.5rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1258,6 +1266,22 @@ input:checked + .toggle-bg {
   height: 100vh;
 }
 
+.h-\[30vh\] {
+  height: 30vh;
+}
+
+.h-1\.5 {
+  height: 0.375rem;
+}
+
+.h-\[20vh\] {
+  height: 20vh;
+}
+
+.h-\[19vh\] {
+  height: 19vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1296,6 +1320,10 @@ input:checked + .toggle-bg {
 
 .w-64 {
   width: 16rem;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .max-w-screen-lg {
@@ -1441,6 +1469,10 @@ input:checked + .toggle-bg {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .rounded-full {
@@ -1660,6 +1692,14 @@ input:checked + .toggle-bg {
   padding-bottom: 2.75rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1682,6 +1722,11 @@ input:checked + .toggle-bg {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-bold {
@@ -2148,6 +2193,11 @@ a.mapboxgl-ctrl-logo {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .xs\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 @media (min-width: 640px) {
@@ -2164,6 +2214,11 @@ a.mapboxgl-ctrl-logo {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2171,12 +2226,22 @@ a.mapboxgl-ctrl-logo {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
