@@ -115,6 +115,11 @@ a.mapboxgl-ctrl-logo {
   height: 65% !important;
 }
 
+select {
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
 /* Media Queries */
 @media (max-width: 767px) {
   /* styles for Small devices (ponsel) */
