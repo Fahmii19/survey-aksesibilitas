@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tableDetail = document.querySelector(".table-detail");
   const collapseImage = document.getElementById("collapseImage");
   const tableRekapElement = document.querySelector(".table-rekap-hide");
+  const scrollRekapElement = document.querySelector(".table-rekap-scroll");
 
   // rekap
   const expandRekap = document.querySelector(".expand_rekap");
@@ -123,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Gesture handling
 
-  if (tableRekapElement) {
+  if (scrollRekapElement) {
     let touchStartY = 0;
     let initialTableHeight = 40; // Tinggi awal dalam vh
     tableRekapElement.style.height = initialTableHeight + "vh";
