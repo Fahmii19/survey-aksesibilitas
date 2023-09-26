@@ -113,40 +113,62 @@ document.addEventListener("DOMContentLoaded", function () {
       if (rekapContainer.style.height !== "90vh") {
         rekapContainer.style.height = "90vh";
       } else {
-        rekapContainer.style.height = "30vh";
+        rekapContainer.style.height = "40vh";
       }
     });
   }
 
+  // Gestute
+
   if (tableRekapElement) {
+    let touchStartY = 0;
+    let initialTableHeight = 40; // Tinggi awal dalam vh
+    tableRekapElement.style.height = initialTableHeight + "vh";
+
     tableRekapElement.addEventListener("touchstart", function (event) {
-      let touchStartY = event.touches[0].clientY;
-      let initialTableHeight = parseFloat(tableRekapElement.style.height);
+      touchStartY = event.touches[0].clientY;
+      initialTableHeight = parseFloat(tableRekapElement.style.height);
       tableRekapElement.style.transition = "none";
+    });
 
-      tableRekapElement.addEventListener("touchmove", function (event) {
-        const touchCurrentY = event.touches[0].clientY;
-        const diffY =
-          ((touchStartY - touchCurrentY) / window.innerHeight) * 100;
-        let newHeight = initialTableHeight + diffY;
-        newHeight = Math.min(Math.max(30, newHeight), 90);
-        tableRekapElement.style.height = newHeight + "vh";
-      });
+    tableRekapElement.addEventListener("touchmove", function (event) {
+      const touchCurrentY = event.touches[0].clientY;
+      const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100;
+      let newHeight = initialTableHeight + diffY;
 
-      tableRekapElement.addEventListener("touchend", function () {
-        tableRekapElement.style.transition = "height 0.3s";
-        const hideToggleButtonRekap =
-          document.querySelector("#toggleButtonRekap");
-        if (parseFloat(tableRekapElement.style.height) > 55) {
-          tableRekapElement.style.height = "90vh";
-          if (hideToggleButtonRekap)
-            hideToggleButtonRekap.style.display = "none";
-        } else {
-          tableRekapElement.style.height = "30vh";
-          if (hideToggleButtonRekap)
-            hideToggleButtonRekap.style.display = "block";
-        }
-      });
+      // Batasi tinggi minimum dan maksimum
+      newHeight = Math.min(Math.max(30, newHeight), 90);
+
+      // Perubahan tinggi elemen
+      tableRekapElement.style.height = newHeight + "vh";
+
+      // Tambahkan atau hapus kelas sesuai dengan tinggi
+      if (newHeight <= 55) {
+        tableRekapElement.classList.add("rounded-tl-[15px]");
+        tableRekapElement.classList.add("rounded-tr-[15px]");
+        toggleButtonRekap.style.display = "block";
+      } else {
+        tableRekapElement.classList.remove("rounded-tl-[15px]");
+        tableRekapElement.classList.remove("rounded-tr-[15px]");
+        toggleButtonRekap.style.display = "none";
+      }
+    });
+
+    tableRekapElement.addEventListener("touchend", function () {
+      tableRekapElement.style.transition = "height 0.3s";
+      // const hideToggleButtonRekap =
+      //   document.querySelector("#toggleButtonRekap");
+
+      // Tentukan tinggi akhir berdasarkan kondisi
+      if (parseFloat(tableRekapElement.style.height) > 55) {
+        tableRekapElement.style.height = "90vh";
+
+        // if (hideToggleButtonRekap) hideToggleButtonRekap.style.display = "none";
+      } else {
+        tableRekapElement.style.height = "30vh";
+        // if (hideToggleButtonRekap)
+        //   hideToggleButtonRekap.style.display = "block";
+      }
     });
   }
 });
