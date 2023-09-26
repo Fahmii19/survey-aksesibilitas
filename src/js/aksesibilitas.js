@@ -169,11 +169,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // Tentukan tinggi akhir berdasarkan kondisi
       if (parseFloat(tableRekapElement.style.height) > 55) {
         tableRekapElement.style.height = "90vh";
+        expandRekap.style.height = "62vh";
       } else if (
         parseFloat(tableRekapElement.style.height) < 55 &&
         parseFloat(tableRekapElement.style.height) >= 20
       ) {
         tableRekapElement.style.height = "40vh";
+        expandRekap.style.height = "13vh";
       } else if (parseFloat(tableRekapElement.style.height) < 20) {
         tableRekapElement.style.height = "0vh"; // Mengatur tinggi ke 0 saat kurang dari 20
         // btnRekapImage.src = "./src/images/rekap.png"; // Mengganti gambar menjadi "rekap.png"
