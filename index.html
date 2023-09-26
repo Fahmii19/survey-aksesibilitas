@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
     <!-- CSS -->
     <link rel="stylesheet" href="dist/output.css" />
@@ -17,6 +20,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css"
       rel="stylesheet"
     />
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   </head>
 
   <body class="font-inter">
@@ -24,33 +29,594 @@
     <div id="mapAksesibilitas" class="map-container">
       <!-- Map will be here -->
 
-      <div class="flex flex-col h-screen font-inter">
-        <!-- Header -->
+      <div class="relative h-[100vh] flex flex-col">
+        <!-- Header  -->
         <div
-          class="z-10 h-10 flex items-center text-black px-6 sm:px-10 border border-purple-500"
-        ></div>
-
-        <!-- Konten -->
-        <div class="flex-grow relative overflow-auto">
-          <!-- Rekap -->
+          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] pt-7 items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto border border-red-500"
+        >
           <div
-            class="bg-white transition-all ease-in-out duration-300 table-rekap-hide z-10 border border-red-500 w-full h-full"
+            class="h-9 font-bold xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold flex items-center border border-yellow-500"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ullam
-            modi, dolores in esse expedita libero adipisci ea iure voluptates
-            beatae numquam sint ducimus ex molestias laboriosam at voluptate
-            rerum.
+            Aksesibilitas
+          </div>
+          <div class="h-7 flex items-center justify-end">
+            <img
+              src="./src/images/logout2.png"
+              alt="Logout"
+              style="height: 100%"
+            />
           </div>
         </div>
+        <!-- Konten -->
+        <div class="h-[80vh] relative bg-slate-50 z-10">
+          <!-- Rekap -->
+          <div
+            id="rekapContainer"
+            class="pb-[4vh] text-black pt-2 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 table-rekap-hide absolute"
+          >
+            <!--  -->
+            <div class="flex justify-center px-6 mb-3">
+              <div
+                class="w-7 h-1 bg-gray-300 rounded-full cursor-pointer sticky -top-2 z-10"
+                id="toggleButtonRekap"
+              ></div>
+            </div>
+            <!--  -->
+            <div class="mb-4 -mt-1 flex flex-col px-6">
+              <div class="font-medium text-xl text-gray-700">Rekap</div>
+            </div>
+            <!--  -->
+            <div class="relative px-3 pb-11">
+              <!-- Data Dumy1 -->
+              <div class="flex flex-col mb-1">
+                <!-- Data -->
+                <div
+                  class="text-black text-sm grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
+                >
+                  <div
+                    class="flex justify-start items-center w-full btn_open_table_detail"
+                  >
+                    Taman Pondok Indah Pinggir Kali
+                  </div>
+                  <div class="flex justify-end mt-1.5">
+                    <div class="w-[1.1rem] h-[1.1rem]">
+                      <img src="./src/images/hapus.png" alt="Delete" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Show Detail -->
+                <div
+                  id="show-detail-rekap"
+                  class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3 hidden"
+                >
+                  <div
+                    class="overflow-y-auto h-[20vh] expand_rekap hide-scrollbar relative"
+                  >
+                    <form>
+                      <div class="mb-3">
+                        <label
+                          for="alamat"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                          >Alamat Lokasi</label
+                        >
+                        <input
+                          type="text"
+                          id="alamat"
+                          name="alamat"
+                          class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          value="Jalan manggis"
+                          readonly=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="lebar"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                          >Lebar Jalan</label
+                        >
+                        <input
+                          type="text"
+                          id="lebar"
+                          name="lebar"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          required=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="jenis"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                          >Jenis Jalan</label
+                        >
+                        <select
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          name="jenis"
+                        >
+                          <option value="">Pilih</option>
+                          <option value="">Permukaan</option>
+                          <option value="">Underground</option>
+                          <option value="">Di atas</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="kelas"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                          >Kelas Jalan</label
+                        >
+                        <select
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          name="kelas"
+                        >
+                          <option value="">Pilih</option>
+                          <option value="">Arteri</option>
+                          <option value="">Kolektor</option>
+                          <option value="">Lingkungan</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="kelas"
+                          class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                          >Pedestrian</label
+                        >
 
-        <!-- Navigasi -->
+                        <div class="grid grid-rows-2">
+                          <div class="flex items-center">
+                            <input
+                              id="ada"
+                              type="radio"
+                              value=""
+                              name="status"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
+                            />
+                            <label for="ada" class="ml-2 text-sm">Ada</label>
+                          </div>
+                          <div class="flex items-center">
+                            <input
+                              id="tidak-ada"
+                              type="radio"
+                              value=""
+                              name="status"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
+                            />
+                            <label for="tidak-ada" class="ml-2 text-sm"
+                              >Tidak Ada</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="max-w-screen-lg mx-auto grid grid-rows-2 mb-6"
+                      >
+                        <div class="grid grid-cols-2 gap-x-5 mb-2">
+                          <div>
+                            <label
+                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                              >Foto Depan</label
+                            >
+                            <div class="relative">
+                              <input
+                                type="file"
+                                id="fotoDepanInput"
+                                class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                                accept="image/*"
+                                onchange="previewImage('fotoDepanInput', 'fotoDepanPreview')"
+                              />
+                              <label
+                                for="fotoDepanInput"
+                                class="cursor-pointer"
+                              >
+                                <img
+                                  id="fotoDepanPreview"
+                                  class="w-auto h-5vh"
+                                  src="./src/images/noimage.png"
+                                  alt="Tidak ada gambar"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                          <div>
+                            <label
+                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                              >Foto Seberang</label
+                            >
+                            <div class="relative">
+                              <input
+                                type="file"
+                                id="fotoSeberangInput"
+                                class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                                accept="image/*"
+                                onchange="previewImage('fotoSeberangInput', 'fotoSeberangPreview')"
+                              />
+                              <label
+                                for="fotoSeberangInput"
+                                class="cursor-pointer"
+                              >
+                                <img
+                                  id="fotoSeberangPreview"
+                                  class="w-auto h-5vh"
+                                  src="./src/images/noimage.png"
+                                  alt="Tidak ada gambar"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-x-5">
+                          <div>
+                            <label
+                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                              >Foto Kiri</label
+                            >
+                            <div class="relative">
+                              <input
+                                type="file"
+                                id="fotoKiriInput"
+                                class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                                accept="image/*"
+                                onchange="previewImage('fotoKiriInput', 'fotoKiriPreview')"
+                              />
+                              <label for="fotoKiriInput" class="cursor-pointer">
+                                <img
+                                  id="fotoKiriPreview"
+                                  class="w-auto h-5vh"
+                                  src="./src/images/noimage.png"
+                                  alt="Tidak ada gambar"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                          <div>
+                            <label
+                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                              >Foto Kanan</label
+                            >
+                            <div class="relative">
+                              <input
+                                type="file"
+                                id="fotoKananInput"
+                                class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                                accept="image/*"
+                                onchange="previewImage('fotoKananInput', 'fotoKananPreview')"
+                              />
+                              <label
+                                for="fotoKananInput"
+                                class="cursor-pointer"
+                              >
+                                <img
+                                  id="fotoKananPreview"
+                                  class="w-auto h-5vh"
+                                  src="./src/images/noimage.png"
+                                  alt="Tidak ada gambar"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex justify-center pb-10">
+                        <div class="">
+                          <button
+                            id="btn_table_detail"
+                            type="button"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-sm px-10 py-2.5 text-center"
+                          >
+                            Simpan
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- Data Dumy1 -->
+              <div class="flex flex-col mb-1">
+                <!-- Data -->
+                <div
+                  class="text-black text-sm grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
+                >
+                  <div
+                    class="flex justify-start items-center w-full btn_open_table_detail"
+                  >
+                    Taman Pondok Indah Pinggir Kali
+                  </div>
+                  <div class="flex justify-end mt-1.5">
+                    <div class="w-[1.1rem] h-[1.1rem]">
+                      <img src="./src/images/hapus.png" alt="Delete" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Show Detail -->
+                <div
+                  class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3 hidden"
+                >
+                  <div
+                    class="h-full overflow-y-auto h-[20vh] expand_rekap hide-scrollbar relative"
+                  >
+                    <form>
+                      <div class="mb-3">
+                        <label
+                          for="alamat"
+                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          >Alamat Lokasi</label
+                        >
+                        <input
+                          type="text"
+                          id="alamat"
+                          name="alamat"
+                          class="bg-gray-200 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          value="Jalan manggis"
+                          readonly=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="lebar"
+                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          >Lebar Jalan</label
+                        >
+                        <input
+                          type="text"
+                          id="lebar"
+                          name="lebar"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          required=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="jenis"
+                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          >Jenis Jalan</label
+                        >
+                        <select
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          name="jenis"
+                        >
+                          <option value="">Pilih</option>
+                          <option value="">Permukaan</option>
+                          <option value="">Underground</option>
+                          <option value="">Di atas</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="kelas"
+                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          >Kelas Jalan</label
+                        >
+                        <select
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-md block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                          name="kelas"
+                        >
+                          <option value="">Pilih</option>
+                          <option value="">Arteri</option>
+                          <option value="">Kolektor</option>
+                          <option value="">Lingkungan</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="kelas"
+                          class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                          >Pedestrian</label
+                        >
+
+                        <div class="grid grid-rows-2">
+                          <div class="flex items-center">
+                            <input
+                              id="ada"
+                              type="radio"
+                              value=""
+                              name="status"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
+                            />
+                            <label for="ada" class="ml-2 text-md">Ada</label>
+                          </div>
+                          <div class="flex items-center">
+                            <input
+                              id="tidak-ada"
+                              type="radio"
+                              value=""
+                              name="status"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
+                            />
+                            <label for="tidak-ada" class="ml-2 text-md"
+                              >Tidak Ada</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="max-w-screen-lg mx-auto grid grid-rows-2 mb-6"
+                      >
+                        <div class="grid grid-cols-2 gap-x-5 mb-2">
+                          <div>
+                            <label
+                              class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                              >Foto Depan</label
+                            >
+                            <div class="relative">
+                              <input
+                                type="file"
+                                id="fotoDepanInput"
+                                class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                                accept="image/*"
+                                onchange="previewImage('fotoDepanInput', 'fotoDepanPreview')"
+                              />
+                              <label
+                                for="fotoDepanInput"
+                                class="cursor-pointer"
+                              >
+                                <img
+                                  id="fotoDepanPreview"
+                                  class="w-auto h-5vh"
+                                  src="./src/images/noimage.png"
+                                  alt="Tidak ada gambar"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                          <div>
+                            <label
+                              class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                              >Foto Seberang</label
+                            >
+                            <div class="relative">
+                              <input
+                                type="file"
+                                id="fotoSeberangInput"
+                                class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                                accept="image/*"
+                                onchange="previewImage('fotoSeberangInput', 'fotoSeberangPreview')"
+                              />
+                              <label
+                                for="fotoSeberangInput"
+                                class="cursor-pointer"
+                              >
+                                <img
+                                  id="fotoSeberangPreview"
+                                  class="w-auto h-5vh"
+                                  src="./src/images/noimage.png"
+                                  alt="Tidak ada gambar"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-x-5">
+                          <div>
+                            <label
+                              class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                              >Foto Kiri</label
+                            >
+                            <div class="relative">
+                              <input
+                                type="file"
+                                id="fotoKiriInput"
+                                class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                                accept="image/*"
+                                onchange="previewImage('fotoKiriInput', 'fotoKiriPreview')"
+                              />
+                              <label for="fotoKiriInput" class="cursor-pointer">
+                                <img
+                                  id="fotoKiriPreview"
+                                  class="w-auto h-5vh"
+                                  src="./src/images/noimage.png"
+                                  alt="Tidak ada gambar"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                          <div>
+                            <label
+                              class="block mb-1 text-md font-medium text-gray-900 tracking-wide"
+                              >Foto Kanan</label
+                            >
+                            <div class="relative">
+                              <input
+                                type="file"
+                                id="fotoKananInput"
+                                class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+                                accept="image/*"
+                                onchange="previewImage('fotoKananInput', 'fotoKananPreview')"
+                              />
+                              <label
+                                for="fotoKananInput"
+                                class="cursor-pointer"
+                              >
+                                <img
+                                  id="fotoKananPreview"
+                                  class="w-auto h-5vh"
+                                  src="./src/images/noimage.png"
+                                  alt="Tidak ada gambar"
+                                />
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex justify-center mb-4">
+                        <div class="">
+                          <button
+                            id="btn_table_detail"
+                            type="button"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-md px-10 py-2.5 text-center"
+                          >
+                            Simpan
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+          <!--  -->
+        </div>
+
+        <!-- Navigasi  -->
         <div
-          class="h-10 flex items-center p-5 px-6 grid grid-cols-3 border border-blue-500 shadow-3xl text-gray-400 cursor-pointer z-10"
+          class="h-[10vh] w-full fixed bottom-0 p-5 px-6 grid grid-cols-3 bg-white shadow-3xl text-gray-400 cursor-pointer z-10 hidden"
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
-          ea temporibus, quidem error maiores neque nisi suscipit voluptatum
-          quae ratione ex accusamus minus? Ratione cupiditate nostrum id
-          quibusdam quos laborum.
+          <!-- Menu1 -->
+          <div class="flex flex-col items-center">
+            <div class="inline-flex flex-col items-center justify-center">
+              <div class="flex w-8 h-8 items-center justify-center btn_rekap">
+                <img
+                  src="./src/images/rekap.png"
+                  alt=""
+                  class="menu-image-rekap"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Menu2 -->
+          <div class="flex flex-col items-center relative">
+            <div
+              class="bottom-5 text-center flex items-center justify-center rounded-full text-3xl p-[3vh] text-white bg-[#2A64D9] transition ease-in duration-200 absolute"
+              id="toggleButtonOpen"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 1v16M1 9h16"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Menu3 -->
+          <div class="flex flex-col items-center">
+            <div class="inline-flex flex-col items-center justify-center">
+              <div class="flex w-8 h-8 items-center justify-center btn_profil">
+                <img
+                  src="./src/images/user.png"
+                  alt=""
+                  class="menu-image-profil"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -60,6 +626,6 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"
     defer
   ></script>
-  <!-- <script src="./src/js/aksesibilitas.js" defer></script> -->
+  <script src="./src/js/aksesibilitas.js" defer></script>
   <script src="./src/js/peta.js" defer></script>
 </html>
