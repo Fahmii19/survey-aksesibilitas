@@ -2242,6 +2242,14 @@ a.mapboxgl-ctrl-logo {
 }
 
 @media (min-width: 320px) {
+  .xs\:pb-14 {
+    padding-bottom: 3.5rem;
+  }
+
+  .xs\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
   .xs\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
