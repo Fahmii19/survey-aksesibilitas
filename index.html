@@ -32,27 +32,42 @@
       <div class="relative h-[100vh] flex flex-col">
         <!-- Header  -->
         <div
-          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] pt-7 items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto border border-red-500"
+          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] mb-7 items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto"
         >
           <div
-            class="h-9 font-bold xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold flex items-center border border-yellow-500"
+            class="h-9 font-bold mt-7 -mb-1 xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold flex items-center"
           >
             Aksesibilitas
           </div>
-          <div class="h-7 flex items-center justify-end">
+          <div class="h-8 mt-7 -mb-1 flex items-center justify-end">
             <img
               src="./src/images/logout2.png"
               alt="Logout"
               style="height: 100%"
             />
           </div>
+
+          <!-- <div
+            class="font-bold mt-7 -mb-1 xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold"
+          >
+            Aksesibilitas
+          </div>
+          <div class="flex justify-end mt-9 mb-2">
+            <div class="flex w-7 h-auto items-center justify-center">
+              <img
+                src="./src/images/logout2.png"
+                alt="Logout"
+                style="height: 100%"
+              />
+            </div>
+          </div> -->
         </div>
         <!-- Konten -->
-        <div class="h-[80vh] relative bg-slate-50 z-10">
+        <div class="h-[80vh]">
           <!-- Rekap -->
           <div
             id="rekapContainer"
-            class="pb-[4vh] text-black pt-2 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 table-rekap-hide absolute"
+            class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 table-rekap-hide absolute bottom-0 z-10 hidden"
           >
             <!--  -->
             <div class="flex justify-center px-6 mb-3">
@@ -566,7 +581,7 @@
 
         <!-- Navigasi  -->
         <div
-          class="h-[10vh] w-full fixed bottom-0 p-5 px-6 grid grid-cols-3 bg-white shadow-3xl text-gray-400 cursor-pointer z-10 hidden"
+          class="h-[10vh] w-full fixed bottom-0 p-5 px-6 grid grid-cols-3 bg-white shadow-3xl text-gray-400 cursor-pointer z-10"
         >
           <!-- Menu1 -->
           <div class="flex flex-col items-center">

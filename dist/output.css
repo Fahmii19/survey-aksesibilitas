@@ -1178,6 +1178,18 @@ input:checked + .toggle-bg {
   margin-top: 0.5rem;
 }
 
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
+.-mb-1 {
+  margin-bottom: -0.25rem;
+}
+
+.mt-9 {
+  margin-top: 2.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1284,6 +1296,10 @@ input:checked + .toggle-bg {
 
 .h-\[19vh\] {
   height: 19vh;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .w-full {
