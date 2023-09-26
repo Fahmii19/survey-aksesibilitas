@@ -1118,6 +1118,10 @@ input:checked + .toggle-bg {
   margin-right: auto;
 }
 
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
 .mt-7 {
   margin-top: 1.75rem;
 }
@@ -1126,8 +1130,8 @@ input:checked + .toggle-bg {
   margin-bottom: -0.25rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
+.mt-9 {
+  margin-top: 2.25rem;
 }
 
 .mb-2 {
@@ -1166,44 +1170,12 @@ input:checked + .toggle-bg {
   margin-left: 0.5rem;
 }
 
-.mb-3\.5 {
-  margin-bottom: 0.875rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-9 {
-  margin-top: 2.25rem;
-}
-
-.mb-7 {
-  margin-bottom: 1.75rem;
-}
-
-.mb-9 {
-  margin-bottom: 2.25rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .block {
@@ -1246,6 +1218,14 @@ input:checked + .toggle-bg {
   height: 10vh;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
 .h-auto {
   height: auto;
 }
@@ -1270,16 +1250,16 @@ input:checked + .toggle-bg {
   height: 100%;
 }
 
+.h-\[20vh\] {
+  height: 20vh;
+}
+
 .h-10 {
   height: 2.5rem;
 }
 
 .h-4 {
   height: 1rem;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .h-6 {
@@ -1290,44 +1270,8 @@ input:checked + .toggle-bg {
   height: 100vh;
 }
 
-.h-\[30vh\] {
-  height: 30vh;
-}
-
-.h-1\.5 {
-  height: 0.375rem;
-}
-
-.h-\[20vh\] {
-  height: 20vh;
-}
-
-.h-\[19vh\] {
-  height: 19vh;
-}
-
-.h-\[12vh\] {
-  height: 12vh;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-12 {
-  height: 3rem;
-}
-
-.h-9 {
-  height: 2.25rem;
-}
-
 .w-full {
   width: 100%;
-}
-
-.w-9 {
-  width: 2.25rem;
 }
 
 .w-7 {
@@ -1360,10 +1304,6 @@ input:checked + .toggle-bg {
 
 .w-64 {
   width: 16rem;
-}
-
-.w-14 {
-  width: 3.5rem;
 }
 
 .max-w-screen-lg {
@@ -1732,10 +1672,6 @@ input:checked + .toggle-bg {
   padding-bottom: 2.75rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -1749,9 +1685,9 @@ input:checked + .toggle-bg {
   line-height: 1.75rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-3xl {
@@ -1759,14 +1695,9 @@ input:checked + .toggle-bg {
   line-height: 2.25rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -2233,11 +2164,6 @@ a.mapboxgl-ctrl-logo {
     font-size: 1.5rem;
     line-height: 2rem;
   }
-
-  .xs\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
 }
 
 @media (min-width: 640px) {
@@ -2254,11 +2180,6 @@ a.mapboxgl-ctrl-logo {
     font-size: 1.5rem;
     line-height: 2rem;
   }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -2266,19 +2187,9 @@ a.mapboxgl-ctrl-logo {
     font-size: 1.5rem;
     line-height: 2rem;
   }
-
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
