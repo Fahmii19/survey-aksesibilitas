@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // ========== Pendefinisian Variabel ==========
   const mapboxCtrlElement = document.querySelector(".mapboxgl-ctrl-top-right");
   const formInputAkses = document.querySelector(".form-input-akses");
   const btnRekap = document.querySelector(".btn_rekap");
@@ -21,16 +22,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const tableDetail = document.querySelector(".table-detail");
   const collapseImage = document.getElementById("collapseImage");
   const tableRekapElement = document.querySelector(".table-rekap-hide");
-
   const showDetailRekap = document.getElementById("show-detail-rekap");
-
-  showDetailRekap.addEventListener("touchmove", function (event) {
-    event.stopPropagation();
-  });
-
-  // rekap
   const expandRekap = document.querySelector(".expand_rekap");
   const formContainerRekapHide = expandRekap;
+
+  // ========== Fungsi Bantuan ==========
+
+  function resetAll() {
+    if (tableRekapElement) tableRekapElement.classList.add("hidden");
+    if (formInputAkses) formInputAkses.classList.add("hidden");
+    if (formProfil) formProfil.classList.add("hidden");
+    if (mapboxCtrlElement) mapboxCtrlElement.style.zIndex = "5";
+    if (btnRekapImage) btnRekapImage.src = "./src/images/rekap.png";
+    if (btnProfilImage) btnProfilImage.src = "./src/images/user.png";
+    if (rekapContainer) rekapContainer.style.height = "45vh";
+    if (tableRekapElement) {
+      tableRekapElement.classList.add("rounded-tl-[15px]");
+      tableRekapElement.classList.add("rounded-tr-[15px]");
+    }
+    if (toggleButtonRekap) toggleButtonRekap.style.display = "block";
+  }
+
+  function toggleHeight(element, initialHeight, toggledHeight) {
+    if (element) {
+      if (element.style.height === initialHeight || !element.style.height) {
+        element.style.height = toggledHeight;
+      } else {
+        element.style.height = initialHeight;
+      }
+    }
+  }
+
+  // ========== Logika Form Rekap ==========
 
   if (btnOpenTableDetail && tableDetail) {
     btnOpenTableDetail.addEventListener("click", function () {
@@ -43,29 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function resetAll() {
-    if (tableRekapElement) tableRekapElement.classList.add("hidden");
-    if (formInputAkses) formInputAkses.classList.add("hidden");
-    if (formProfil) formProfil.classList.add("hidden");
-    if (mapboxCtrlElement) mapboxCtrlElement.style.zIndex = "5";
-    if (btnRekapImage) btnRekapImage.src = "./src/images/rekap.png";
-    if (btnProfilImage) btnProfilImage.src = "./src/images/user.png";
-
-    // Reset Rekap
-    if (rekapContainer) rekapContainer.style.height = "45vh";
-    if (tableRekapElement) {
-      tableRekapElement.classList.add("rounded-tl-[15px]");
-      tableRekapElement.classList.add("rounded-tr-[15px]");
-    }
-    if (toggleButtonRekap) toggleButtonRekap.style.display = "block";
-  }
-
   if (btnRekap && tableRekapElement && btnRekapImage) {
     btnRekap.addEventListener("click", function () {
       if (tableRekapElement.classList.contains("hidden")) {
         resetAll();
         tableDetail.classList.add("hidden");
-
         tableRekapElement.classList.remove("hidden");
         btnRekapImage.src = "./src/images/active_rekap.png";
       } else {
@@ -75,46 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function to toggle height
-  function toggleHeight(element, initialHeight, toggledHeight) {
-    if (element) {
-      if (element.style.height === initialHeight || !element.style.height) {
-        element.style.height = toggledHeight;
-      } else {
-        element.style.height = initialHeight;
-      }
-    }
-  }
-
-  if (toggleButtonFormInput && formInputAkses) {
-    toggleButtonFormInput.addEventListener("click", function () {
-      toggleHeight(formInputAkses, "45vh", "74vh");
-      if (formInputAkses.style.height === "74vh" && mapboxCtrlElement) {
-        mapboxCtrlElement.style.zIndex = "-1";
-      } else if (mapboxCtrlElement) {
-        mapboxCtrlElement.style.zIndex = "5";
-      }
-    });
-  }
-
-  if (toggleButtonProfil && formProfil) {
-    toggleButtonProfil.addEventListener("click", function () {
-      toggleHeight(formProfil, "45vh", "75vh");
-
-      if (formProfil.style.height === "75vh" && mapboxCtrlElement) {
-        mapboxCtrlElement.style.zIndex = "-1";
-      } else if (mapboxCtrlElement) {
-        mapboxCtrlElement.style.zIndex = "5";
-      }
-    });
-  }
-
   if (toggleButtonRekap && rekapContainer) {
     toggleHeight(formContainerRekapHide, "20vh", "13vh");
-
     toggleButtonRekap.addEventListener("click", function () {
       expandRekap.style.height = "62vh";
-
       if (rekapContainer.style.height !== "90vh") {
         rekapContainer.style.height = "90vh";
         tableRekapElement.classList.remove("rounded-tl-[15px]");
@@ -129,7 +98,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Gesture handling
+  // ========== Logika Form Input ==========
+
+  if (toggleButtonFormInput && formInputAkses) {
+    toggleButtonFormInput.addEventListener("click", function () {
+      toggleHeight(formInputAkses, "45vh", "74vh");
+      if (formInputAkses.style.height === "74vh" && mapboxCtrlElement) {
+        mapboxCtrlElement.style.zIndex = "-1";
+      } else if (mapboxCtrlElement) {
+        mapboxCtrlElement.style.zIndex = "5";
+      }
+    });
+  }
+
+  // ========== Logika Form Profil ==========
+
+  if (toggleButtonProfil && formProfil) {
+    toggleButtonProfil.addEventListener("click", function () {
+      toggleHeight(formProfil, "45vh", "75vh");
+      if (formProfil.style.height === "75vh" && mapboxCtrlElement) {
+        mapboxCtrlElement.style.zIndex = "-1";
+      } else if (mapboxCtrlElement) {
+        mapboxCtrlElement.style.zIndex = "5";
+      }
+    });
+  }
+
+  // ========== Gesture Handling ==========
 
   if (tableRekapElement) {
     let touchStartY = 0;
@@ -179,19 +174,9 @@ document.addEventListener("DOMContentLoaded", function () {
         tableRekapElement.style.height = "45vh";
         expandRekap.style.height = "13vh";
       } else if (parseFloat(tableRekapElement.style.height) < 20) {
-        tableRekapElement.style.height = "0vh"; // Mengatur tinggi ke 0 saat kurang dari 20
-        // btnRekapImage.src = "./src/images/rekap.png"; // Mengganti gambar menjadi "rekap.png"
+        tableRekapElement.style.height = "0vh";
         resetAll();
       }
     });
-
-    // Event handler untuk mengembalikan tinggi ke 40 saat diklik
-    // tableRekapElement.addEventListener("click", function () {
-    //   tableRekapElement.style.transition = "height 0.3s";
-    //   tableRekapElement.style.height = "45vh";
-    //   tableRekapElement.classList.remove("hidden");
-
-    //   resetAll();
-    // });
   }
 });
