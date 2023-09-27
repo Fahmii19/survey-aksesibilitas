@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleHeight(formContainerRekapHide, "20vh", "13vh");
     toggleButtonRekap.addEventListener("click", function () {
       expandRekap.style.height = "62vh";
+      expandRekap.classList.add("overflow-y-auto");
       if (rekapContainer.style.height !== "90vh") {
         rekapContainer.style.height = "90vh";
         tableRekapElement.classList.remove("rounded-tl-[15px]");
@@ -123,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "block";
+        expandRekap.classList.remove("overflow-y-auto");
       }
     });
   }
@@ -148,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleButtonFormInput.addEventListener("click", function () {
       toggleHeight(formInputAkses, "45vh", "90vh");
       formContainerFormInputHide.style.height = "62vh";
+      formContainerFormInputHide.classList.add("overflow-y-auto");
       if (formInputAkses.style.height === "90vh") {
         if (mapboxCtrlElement) {
           mapboxCtrlElement.style.zIndex = "-1";
@@ -162,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
         toggleButtonFormInput.style.display = "block";
+        formContainerFormInputHide.classList.remove("overflow-y-auto");
       }
     });
   }
@@ -185,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mengatur event click pada tombol "Toggle Profil"
   if (toggleButtonProfil && formProfil) {
     formContainerProfilHide.style.height = "62vh";
+    formContainerProfilHide.classList.add("overflow-y-auto");
     toggleButtonProfil.addEventListener("click", function () {
       toggleHeight(formProfil, "45vh", "90vh");
 
@@ -203,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block"; // Tampilkan tombol toggle lagi
+        formProfil.classList.remove("overflow-y-auto");
       }
     });
   }

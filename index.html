@@ -105,7 +105,7 @@
                   class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3 hidden"
                 >
                   <div
-                    class="overflow-y-auto h-[20vh] expand_rekap hide-scrollbar relative"
+                    class="overflow-y-hidden h-[20vh] expand_rekap hide-scrollbar relative"
                   >
                     <form>
                       <div class="mb-3">
@@ -350,7 +350,7 @@
                   class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3 hidden"
                 >
                   <div
-                    class="h-full overflow-y-auto h-[20vh] expand_rekap hide-scrollbar relative"
+                    class="h-full overflow-y-hidden h-[20vh] expand_rekap hide-scrollbar relative"
                   >
                     <form>
                       <div class="mb-3">
@@ -592,14 +592,14 @@
               <div class="font-medium text-xl text-gray-700">Form Input</div>
             </div>
             <!--  -->
-            <div class="relative px-3 pb-11">
+            <div class="relative px-3">
               <div class="flex flex-col mb-1">
                 <!-- Form -->
                 <div
                   class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 px-3 pb-5 mt-3"
                 >
                   <div
-                    class="overflow-y-auto h-[20vh] expand_input hide-scrollbar relative"
+                    class="overflow-y-hidden h-[20vh] expand_input hide-scrollbar relative"
                   >
                     <form>
                       <div class="mb-3">
@@ -829,7 +829,7 @@
 
           <!-- Konten Profil -->
           <div
-            class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 form-profil absolute bottom-0 z-10 hidden"
+            class="pb-[24vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 form-profil absolute bottom-0 z-10 hidden"
           >
             <!--  -->
             <div class="flex justify-center px-6 mb-3">
@@ -850,49 +850,51 @@
                   class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 px-3 pb-5 mt-3"
                 >
                   <div
-                    class="overflow-y-auto h-[20vh] expand_profil hide-scrollbar relative"
+                    class="overflow-y-hidden h-[20vh] expand_profil hide-scrollbar relative !pb-[20vh]"
                   >
                     <div class="mb-3">
                       <label
-                        for="alamat"
+                        for="nama"
                         class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                        >Alamat Lokasi</label
+                        >Nama</label
                       >
                       <input
                         type="text"
-                        id="alamat"
-                        name="alamat"
-                        class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                        value="Jalan manggis"
-                        readonly=""
+                        id="nama"
+                        name="nama"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                        placeholder="Muchamad Fahmi"
+                        disabled
                       />
                     </div>
                     <div class="mb-3">
                       <label
-                        for="lebar"
+                        for="penempatan"
                         class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                        >Lebar Jalan</label
+                        >Penempatan</label
                       >
                       <input
                         type="text"
-                        id="lebar"
-                        name="lebar"
+                        id="penempatan"
+                        name="penempatan"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                        required=""
+                        placeholder="Kecamatan Tebet"
+                        disabled
                       />
                     </div>
                     <div class="mb-3">
                       <label
-                        for="lebar"
+                        for="jabatan"
                         class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                        >Lebar Jalan</label
+                        >Jabatan</label
                       >
                       <input
                         type="text"
-                        id="lebar"
-                        name="lebar"
+                        id="jabatan"
+                        name="jabatan"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                        required=""
+                        placeholder="AJIB"
+                        disabled
                       />
                     </div>
                   </div>

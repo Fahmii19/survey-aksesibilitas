@@ -1190,6 +1190,14 @@ input:checked + .toggle-bg {
   margin-top: 0.5rem;
 }
 
+.mb-\[\] {
+  margin-bottom: ;
+}
+
+.mb-\[25vh\] {
+  margin-bottom: 25vh;
+}
+
 .block {
   display: block;
 }
@@ -1296,6 +1304,10 @@ input:checked + .toggle-bg {
 
 .h-\[19vh\] {
   height: 19vh;
+}
+
+.h-\[23vh\] {
+  height: 23vh;
 }
 
 .w-full {
@@ -1497,6 +1509,10 @@ input:checked + .toggle-bg {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 
 .rounded-full {
@@ -1730,6 +1746,38 @@ input:checked + .toggle-bg {
 
 .pb-\[12\.5vh\] {
   padding-bottom: 12.5vh;
+}
+
+.pb-\[14vh\] {
+  padding-bottom: 14vh;
+}
+
+.pb-\[24vh\] {
+  padding-bottom: 24vh;
+}
+
+.pb-\[20rem\] {
+  padding-bottom: 20rem;
+}
+
+.pb-48 {
+  padding-bottom: 12rem;
+}
+
+.pb-\[20vh\] {
+  padding-bottom: 20vh;
+}
+
+.\!pb-11 {
+  padding-bottom: 2.75rem !important;
+}
+
+.pb-\[20\] {
+  padding-bottom: 20;
+}
+
+.\!pb-\[20vh\] {
+  padding-bottom: 20vh !important;
 }
 
 .text-center {
