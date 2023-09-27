@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (toggleButtonRekap && rekapContainer) {
     toggleHeight(formContainerRekapHide, "20vh", "13vh");
     toggleButtonRekap.addEventListener("click", function () {
-      expandRekap.style.height = "62vh";
+      expandRekap.style.height = "26vh";
       if (rekapContainer.style.height !== "90vh") {
         rekapContainer.style.height = "90vh";
         tableRekapElement.classList.remove("rounded-tl-[15px]");
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         formInputAkses.classList.remove("rounded-tl-[15px]");
         formInputAkses.classList.remove("rounded-tr-[15px]");
-        toggleButtonFormInput.style.display = "none";
+        // toggleButtonFormInput.style.display = "none";
 
         expandFormInput.classList.remove("overflow-y-hidden");
         expandFormInput.classList.add("overflow-y-auto");
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
-        toggleButtonFormInput.style.display = "block";
+        // toggleButtonFormInput.style.display = "block";
 
         expandFormInput.classList.remove("overflow-y-auto");
         expandFormInput.classList.add("overflow-y-hidden");
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Mengatur event click pada tombol "Toggle Profil"
   if (toggleButtonProfil && formProfil) {
-    formContainerProfilHide.style.height = "62vh";
+    formContainerProfilHide.style.height = "26vh";
     toggleButtonProfil.addEventListener("click", function () {
       toggleHeight(formProfil, "45vh", "90vh");
 
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         formProfil.classList.remove("rounded-tl-[15px]");
         formProfil.classList.remove("rounded-tr-[15px]");
-        toggleButtonProfil.style.display = "none";
+        // toggleButtonProfil.style.display = "none";
 
         expandProfil.classList.remove("overflow-y-auto");
         expandProfil.classList.add("overflow-y-hidden");
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
-        toggleButtonProfil.style.display = "block"; // Tampilkan tombol toggle lagi
+        // toggleButtonProfil.style.display = "block"; // Tampilkan tombol toggle lagi
 
         expandProfil.classList.remove("overflow-y-hidden");
         expandProfil.classList.add("overflow-y-auto");
@@ -399,14 +399,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (newHeightForm <= 55) {
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
-        toggleButtonFormInput.style.display = "block";
+        // toggleButtonFormInput.style.display = "block";
 
         expandFormInput.classList.remove("overflow-y-auto");
         expandFormInput.classList.add("overflow-y-hidden");
       } else {
         formInputAkses.classList.remove("rounded-tl-[15px]");
         formInputAkses.classList.remove("rounded-tr-[15px]");
-        toggleButtonFormInput.style.display = "none";
+        // toggleButtonFormInput.style.display = "none";
 
         expandFormInput.classList.remove("overflow-y-hidden");
         expandFormInput.classList.add("overflow-y-auto");
@@ -520,13 +520,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (newHeightProfil <= 55) {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
-        toggleButtonProfil.style.display = "block";
+        // toggleButtonProfil.style.display = "block";
         expandProfil.classList.remove("overflow-y-auto");
         expandProfil.classList.add("overflow-y-hidden");
       } else {
         formProfil.classList.remove("rounded-tl-[15px]");
         formProfil.classList.remove("rounded-tr-[15px]");
-        toggleButtonProfil.style.display = "none";
+        // toggleButtonProfil.style.display = "none";
         expandProfil.classList.remove("overflow-y-hidden");
         expandProfil.classList.add("overflow-y-auto");
       }

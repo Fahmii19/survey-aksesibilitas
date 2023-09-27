@@ -1178,10 +1178,6 @@ input:checked + .toggle-bg {
   margin-bottom: 4rem;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
 .-ml-3 {
   margin-left: -0.75rem;
 }
@@ -1196,10 +1192,6 @@ input:checked + .toggle-bg {
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
 }
 
 .block {
@@ -1754,14 +1746,6 @@ input:checked + .toggle-bg {
 
 .pt-10 {
   padding-top: 2.5rem;
-}
-
-.pb-\[24vh\] {
-  padding-bottom: 24vh;
-}
-
-.\!pb-\[20vh\] {
-  padding-bottom: 20vh !important;
 }
 
 .pt-4 {
