@@ -1,28 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   // ========== Pendefinisian Variabel ==========
+
+  // Mendapatkan elemen-elemen yang akan digunakan
   const mapboxCtrlElement = document.querySelector(".mapboxgl-ctrl-top-right");
   const formInputAkses = document.querySelector(".form-input-akses");
   const btnRekap = document.querySelector(".btn_rekap");
   const btnRekapImage = btnRekap
     ? btnRekap.querySelector(".menu-image-rekap")
     : null;
-  // const btnInput = document.querySelector("#toggleButtonOpen");
   const formProfil = document.querySelector(".form-profil");
   const btnProfil = document.querySelector(".btn_profil");
   const btnProfilImage = btnProfil
     ? btnProfil.querySelector(".menu-image-profil")
     : null;
 
-  // const toggleButtonFormInput = document.getElementById(
-  //   "toggleButtonFormInput"
-  // );
-
-  const toggleButtonFormInput = document.querySelector(
-    "#toggleButtonFormInput"
-  ); // Placeholder selector, replace with the correct one
-
+  const toggleButtonFormInput = document.getElementById(
+    "toggleButtonFormInput"
+  ); // Ganti dengan ID yang sesuai
   const btnFormInput = document.querySelector(".btn_form_input");
-
   const toggleButtonProfil = document.getElementById("toggleButtonProfil");
   const toggleButtonRekap = document.getElementById("toggleButtonRekap");
   const rekapContainer = document.getElementById("rekapContainer");
@@ -30,12 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const tableDetail = document.querySelector(".table-detail");
   const collapseImage = document.getElementById("collapseImage");
   const tableRekapElement = document.querySelector(".table-rekap-hide");
-  // const showDetailRekap = document.getElementById("show-detail-rekap");
   const expandRekap = document.querySelector(".expand_rekap");
   const formContainerRekapHide = expandRekap;
+  const expandFormInput = document.querySelector(".expand_input");
+  const formContainerFormInputHide = expandFormInput;
+  const expandProfil = document.querySelector(".expand_profil");
+  const formContainerProfilHide = expandProfil;
 
   // ========== Fungsi Bantuan ==========
 
+  // Fungsi untuk mereset semua elemen
   function resetAll() {
     if (tableRekapElement) tableRekapElement.classList.add("hidden");
     if (formInputAkses) formInputAkses.classList.add("hidden");
@@ -44,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnRekapImage) btnRekapImage.src = "./src/images/rekap.png";
     if (btnProfilImage) btnProfilImage.src = "./src/images/user.png";
 
-    // mereset setelah klik tombol rekap
+    // Mereset setelah klik tombol rekap
     if (rekapContainer) rekapContainer.style.height = "45vh";
     if (tableRekapElement) {
       tableRekapElement.classList.add("rounded-tl-[15px]");
@@ -61,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (toggleButtonFormInput) toggleButtonFormInput.style.display = "block";
   }
 
+  // Fungsi untuk menggeser tinggi elemen
   function toggleHeight(element, initialHeight, toggledHeight) {
     if (element) {
       if (element.style.height === initialHeight || !element.style.height) {
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ========== Logika Form Rekap ==========
 
+  // Mengatur event click pada tombol "Open Table Detail"
   if (btnOpenTableDetail && tableDetail) {
     btnOpenTableDetail.addEventListener("click", function () {
       tableDetail.classList.toggle("hidden");
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Mengatur event click pada tombol "Rekap"
   if (btnRekap && tableRekapElement && btnRekapImage) {
     btnRekap.addEventListener("click", function () {
       if (tableRekapElement.classList.contains("hidden")) {
@@ -98,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Mengatur event click pada tombol "Toggle Rekap"
   if (toggleButtonRekap && rekapContainer) {
     toggleHeight(formContainerRekapHide, "20vh", "13vh");
     toggleButtonRekap.addEventListener("click", function () {
@@ -118,18 +121,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ========== Logika Form Input ==========
 
+  // ...
+
+  // ========== Logika Form Input ==========
+
   if (btnFormInput && formInputAkses) {
     btnFormInput.addEventListener("click", function () {
-      formInputAkses.classList.toggle("hidden");
-      // menutupi form rekap
-      tableRekapElement.classList.add("hidden");
+      if (formInputAkses.classList.contains("hidden")) {
+        resetAll();
+        formInputAkses.classList.remove("hidden");
+      } else {
+        formInputAkses.classList.add("hidden");
+      }
     });
   }
 
   if (toggleButtonFormInput && formInputAkses) {
     toggleButtonFormInput.addEventListener("click", function () {
       toggleHeight(formInputAkses, "45vh", "90vh");
-
+      formContainerFormInputHide.style.height = "62vh";
       if (formInputAkses.style.height === "90vh") {
         if (mapboxCtrlElement) {
           mapboxCtrlElement.style.zIndex = "-1";
@@ -143,26 +153,54 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
-        toggleButtonFormInput.style.display = "block"; // Show the toggle button again
+        toggleButtonFormInput.style.display = "block";
       }
     });
   }
 
   // ========== Logika Form Profil ==========
 
-  if (toggleButtonProfil && formProfil) {
-    toggleButtonProfil.addEventListener("click", function () {
-      toggleHeight(formProfil, "45vh", "75vh");
-      if (formProfil.style.height === "75vh" && mapboxCtrlElement) {
-        mapboxCtrlElement.style.zIndex = "-1";
-      } else if (mapboxCtrlElement) {
-        mapboxCtrlElement.style.zIndex = "5";
+  // Mengatur event click pada tombol "Profil"
+  if (btnProfil && formProfil) {
+    btnProfil.addEventListener("click", function () {
+      if (formProfil.classList.contains("hidden")) {
+        resetAll();
+        formProfil.classList.remove("hidden");
+        btnProfilImage.src = "./src/images/active_user.png";
+      } else {
+        formProfil.classList.add("hidden");
+        btnProfilImage.src = "./src/images/user.png";
       }
     });
   }
 
-  // ========== Gesture Handling ==========
+  // Mengatur event click pada tombol "Toggle Profil"
+  if (toggleButtonProfil && formProfil) {
+    toggleButtonProfil.addEventListener("click", function () {
+      toggleHeight(formProfil, "45vh", "90vh");
 
+      if (formProfil.style.height === "90vh") {
+        if (mapboxCtrlElement) {
+          mapboxCtrlElement.style.zIndex = "-1";
+        }
+        formProfil.classList.remove("rounded-tl-[15px]");
+        formProfil.classList.remove("rounded-tr-[15px]");
+        toggleButtonProfil.style.display = "none";
+      }
+      if (formProfil.style.height === "45vh") {
+        if (mapboxCtrlElement) {
+          mapboxCtrlElement.style.zIndex = "5";
+        }
+        formProfil.classList.add("rounded-tl-[15px]");
+        formProfil.classList.add("rounded-tr-[15px]");
+        toggleButtonProfil.style.display = "block"; // Tampilkan tombol toggle lagi
+      }
+    });
+  }
+
+  // ========== Penanganan Gesture ==========
+
+  // Penanganan gesture untuk elemen "Form Rekap"
   if (tableRekapElement) {
     let touchStartY = 0;
     let initialTableHeight = 0; // Tinggi awal dalam vh
@@ -217,11 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ========== Gesture Handling untuk Form Input ==========
-
+  // Penanganan gesture untuk "Form Input"
   if (formInputAkses) {
     let touchStartYInput = 0;
-    let initialFormHeight = 0; // Tinggi awal dalam vh (sesuaikan jika perlu)
+    let initialFormHeight = 0; // Tinggi awal dalam vh
     formInputAkses.style.height = initialFormHeight + "vh";
 
     formInputAkses.addEventListener("touchstart", function (event) {
@@ -270,5 +307,52 @@ document.addEventListener("DOMContentLoaded", function () {
         resetAll();
       }
     });
+  }
+
+  // Penanganan gesture untuk "Form Profil"
+  if (formProfil) {
+    // let touchStartYProfil = 0;
+    // let initialFormProfilHeight = 0; // Tinggi awal dalam vh
+    // formProfil.style.height = initialFormProfilHeight + "vh";
+    // formProfil.addEventListener("touchstart", function (event) {
+    //   touchStartYProfil = event.touches[0].clientY;
+    //   initialFormProfilHeight = parseFloat(formProfil.style.height);
+    //   formProfil.style.transition = "none";
+    // });
+    // formProfil.addEventListener("touchmove", function (event) {
+    //   const touchCurrentYProfil = event.touches[0].clientY;
+    //   const diffYProfil =
+    //     ((touchStartYProfil - touchCurrentYProfil) / window.innerHeight) * 100;
+    //   let newHeightProfil = initialFormProfilHeight + diffYProfil;
+    //   // Batasi tinggi minimum dan maksimum
+    //   newHeightProfil = Math.min(Math.max(0, newHeightProfil), 90);
+    // Perubahan tinggi elemen
+    //   formProfil.style.height = newHeightProfil + "vh";
+    //   // Tambahkan atau hapus kelas sesuai dengan tinggi
+    //   if (newHeightProfil <= 55) {
+    //     formProfil.classList.add("rounded-tl-[15px]");
+    //     formProfil.classList.add("rounded-tr-[15px]");
+    //     toggleButtonProfil.style.display = "block";
+    //   } else {
+    //     formProfil.classList.remove("rounded-tl-[15px]");
+    //     formProfil.classList.remove("rounded-tr-[15px]");
+    //     toggleButtonProfil.style.display = "none";
+    //   }
+    // });
+    // formProfil.addEventListener("touchend", function () {
+    //   formProfil.style.transition = "height 0.3s";
+    //   // Tentukan tinggi akhir berdasarkan kondisi
+    //   if (parseFloat(formProfil.style.height) > 55) {
+    //     formProfil.style.height = "90vh";
+    //   } else if (
+    //     parseFloat(formProfil.style.height) < 55 &&
+    //     parseFloat(formProfil.style.height) >= 20
+    //   ) {
+    //     formProfil.style.height = "45vh";
+    //   } else if (parseFloat(formProfil.style.height) < 20) {
+    //     formProfil.style.height = "0vh";
+    //     resetAll();
+    //   }
+    // });
   }
 });
