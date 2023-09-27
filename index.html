@@ -31,15 +31,35 @@
 
       <div class="relative h-[100vh] flex flex-col">
         <!-- Header  -->
+
         <div
-          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] mb-7 items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto"
+          class="z-10 grid grid-flow-col gap-4 items-center pt-9 pb-1 text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto"
         >
           <div
-            class="h-9 font-bold mt-7 -mb-1 xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold flex items-center"
+            class="text-black font-bold xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold"
           >
             Aksesibilitas
           </div>
-          <div class="h-8 mt-7 -mb-1 flex items-center justify-end">
+          <div class="flex justify-end">
+            <img
+              src="./src/images/logout2.png"
+              alt="Logout"
+              style="height: 2em"
+            />
+          </div>
+        </div>
+
+        <div
+          class="z-10 h-[10vh] grid grid-cols-[1fr,100px] mb-7 items-center text-black px-6 sm:px-10 bg-slate-50 w-full sm:h-auto hidden"
+        >
+          <div
+            class="h-9 font-bold mt-7 -mb-1 xs:text-2xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-inter_bold flex border border-red-500 p-0"
+          >
+            Aksesibilitas
+          </div>
+          <div
+            class="h-9 mt-7 -mb-1 flex items-center justify-end border border-red-500"
+          >
             <img
               src="./src/images/logout2.png"
               alt="Logout"
