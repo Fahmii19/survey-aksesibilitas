@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         expandFormInput.classList.remove("overflow-y-hidden");
         expandFormInput.classList.add("overflow-y-auto");
 
-        expandFormInput.style.height = "62vh";
+        expandFormInput.style.height = "60vh";
       } else {
         if (mapboxCtrlElement) {
           mapboxCtrlElement.style.zIndex = "5";
@@ -358,13 +358,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // Tentukan tinggi akhir berdasarkan kondisi
       if (parseFloat(formInputAkses.style.height) > 55) {
         formInputAkses.style.height = "90vh";
-        expandFormInput.style.height = "62vh";
+        expandFormInput.style.height = "60vh";
       } else if (
         parseFloat(formInputAkses.style.height) < 55 &&
         parseFloat(formInputAkses.style.height) >= 20
       ) {
         formInputAkses.style.height = "45vh";
-        expandFormInput.style.height = "62vh";
+        expandFormInput.style.height = "60vh";
       } else if (parseFloat(formInputAkses.style.height) < 20) {
         formInputAkses.style.height = "0vh";
         resetAll();
