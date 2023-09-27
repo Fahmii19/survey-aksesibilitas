@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleHeight(formContainerRekapHide, "20vh", "13vh");
     toggleButtonRekap.addEventListener("click", function () {
       expandRekap.style.height = "62vh";
-      expandRekap.classList.add("overflow-y-auto");
+      formContainerRekapHide.classList.add("overflow-y-auto");
       if (rekapContainer.style.height !== "90vh") {
         rekapContainer.style.height = "90vh";
         tableRekapElement.classList.remove("rounded-tl-[15px]");
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "block";
-        expandRekap.classList.remove("overflow-y-auto");
+        formContainerRekapHide.classList.remove("overflow-y-auto");
       }
     });
   }
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block"; // Tampilkan tombol toggle lagi
-        formProfil.classList.remove("overflow-y-auto");
+        formContainerProfilHide.classList.remove("overflow-y-auto");
       }
     });
   }
