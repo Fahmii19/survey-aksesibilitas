@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mendapatkan elemen-elemen yang akan digunakan
   const mapboxCtrlElement = document.querySelector(".mapboxgl-ctrl-top-right");
   const formInputAkses = document.querySelector(".form-input-akses");
+
+  const scrollUpDown = document.querySelector(".scroll_up_rekap");
+
   const btnRekap = document.querySelector(".btn_rekap");
   const btnRekapImage = btnRekap
     ? btnRekap.querySelector(".menu-image-rekap")
@@ -164,6 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         expandFormInput.classList.remove("overflow-y-hidden");
         expandFormInput.classList.add("overflow-y-auto");
+
+        expandFormInput.style.height = "62vh";
       } else {
         if (mapboxCtrlElement) {
           mapboxCtrlElement.style.zIndex = "5";
@@ -228,18 +233,81 @@ document.addEventListener("DOMContentLoaded", function () {
   // ========== Penanganan Gesture ==========
 
   // Penanganan gesture untuk elemen "Form Rekap"
+  // if (tableRekapElement) {
+  //   let touchStartY = 0;
+  //   let initialTableHeight = 0; // Tinggi awal dalam vh
+  //   tableRekapElement.style.height = initialTableHeight + "vh";
+
+  //   tableRekapElement.addEventListener("touchstart", function (event) {
+  //     touchStartY = event.touches[0].clientY;
+  //     initialTableHeight = parseFloat(tableRekapElement.style.height);
+  //     tableRekapElement.style.transition = "none";
+  //   });
+
+  //   tableRekapElement.addEventListener("touchmove", function (event) {
+  //     const touchCurrentY = event.touches[0].clientY;
+  //     const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100;
+  //     let newHeight = initialTableHeight + diffY;
+
+  //     // Batasi tinggi minimum dan maksimum
+  //     newHeight = Math.min(Math.max(0, newHeight), 90);
+
+  //     // Perubahan tinggi elemen
+  //     tableRekapElement.style.height = newHeight + "vh";
+
+  //     // Tambahkan atau hapus kelas sesuai dengan tinggi
+  //     if (newHeight <= 55) {
+  //       tableRekapElement.classList.add("rounded-tl-[15px]");
+  //       tableRekapElement.classList.add("rounded-tr-[15px]");
+  //       toggleButtonRekap.style.display = "block";
+
+  //       expandRekap.classList.remove("overflow-y-auto");
+  //       expandRekap.classList.add("overflow-y-hidden");
+  //     } else {
+  //       tableRekapElement.classList.remove("rounded-tl-[15px]");
+  //       tableRekapElement.classList.remove("rounded-tr-[15px]");
+  //       toggleButtonRekap.style.display = "none";
+
+  //       //
+  //       expandRekap.classList.remove("overflow-y-hidden");
+  //       expandRekap.classList.add("overflow-y-auto");
+  //     }
+  //   });
+
+  //   tableRekapElement.addEventListener("touchend", function () {
+  //     tableRekapElement.style.transition = "height 0.3s";
+
+  //     // Tentukan tinggi akhir berdasarkan kondisi
+  //     if (parseFloat(tableRekapElement.style.height) > 55) {
+  //       tableRekapElement.style.height = "90vh";
+  //       expandRekap.style.height = "62vh";
+  //     } else if (
+  //       parseFloat(tableRekapElement.style.height) < 55 &&
+  //       parseFloat(tableRekapElement.style.height) >= 20
+  //     ) {
+  //       tableRekapElement.style.height = "45vh";
+  //       expandRekap.style.height = "13vh";
+  //     } else if (parseFloat(tableRekapElement.style.height) < 20) {
+  //       tableRekapElement.style.height = "0vh";
+  //       resetAll();
+  //     }
+  //   });
+  // }
+
   if (tableRekapElement) {
     let touchStartY = 0;
     let initialTableHeight = 0; // Tinggi awal dalam vh
     tableRekapElement.style.height = initialTableHeight + "vh";
 
-    tableRekapElement.addEventListener("touchstart", function (event) {
+    // Menambahkan event listener pada elemen "scroll_up_rekap"
+    scrollUpDown.addEventListener("touchstart", function (event) {
       touchStartY = event.touches[0].clientY;
       initialTableHeight = parseFloat(tableRekapElement.style.height);
       tableRekapElement.style.transition = "none";
     });
 
-    tableRekapElement.addEventListener("touchmove", function (event) {
+    // Memproses perubahan tinggi hanya ketika sentuhan dimulai di dalam "scroll_up_rekap"
+    scrollUpDown.addEventListener("touchmove", function (event) {
       const touchCurrentY = event.touches[0].clientY;
       const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100;
       let newHeight = initialTableHeight + diffY;
@@ -266,6 +334,14 @@ document.addEventListener("DOMContentLoaded", function () {
         //
         expandRekap.classList.remove("overflow-y-hidden");
         expandRekap.classList.add("overflow-y-auto");
+      }
+    });
+
+    // Mengatasi sentuhan di luar elemen "scroll_up_rekap"
+    document.addEventListener("touchmove", function (event) {
+      // Cek apakah sentuhan dimulai di dalam "scroll_up_rekap"
+      if (!scrollUpDown.contains(event.target)) {
+        event.preventDefault();
       }
     });
 

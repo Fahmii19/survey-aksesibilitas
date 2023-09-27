@@ -1724,6 +1724,11 @@ input:checked + .toggle-bg {
   padding-right: 1.25rem;
 }
 
+.px-11 {
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+}
+
 .pb-\[4vh\] {
   padding-bottom: 4vh;
 }
@@ -1770,6 +1775,14 @@ input:checked + .toggle-bg {
 
 .pb-1 {
   padding-bottom: 0.25rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-center {
