@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const mapboxCtrlElement = document.querySelector(".mapboxgl-ctrl-top-right");
   const formInputAkses = document.querySelector(".form-input-akses");
 
-  const scrollUpDown = document.querySelector(".scroll_up_rekap");
+  const scrollUpDownRekap = document.querySelector(".scroll_up_rekap");
+  const scrollUpDownForm = document.querySelector(".scroll_up_form_input");
 
   const btnRekap = document.querySelector(".btn_rekap");
   const btnRekapImage = btnRekap
@@ -300,14 +301,14 @@ document.addEventListener("DOMContentLoaded", function () {
     tableRekapElement.style.height = initialTableHeight + "vh";
 
     // Menambahkan event listener pada elemen "scroll_up_rekap"
-    scrollUpDown.addEventListener("touchstart", function (event) {
+    scrollUpDownRekap.addEventListener("touchstart", function (event) {
       touchStartY = event.touches[0].clientY;
       initialTableHeight = parseFloat(tableRekapElement.style.height);
       tableRekapElement.style.transition = "none";
     });
 
     // Memproses perubahan tinggi hanya ketika sentuhan dimulai di dalam "scroll_up_rekap"
-    scrollUpDown.addEventListener("touchmove", function (event) {
+    scrollUpDownRekap.addEventListener("touchmove", function (event) {
       const touchCurrentY = event.touches[0].clientY;
       const diffY = ((touchStartY - touchCurrentY) / window.innerHeight) * 100;
       let newHeight = initialTableHeight + diffY;
@@ -340,7 +341,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mengatasi sentuhan di luar elemen "scroll_up_rekap"
     document.addEventListener("touchmove", function (event) {
       // Cek apakah sentuhan dimulai di dalam "scroll_up_rekap"
-      if (!scrollUpDown.contains(event.target)) {
+      if (!scrollUpDownRekap.contains(event.target)) {
         event.preventDefault();
       }
     });
@@ -366,31 +367,36 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Penanganan gesture untuk "Form Input"
-  if (formInputAkses) {
-    let touchStartYInput = 0;
+  // ...
+
+  // Penanganan gesture untuk "Form Input"
+  if (scrollUpDownForm) {
+    let touchStartYForm = 0;
     let initialFormHeight = 0; // Tinggi awal dalam vh
     formInputAkses.style.height = initialFormHeight + "vh";
 
-    formInputAkses.addEventListener("touchstart", function (event) {
-      touchStartYInput = event.touches[0].clientY;
+    // Menambahkan event listener pada elemen "scroll_up_form_input"
+    scrollUpDownForm.addEventListener("touchstart", function (event) {
+      touchStartYForm = event.touches[0].clientY;
       initialFormHeight = parseFloat(formInputAkses.style.height);
       formInputAkses.style.transition = "none";
     });
 
-    formInputAkses.addEventListener("touchmove", function (event) {
-      const touchCurrentYInput = event.touches[0].clientY;
-      const diffYInput =
-        ((touchStartYInput - touchCurrentYInput) / window.innerHeight) * 100;
-      let newHeightInput = initialFormHeight + diffYInput;
+    // Memproses perubahan tinggi hanya ketika sentuhan dimulai di dalam "scroll_up_form_input"
+    scrollUpDownForm.addEventListener("touchmove", function (event) {
+      const touchCurrentYForm = event.touches[0].clientY;
+      const diffYForm =
+        ((touchStartYForm - touchCurrentYForm) / window.innerHeight) * 100;
+      let newHeightForm = initialFormHeight + diffYForm;
 
       // Batasi tinggi minimum dan maksimum
-      newHeightInput = Math.min(Math.max(0, newHeightInput), 90);
+      newHeightForm = Math.min(Math.max(0, newHeightForm), 90);
 
       // Perubahan tinggi elemen
-      formInputAkses.style.height = newHeightInput + "vh";
+      formInputAkses.style.height = newHeightForm + "vh";
 
       // Tambahkan atau hapus kelas sesuai dengan tinggi
-      if (newHeightInput <= 55) {
+      if (newHeightForm <= 55) {
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
         toggleButtonFormInput.style.display = "block";
@@ -407,17 +413,27 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    formInputAkses.addEventListener("touchend", function () {
+    // Mengatasi sentuhan di luar elemen "scroll_up_form_input"
+    document.addEventListener("touchmove", function (event) {
+      // Cek apakah sentuhan dimulai di dalam "scroll_up_form_input"
+      if (!scrollUpDownForm.contains(event.target)) {
+        event.preventDefault();
+      }
+    });
+
+    scrollUpDownForm.addEventListener("touchend", function () {
       formInputAkses.style.transition = "height 0.3s";
 
       // Tentukan tinggi akhir berdasarkan kondisi
       if (parseFloat(formInputAkses.style.height) > 55) {
         formInputAkses.style.height = "90vh";
+        expandFormInput.style.height = "62vh";
       } else if (
         parseFloat(formInputAkses.style.height) < 55 &&
         parseFloat(formInputAkses.style.height) >= 20
       ) {
         formInputAkses.style.height = "45vh";
+        expandFormInput.style.height = "13vh";
       } else if (parseFloat(formInputAkses.style.height) < 20) {
         formInputAkses.style.height = "0vh";
         resetAll();
@@ -425,7 +441,63 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Penanganan gesture untuk "Form Profil"
+  // ...
+
+  //
+  // if (formProfil) {
+  //   // Penanganan gesture untuk "Form Profil"
+  //   let touchStartYProfil = 0;
+  //   let initialFormProfilHeight = 0; // Tinggi awal dalam vh
+  //   formProfil.style.height = initialFormProfilHeight + "vh";
+  //   formProfil.addEventListener("touchstart", function (event) {
+  //     touchStartYProfil = event.touches[0].clientY;
+  //     initialFormProfilHeight = parseFloat(formProfil.style.height);
+  //     formProfil.style.transition = "none";
+  //   });
+
+  //   formProfil.addEventListener("touchmove", function (event) {
+  //     const touchCurrentYProfil = event.touches[0].clientY;
+  //     const diffYProfil =
+  //       ((touchStartYProfil - touchCurrentYProfil) / window.innerHeight) * 100;
+  //     let newHeightProfil = initialFormProfilHeight + diffYProfil;
+  //     // Batasi tinggi minimum dan maksimum
+  //     newHeightProfil = Math.min(Math.max(0, newHeightProfil), 90);
+  //     formProfil.style.height = newHeightProfil + "vh";
+  //     // Tambahkan atau hapus kelas sesuai dengan tinggi
+  //     if (newHeightProfil <= 55) {
+  //       formProfil.classList.add("rounded-tl-[15px]");
+  //       formProfil.classList.add("rounded-tr-[15px]");
+  //       toggleButtonProfil.style.display = "block";
+
+  //       expandProfil.classList.remove("overflow-y-auto");
+  //       expandProfil.classList.add("overflow-y-hidden");
+  //     } else {
+  //       formProfil.classList.remove("rounded-tl-[15px]");
+  //       formProfil.classList.remove("rounded-tr-[15px]");
+  //       toggleButtonProfil.style.display = "none";
+
+  //       expandProfil.classList.remove("overflow-y-hidden");
+  //       expandProfil.classList.add("overflow-y-auto");
+  //     }
+  //   });
+
+  //   formProfil.addEventListener("touchend", function () {
+  //     formProfil.style.transition = "height 0.3s";
+  //     // Tentukan tinggi akhir berdasarkan kondisi
+  //     if (parseFloat(formProfil.style.height) > 55) {
+  //       formProfil.style.height = "90vh";
+  //     } else if (
+  //       parseFloat(formProfil.style.height) < 55 &&
+  //       parseFloat(formProfil.style.height) >= 20
+  //     ) {
+  //       formProfil.style.height = "45vh";
+  //     } else if (parseFloat(formProfil.style.height) < 20) {
+  //       formProfil.style.height = "0vh";
+  //       resetAll();
+  //     }
+  //   });
+  // }
+
   if (formProfil) {
     let touchStartYProfil = 0;
     let initialFormProfilHeight = 0; // Tinggi awal dalam vh
@@ -449,21 +521,28 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block";
-
         expandProfil.classList.remove("overflow-y-auto");
         expandProfil.classList.add("overflow-y-hidden");
       } else {
         formProfil.classList.remove("rounded-tl-[15px]");
         formProfil.classList.remove("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "none";
-
         expandProfil.classList.remove("overflow-y-hidden");
         expandProfil.classList.add("overflow-y-auto");
       }
     });
 
+    // Mengatasi sentuhan di luar elemen "scroll_up_form_profil"
+    document.addEventListener("touchmove", function (event) {
+      // Cek apakah sentuhan dimulai di dalam "scroll_up_form_profil"
+      if (!formProfil.contains(event.target)) {
+        event.preventDefault();
+      }
+    });
+
     formProfil.addEventListener("touchend", function () {
       formProfil.style.transition = "height 0.3s";
+
       // Tentukan tinggi akhir berdasarkan kondisi
       if (parseFloat(formProfil.style.height) > 55) {
         formProfil.style.height = "90vh";
