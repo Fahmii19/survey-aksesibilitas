@@ -322,14 +322,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (newHeight <= 55) {
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
-        toggleButtonRekap.style.display = "block";
+        // toggleButtonRekap.style.display = "block";
 
         expandRekap.classList.remove("overflow-y-auto");
         expandRekap.classList.add("overflow-y-hidden");
       } else {
         tableRekapElement.classList.remove("rounded-tl-[15px]");
         tableRekapElement.classList.remove("rounded-tr-[15px]");
-        toggleButtonRekap.style.display = "none";
+        // toggleButtonRekap.style.display = "none";
 
         //
         expandRekap.classList.remove("overflow-y-hidden");
