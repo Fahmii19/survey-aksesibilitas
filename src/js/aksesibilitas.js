@@ -113,18 +113,22 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleHeight(formContainerRekapHide, "20vh", "13vh");
     toggleButtonRekap.addEventListener("click", function () {
       expandRekap.style.height = "62vh";
-      formContainerRekapHide.classList.add("overflow-y-auto");
       if (rekapContainer.style.height !== "90vh") {
         rekapContainer.style.height = "90vh";
         tableRekapElement.classList.remove("rounded-tl-[15px]");
         tableRekapElement.classList.remove("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "none";
+
+        expandRekap.classList.remove("overflow-y-hidden");
+        expandRekap.classList.add("overflow-y-auto");
       } else {
         rekapContainer.style.height = "45vh";
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "block";
-        formContainerRekapHide.classList.remove("overflow-y-auto");
+
+        expandRekap.classList.remove("overflow-y-auto");
+        expandRekap.classList.add("overflow-y-hidden");
       }
     });
   }
@@ -150,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleButtonFormInput.addEventListener("click", function () {
       toggleHeight(formInputAkses, "45vh", "90vh");
       formContainerFormInputHide.style.height = "62vh";
-      formContainerFormInputHide.classList.add("overflow-y-auto");
       if (formInputAkses.style.height === "90vh") {
         if (mapboxCtrlElement) {
           mapboxCtrlElement.style.zIndex = "-1";
@@ -158,6 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
         formInputAkses.classList.remove("rounded-tl-[15px]");
         formInputAkses.classList.remove("rounded-tr-[15px]");
         toggleButtonFormInput.style.display = "none";
+
+        expandFormInput.classList.remove("overflow-y-hidden");
+        expandFormInput.classList.add("overflow-y-auto");
       } else {
         if (mapboxCtrlElement) {
           mapboxCtrlElement.style.zIndex = "5";
@@ -165,7 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
         toggleButtonFormInput.style.display = "block";
-        formContainerFormInputHide.classList.remove("overflow-y-auto");
+
+        expandFormInput.classList.remove("overflow-y-auto");
+        expandFormInput.classList.add("overflow-y-hidden");
       }
     });
   }
@@ -189,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mengatur event click pada tombol "Toggle Profil"
   if (toggleButtonProfil && formProfil) {
     formContainerProfilHide.style.height = "62vh";
-    formContainerProfilHide.classList.add("overflow-y-auto");
     toggleButtonProfil.addEventListener("click", function () {
       toggleHeight(formProfil, "45vh", "90vh");
 
@@ -200,6 +207,9 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.remove("rounded-tl-[15px]");
         formProfil.classList.remove("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "none";
+
+        expandProfil.classList.remove("overflow-y-auto");
+        expandProfil.classList.add("overflow-y-hidden");
       }
       if (formProfil.style.height === "45vh") {
         if (mapboxCtrlElement) {
@@ -208,7 +218,9 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block"; // Tampilkan tombol toggle lagi
-        formContainerProfilHide.classList.remove("overflow-y-auto");
+
+        expandProfil.classList.remove("overflow-y-hidden");
+        expandProfil.classList.add("overflow-y-auto");
       }
     });
   }
@@ -243,10 +255,17 @@ document.addEventListener("DOMContentLoaded", function () {
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "block";
+
+        expandRekap.classList.remove("overflow-y-auto");
+        expandRekap.classList.add("overflow-y-hidden");
       } else {
         tableRekapElement.classList.remove("rounded-tl-[15px]");
         tableRekapElement.classList.remove("rounded-tr-[15px]");
         toggleButtonRekap.style.display = "none";
+
+        //
+        expandRekap.classList.remove("overflow-y-hidden");
+        expandRekap.classList.add("overflow-y-auto");
       }
     });
 
@@ -299,10 +318,16 @@ document.addEventListener("DOMContentLoaded", function () {
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
         toggleButtonFormInput.style.display = "block";
+
+        expandFormInput.classList.remove("overflow-y-auto");
+        expandFormInput.classList.add("overflow-y-hidden");
       } else {
         formInputAkses.classList.remove("rounded-tl-[15px]");
         formInputAkses.classList.remove("rounded-tr-[15px]");
         toggleButtonFormInput.style.display = "none";
+
+        expandFormInput.classList.remove("overflow-y-hidden");
+        expandFormInput.classList.add("overflow-y-auto");
       }
     });
 
@@ -348,10 +373,16 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block";
+
+        expandProfil.classList.remove("overflow-y-auto");
+        expandProfil.classList.add("overflow-y-hidden");
       } else {
         formProfil.classList.remove("rounded-tl-[15px]");
         formProfil.classList.remove("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "none";
+
+        expandProfil.classList.remove("overflow-y-hidden");
+        expandProfil.classList.add("overflow-y-auto");
       }
     });
 
