@@ -58,6 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
       formInputAkses.classList.add("rounded-tr-[15px]");
     }
     if (toggleButtonFormInput) toggleButtonFormInput.style.display = "block";
+
+    // Mereset setelah klik tombol profil
+    if (formProfil) formProfil.style.height = "45vh";
+    if (formProfil) {
+      formProfil.classList.add("rounded-tl-[15px]");
+      formProfil.classList.add("rounded-tr-[15px]");
+    }
+    if (toggleButtonProfil) toggleButtonProfil.style.display = "block";
   }
 
   // Fungsi untuk menggeser tinggi elemen
@@ -176,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Mengatur event click pada tombol "Toggle Profil"
   if (toggleButtonProfil && formProfil) {
+    formContainerProfilHide.style.height = "62vh";
     toggleButtonProfil.addEventListener("click", function () {
       toggleHeight(formProfil, "45vh", "90vh");
 
@@ -311,48 +320,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Penanganan gesture untuk "Form Profil"
   if (formProfil) {
-    // let touchStartYProfil = 0;
-    // let initialFormProfilHeight = 0; // Tinggi awal dalam vh
-    // formProfil.style.height = initialFormProfilHeight + "vh";
-    // formProfil.addEventListener("touchstart", function (event) {
-    //   touchStartYProfil = event.touches[0].clientY;
-    //   initialFormProfilHeight = parseFloat(formProfil.style.height);
-    //   formProfil.style.transition = "none";
-    // });
-    // formProfil.addEventListener("touchmove", function (event) {
-    //   const touchCurrentYProfil = event.touches[0].clientY;
-    //   const diffYProfil =
-    //     ((touchStartYProfil - touchCurrentYProfil) / window.innerHeight) * 100;
-    //   let newHeightProfil = initialFormProfilHeight + diffYProfil;
-    //   // Batasi tinggi minimum dan maksimum
-    //   newHeightProfil = Math.min(Math.max(0, newHeightProfil), 90);
-    // Perubahan tinggi elemen
-    //   formProfil.style.height = newHeightProfil + "vh";
-    //   // Tambahkan atau hapus kelas sesuai dengan tinggi
-    //   if (newHeightProfil <= 55) {
-    //     formProfil.classList.add("rounded-tl-[15px]");
-    //     formProfil.classList.add("rounded-tr-[15px]");
-    //     toggleButtonProfil.style.display = "block";
-    //   } else {
-    //     formProfil.classList.remove("rounded-tl-[15px]");
-    //     formProfil.classList.remove("rounded-tr-[15px]");
-    //     toggleButtonProfil.style.display = "none";
-    //   }
-    // });
-    // formProfil.addEventListener("touchend", function () {
-    //   formProfil.style.transition = "height 0.3s";
-    //   // Tentukan tinggi akhir berdasarkan kondisi
-    //   if (parseFloat(formProfil.style.height) > 55) {
-    //     formProfil.style.height = "90vh";
-    //   } else if (
-    //     parseFloat(formProfil.style.height) < 55 &&
-    //     parseFloat(formProfil.style.height) >= 20
-    //   ) {
-    //     formProfil.style.height = "45vh";
-    //   } else if (parseFloat(formProfil.style.height) < 20) {
-    //     formProfil.style.height = "0vh";
-    //     resetAll();
-    //   }
-    // });
+    let touchStartYProfil = 0;
+    let initialFormProfilHeight = 0; // Tinggi awal dalam vh
+    formProfil.style.height = initialFormProfilHeight + "vh";
+    formProfil.addEventListener("touchstart", function (event) {
+      touchStartYProfil = event.touches[0].clientY;
+      initialFormProfilHeight = parseFloat(formProfil.style.height);
+      formProfil.style.transition = "none";
+    });
+
+    formProfil.addEventListener("touchmove", function (event) {
+      const touchCurrentYProfil = event.touches[0].clientY;
+      const diffYProfil =
+        ((touchStartYProfil - touchCurrentYProfil) / window.innerHeight) * 100;
+      let newHeightProfil = initialFormProfilHeight + diffYProfil;
+      // Batasi tinggi minimum dan maksimum
+      newHeightProfil = Math.min(Math.max(0, newHeightProfil), 90);
+      formProfil.style.height = newHeightProfil + "vh";
+      // Tambahkan atau hapus kelas sesuai dengan tinggi
+      if (newHeightProfil <= 55) {
+        formProfil.classList.add("rounded-tl-[15px]");
+        formProfil.classList.add("rounded-tr-[15px]");
+        toggleButtonProfil.style.display = "block";
+      } else {
+        formProfil.classList.remove("rounded-tl-[15px]");
+        formProfil.classList.remove("rounded-tr-[15px]");
+        toggleButtonProfil.style.display = "none";
+      }
+    });
+
+    formProfil.addEventListener("touchend", function () {
+      formProfil.style.transition = "height 0.3s";
+      // Tentukan tinggi akhir berdasarkan kondisi
+      if (parseFloat(formProfil.style.height) > 55) {
+        formProfil.style.height = "90vh";
+      } else if (
+        parseFloat(formProfil.style.height) < 55 &&
+        parseFloat(formProfil.style.height) >= 20
+      ) {
+        formProfil.style.height = "45vh";
+      } else if (parseFloat(formProfil.style.height) < 20) {
+        formProfil.style.height = "0vh";
+        resetAll();
+      }
+    });
   }
 });
