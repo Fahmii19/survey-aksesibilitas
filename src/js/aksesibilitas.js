@@ -210,8 +210,8 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.remove("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "none";
 
-        expandProfil.classList.remove("overflow-y-auto");
-        expandProfil.classList.add("overflow-y-hidden");
+        // expandProfil.classList.remove("overflow-y-auto");
+        // expandProfil.classList.add("overflow-y-hidden");
       }
       if (formProfil.style.height === "45vh") {
         if (mapboxCtrlElement) {
@@ -221,8 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block"; // Tampilkan tombol toggle lagi
 
-        expandProfil.classList.remove("overflow-y-hidden");
-        expandProfil.classList.add("overflow-y-auto");
+        // expandProfil.classList.remove("overflow-y-hidden");
+        // expandProfil.classList.add("overflow-y-auto");
       }
     });
   }
@@ -254,17 +254,17 @@ document.addEventListener("DOMContentLoaded", function () {
       tableRekapElement.style.height = newHeight + "vh";
 
       // Tambahkan atau hapus kelas sesuai dengan tinggi
-      if (newHeight <= 55) {
+      if (newHeight <= 80) {
         tableRekapElement.classList.add("rounded-tl-[15px]");
         tableRekapElement.classList.add("rounded-tr-[15px]");
-        // toggleButtonRekap.style.display = "block";
+        toggleButtonRekap.style.display = "block";
 
         expandRekap.classList.remove("overflow-y-auto");
         expandRekap.classList.add("overflow-y-hidden");
       } else {
         tableRekapElement.classList.remove("rounded-tl-[15px]");
         tableRekapElement.classList.remove("rounded-tr-[15px]");
-        // toggleButtonRekap.style.display = "none";
+        toggleButtonRekap.style.display = "none";
 
         //
         expandRekap.classList.remove("overflow-y-hidden");
@@ -284,11 +284,11 @@ document.addEventListener("DOMContentLoaded", function () {
       tableRekapElement.style.transition = "height 0.3s";
 
       // Tentukan tinggi akhir berdasarkan kondisi
-      if (parseFloat(tableRekapElement.style.height) > 55) {
+      if (parseFloat(tableRekapElement.style.height) > 80) {
         tableRekapElement.style.height = "90vh";
         expandRekap.style.height = "62vh";
       } else if (
-        parseFloat(tableRekapElement.style.height) < 55 &&
+        parseFloat(tableRekapElement.style.height) < 80 &&
         parseFloat(tableRekapElement.style.height) >= 20
       ) {
         tableRekapElement.style.height = "45vh";
@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", function () {
       formInputAkses.style.height = newHeightForm + "vh";
 
       // Tambahkan atau hapus kelas sesuai dengan tinggi
-      if (newHeightForm <= 55) {
+      if (newHeightForm <= 80) {
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
         toggleButtonFormInput.style.display = "block";
@@ -356,11 +356,11 @@ document.addEventListener("DOMContentLoaded", function () {
       formInputAkses.style.transition = "height 0.3s";
 
       // Tentukan tinggi akhir berdasarkan kondisi
-      if (parseFloat(formInputAkses.style.height) > 55) {
+      if (parseFloat(formInputAkses.style.height) > 80) {
         formInputAkses.style.height = "90vh";
         expandFormInput.style.height = "59vh";
       } else if (
-        parseFloat(formInputAkses.style.height) < 55 &&
+        parseFloat(formInputAkses.style.height) < 80 &&
         parseFloat(formInputAkses.style.height) >= 20
       ) {
         formInputAkses.style.height = "45vh";
@@ -391,18 +391,20 @@ document.addEventListener("DOMContentLoaded", function () {
       newHeightProfil = Math.min(Math.max(0, newHeightProfil), 90);
       formProfil.style.height = newHeightProfil + "vh";
       // Tambahkan atau hapus kelas sesuai dengan tinggi
-      if (newHeightProfil <= 55) {
+      if (newHeightProfil <= 80) {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block";
-        expandProfil.classList.remove("overflow-y-auto");
-        expandProfil.classList.add("overflow-y-hidden");
+        //
+        // expandProfil.classList.remove("overflow-y-auto");
+        // expandProfil.classList.add("overflow-y-hidden");
       } else {
         formProfil.classList.remove("rounded-tl-[15px]");
         formProfil.classList.remove("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "none";
-        expandProfil.classList.remove("overflow-y-hidden");
-        expandProfil.classList.add("overflow-y-auto");
+        //
+        // expandProfil.classList.remove("overflow-y-hidden");
+        // expandProfil.classList.add("overflow-y-auto");
       }
     });
 
@@ -418,10 +420,10 @@ document.addEventListener("DOMContentLoaded", function () {
       formProfil.style.transition = "height 0.3s";
 
       // Tentukan tinggi akhir berdasarkan kondisi
-      if (parseFloat(formProfil.style.height) > 55) {
+      if (parseFloat(formProfil.style.height) > 80) {
         formProfil.style.height = "90vh";
       } else if (
-        parseFloat(formProfil.style.height) < 55 &&
+        parseFloat(formProfil.style.height) < 80 &&
         parseFloat(formProfil.style.height) >= 20
       ) {
         formProfil.style.height = "45vh";
