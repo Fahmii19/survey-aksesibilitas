@@ -1198,6 +1198,18 @@ input:checked + .toggle-bg {
   margin-bottom: 3.5rem;
 }
 
+.mb-\[\] {
+  margin-bottom: ;
+}
+
+.mb-\[20\%\] {
+  margin-bottom: 20%;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .block {
   display: block;
 }
