@@ -32,10 +32,10 @@ main {
 }
 
 /* Map Container */
-.map-container {
+/* .map-container {
   position: relative;
   flex-grow: 1;
-}
+} */
 
 #mapAksesibilitas {
   position: absolute;
@@ -122,17 +122,49 @@ select {
 
 /* Media Queries */
 @media (max-width: 767px) {
-  /* styles for Small devices (ponsel) */
+  .mobile-survey {
+    @apply block;
+  }
+
+  .mapboxgl-ctrl-top-right {
+    right: 1vh !important;
+    top: 32vh !important;
+    display: block;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  /* styles for Medium devices (tablet) */
+  .mobile-survey {
+    @apply block;
+  }
+
+  .mapboxgl-ctrl-top-right {
+    right: 1vh !important;
+    top: 32vh !important;
+    display: block;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* styles for Large devices (laptop, desktop) */
+  .mobile-survey {
+    @apply hidden !important;
+  }
+
+  .mapboxgl-ctrl-top-right {
+    right: 1vh !important;
+    top: 32vh !important;
+    display: none !important;
+  }
 }
 
 @media (min-width: 1200px) {
-  /* styles for Extra large devices (monitor besar) */
+  .mobile-survey {
+    @apply hidden !important;
+  }
+
+  .mapboxgl-ctrl-top-right {
+    right: 1vh !important;
+    top: 32vh !important;
+    display: none !important;
+  }
 }
