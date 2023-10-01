@@ -458,6 +458,38 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Menyeleksi semua elemen menu - Desktop
+  const menus = document.querySelectorAll(".menu");
+
+  // Fungsi untuk mengupdate menu yang aktif - Desktop
+  function updateActiveMenu(id) {
+    menus.forEach((menu) => {
+      menu.classList.remove("text-blue-600");
+      menu.classList.add("text-gray-900");
+      if (menu.id === id) {
+        menu.classList.add("text-blue-600");
+        menu.classList.remove("text-gray-900");
+      }
+    });
+  }
+
+  // Menambahkan event listener ke setiap menu - Desktop
+  menus.forEach((menu) => {
+    menu.addEventListener("click", function () {
+      updateActiveMenu(this.id);
+      if (this.id === "rekapLink") {
+        document.getElementById("judulMenu").innerText = "Rekap";
+        document.getElementById("rekapScreen").classList.remove("hidden");
+        document.getElementById("surveyScreen").classList.add("hidden");
+      } else if (this.id === "surveyLink") {
+        document.getElementById("judulMenu").innerText = "Survey Aksesibilitas";
+        document.getElementById("rekapScreen").classList.add("hidden");
+        document.getElementById("surveyScreen").classList.remove("hidden");
+      }
+    });
+  });
+
   //
 });
 
