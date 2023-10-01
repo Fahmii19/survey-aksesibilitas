@@ -433,6 +433,32 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // ========== Logika Rekap Dekstop ==========
+  const collapseButtons = document.querySelectorAll("[data-attribut]");
+
+  collapseButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const attributeValue = button.getAttribute("data-attribut");
+      const rowToToggle = document.querySelector(
+        `[data-row="${attributeValue}"]`
+      );
+
+      if (rowToToggle) {
+        if (
+          rowToToggle.style.display === "none" ||
+          !rowToToggle.style.display
+        ) {
+          rowToToggle.style.display = "table-row";
+          button.src = "./src/images/close_collapse.png"; // mengubah sumber gambar ketika baris ditampilkan
+        } else {
+          rowToToggle.style.display = "none";
+          button.src = "./src/images/open_collapse.png"; // mengembalikan sumber gambar ketika baris disembunyikan
+        }
+      }
+    });
+  });
+  //
 });
 
 // tw elements

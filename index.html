@@ -22,8 +22,6 @@
     />
 
     <!--  -->
-
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   </head>
 
   <body class="font-inter">
@@ -145,7 +143,7 @@
           </div>
         </div>
 
-        <!--  -->
+        <!--  Screen Dekstop - Rekap -->
         <div class="grid grid-cols-1 h-full">
           <div class="bg-slate-50 p-10">
             <div class="relative overflow-x-auto sm:rounded-lg">
@@ -1672,38 +1670,4 @@
 
   <script src="./src/js/aksesibilitas.js" defer></script>
   <script src="./src/js/peta.js" defer></script>
-
-  <!-- jQuery -->
-  <script
-    type="text/javascript"
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-  ></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const collapseButtons = document.querySelectorAll("[data-attribut]");
-
-      collapseButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-          const attributeValue = button.getAttribute("data-attribut");
-          const rowToToggle = document.querySelector(
-            `[data-row="${attributeValue}"]`
-          );
-
-          if (rowToToggle) {
-            if (
-              rowToToggle.style.display === "none" ||
-              !rowToToggle.style.display
-            ) {
-              rowToToggle.style.display = "table-row";
-              button.src = "./src/images/close_collapse.png"; // mengubah sumber gambar ketika baris ditampilkan
-            } else {
-              rowToToggle.style.display = "none";
-              button.src = "./src/images/open_collapse.png"; // mengembalikan sumber gambar ketika baris disembunyikan
-            }
-          }
-        });
-      });
-    });
-  </script>
 </html>
