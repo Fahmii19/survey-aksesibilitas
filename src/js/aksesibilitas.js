@@ -436,8 +436,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // tw elements
-
-// Initialization for ES Users
-import { Datatable, initTE } from "tw-elements";
-
-initTE({ Datatable });
