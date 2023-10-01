@@ -137,16 +137,292 @@
             <!--  -->
           </div>
         </nav>
+
+        <!-- Judul Menu -->
         <div class="">
           <div class="flex flex-wrap items-center justify-between h-[12vh]">
-            <div class="ml-5 font-bold text-3xl">Survey Aksesbilitas</div>
+            <div class="ml-5 font-bold text-3xl">Rekap</div>
           </div>
         </div>
 
         <!--  -->
-        <div class="grid grid-cols-1 h-full border border-red-500">
-          <div class="bg-slate-50">
-            <!--  lorem aja -->
+        <div class="grid grid-cols-1 h-full">
+          <div class="bg-slate-50 p-10">
+            <div class="relative overflow-x-auto sm:rounded-lg">
+              <table
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+              >
+                <thead class="text-xs text-gray-700 uppercase bg-slate-50">
+                  <tr>
+                    <th
+                      scope="col"
+                      class="px-6 py-3 flex justify-center items-center"
+                    ></th>
+                    <th scope="col" class="px-6 py-3">
+                      <div class="flex items-center">
+                        Nama Lokasi
+
+                        <svg
+                          class="w-3 h-3 ml-1.5 cursor-pointer"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 16 20"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
+                          />
+                        </svg>
+                      </div>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      <div class="flex items-center">
+                        Jenis Lokasi
+
+                        <svg
+                          class="w-3 h-3 ml-1.5 cursor-pointer"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 16 20"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
+                          />
+                        </svg>
+                      </div>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      <div class="flex items-center">
+                        Kelas Lokasi
+                        <svg
+                          class="w-3 h-3 ml-1.5 cursor-pointer"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 16 20"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
+                          />
+                        </svg>
+                      </div>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      <div class="flex items-center">
+                        Pendestrian
+                        <svg
+                          class="w-3 h-3 ml-1.5 cursor-pointer"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 16 20"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
+                          />
+                        </svg>
+                      </div>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      <div class="flex items-center">
+                        Kelurahan
+                        <svg
+                          class="w-3 h-3 ml-1.5 cursor-pointer"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 16 20"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
+                          />
+                        </svg>
+                      </div>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      <div class="flex items-center">Aksi</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ID -->
+                  <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  >
+                    <td class="pl-6 pr-0 py-4 flex items-center justify-center">
+                      <img
+                        data-attribut="1"
+                        class="w-5 h-5 cursor-pointer"
+                        src="./src/images/open_collapse.png"
+                        alt=""
+                      />
+                    </td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-4 py-4">
+                      <div class="inline-flex">
+                        <div class="mr-3">
+                          <img
+                            class="w-5 h-5"
+                            src="./src/images/edit.png"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <img
+                            class="w-5 h-5"
+                            src="./src/images/hapus.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Konten ID -->
+                  <tr
+                    data-row="1"
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hidden"
+                  >
+                    <td
+                      class="pl-6 pr-0 py-4 flex items-center justify-center"
+                    ></td>
+                    <td colspan="6" class="px-6 py-4">
+                      <div class="flex flex-col">
+                        <div class="mb-3">
+                          <label
+                            for="nama_lokasi"
+                            class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                            >Nama Lokasi</label
+                          >
+                          <input
+                            type="text"
+                            id="nama_lokasi"
+                            name="nama_lokasi"
+                            class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                            value="Jalan manggis"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label
+                            for="jenis_lokasi"
+                            class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                            >Jenis Lokasi</label
+                          >
+                          <input
+                            type="text"
+                            id="jenis_lokasi"
+                            name="jenis_lokasi"
+                            class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                            value="Jalan"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- ID -->
+                  <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  >
+                    <td class="pl-6 pr-0 py-4 flex items-center justify-center">
+                      <img
+                        data-attribut="2"
+                        class="w-5 h-5 cursor-pointer"
+                        src="./src/images/open_collapse.png"
+                        alt=""
+                      />
+                    </td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-6 py-4">Jakarta Selatan</td>
+                    <td class="px-4 py-4">
+                      <div class="inline-flex">
+                        <div class="mr-3">
+                          <img
+                            class="w-5 h-5"
+                            src="./src/images/edit.png"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <img
+                            class="w-5 h-5"
+                            src="./src/images/hapus.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Konten ID -->
+                  <tr
+                    data-row="2"
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hidden"
+                  >
+                    <td
+                      class="pl-6 pr-0 py-4 flex items-center justify-center"
+                    ></td>
+                    <td colspan="6" class="px-6 py-4">
+                      <div class="flex flex-col">
+                        <div class="mb-3">
+                          <label
+                            for="nama_lokasi"
+                            class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                            >Nama Lokasi</label
+                          >
+                          <input
+                            type="text"
+                            id="nama_lokasi"
+                            name="nama_lokasi"
+                            class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                            value="Jalan manggis"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label
+                            for="jenis_lokasi"
+                            class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                            >Jenis Lokasi</label
+                          >
+                          <input
+                            type="text"
+                            id="jenis_lokasi"
+                            name="jenis_lokasi"
+                            class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                            value="Jalan"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -1402,4 +1678,32 @@
     type="text/javascript"
     src="https://code.jquery.com/jquery-3.4.1.min.js"
   ></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const collapseButtons = document.querySelectorAll("[data-attribut]");
+
+      collapseButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const attributeValue = button.getAttribute("data-attribut");
+          const rowToToggle = document.querySelector(
+            `[data-row="${attributeValue}"]`
+          );
+
+          if (rowToToggle) {
+            if (
+              rowToToggle.style.display === "none" ||
+              !rowToToggle.style.display
+            ) {
+              rowToToggle.style.display = "table-row";
+              button.src = "./src/images/close_collapse.png"; // mengubah sumber gambar ketika baris ditampilkan
+            } else {
+              rowToToggle.style.display = "none";
+              button.src = "./src/images/open_collapse.png"; // mengembalikan sumber gambar ketika baris disembunyikan
+            }
+          }
+        });
+      });
+    });
+  </script>
 </html>
