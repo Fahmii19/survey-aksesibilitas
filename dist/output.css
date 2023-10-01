@@ -1202,8 +1202,8 @@ input:checked + .toggle-bg {
   margin-left: 0.625rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
 .mb-16 {
@@ -1316,6 +1316,10 @@ input:checked + .toggle-bg {
 
 .h-2 {
   height: 0.5rem;
+}
+
+.h-\[12vh\] {
+  height: 12vh;
 }
 
 .h-screen {
@@ -1754,6 +1758,10 @@ input:checked + .toggle-bg {
   padding: 1rem;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -2059,13 +2067,13 @@ main {
 
 /* Map Container */
 
-/* .map-container {
+.map-container {
   position: relative;
   flex-grow: 1;
-} */
+}
 
 #mapAksesibilitas {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   bottom: 0;
   left: 0;
@@ -2469,6 +2477,10 @@ select {
     display: flex;
   }
 
+  .md\:h-\[80vh\] {
+    height: 80vh;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -2524,6 +2536,10 @@ select {
 }
 
 @media (min-width: 1024px) {
+  .lg\:h-\[80vh\] {
+    height: 80vh;
+  }
+
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -2536,6 +2552,10 @@ select {
 }
 
 @media (min-width: 1280px) {
+  .xl\:h-\[80vh\] {
+    height: 80vh;
+  }
+
   .xl\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;

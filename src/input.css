@@ -32,13 +32,13 @@ main {
 }
 
 /* Map Container */
-/* .map-container {
+.map-container {
   position: relative;
   flex-grow: 1;
-} */
+}
 
 #mapAksesibilitas {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   bottom: 0;
   left: 0;
