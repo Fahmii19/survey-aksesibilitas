@@ -462,6 +462,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Menyeleksi semua elemen menu - Desktop
   const menus = document.querySelectorAll(".menu");
 
+  document.getElementById("surveyScreen").classList.add("hidden");
+
   // Fungsi untuk mengupdate menu yang aktif - Desktop
   function updateActiveMenu(id) {
     menus.forEach((menu) => {
