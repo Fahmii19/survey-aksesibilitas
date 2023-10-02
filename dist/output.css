@@ -1319,6 +1319,10 @@ input:checked + .toggle-bg {
   height: 20vh;
 }
 
+.h-\[35vh\] {
+  height: 35vh;
+}
+
 .h-\[45vh\] {
   height: 45vh;
 }
