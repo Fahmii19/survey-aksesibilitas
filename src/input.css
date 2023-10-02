@@ -122,8 +122,16 @@ select {
 
 /* Media Queries */
 @media (max-width: 767px) {
+  .dekstop-survey {
+    @apply hidden !important;
+  }
+
+  .container-survey-aksesibilitas {
+    @apply grid grid-cols-1;
+  }
+
   .mobile-survey {
-    @apply block;
+    @apply block !important;
   }
 
   .mapboxgl-ctrl-top-right {
@@ -158,6 +166,10 @@ select {
 }
 
 @media (min-width: 1200px) {
+  .container-survey-aksesibilitas {
+    @apply grid grid-cols-2;
+  }
+
   .mobile-survey {
     @apply hidden !important;
   }

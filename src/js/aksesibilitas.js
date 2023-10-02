@@ -459,7 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Menyeleksi semua elemen menu - Desktop
+  // // Menyeleksi semua elemen menu - Desktop
   const menus = document.querySelectorAll(".menu");
 
   document.getElementById("surveyScreen").classList.add("hidden");
@@ -488,6 +488,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("judulMenu").innerText = "Survey Aksesibilitas";
         document.getElementById("rekapScreen").classList.add("hidden");
         document.getElementById("surveyScreen").classList.remove("hidden");
+        document.getElementsByClassName(
+          "container-survey-aksesibilitas"
+        ).style.display = "block";
       }
     });
   });
