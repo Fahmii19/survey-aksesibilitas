@@ -152,9 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (toggleButtonFormInput && formInputAkses) {
     toggleButtonFormInput.addEventListener("click", function () {
-      toggleHeight(formInputAkses, "35vh", "90vh");
+      toggleHeight(formInputAkses, "35vh", "80vh");
       formContainerFormInputHide.style.height = "62vh";
-      if (formInputAkses.style.height === "90vh") {
+      if (formInputAkses.style.height === "80vh") {
         if (mapboxCtrlElement) {
           mapboxCtrlElement.style.zIndex = "-1";
         }
@@ -200,9 +200,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (toggleButtonProfil && formProfil) {
     formContainerProfilHide.style.height = "26vh";
     toggleButtonProfil.addEventListener("click", function () {
-      toggleHeight(formProfil, "35vh", "90vh");
+      toggleHeight(formProfil, "35vh", "80vh");
 
-      if (formProfil.style.height === "90vh") {
+      if (formProfil.style.height === "80vh") {
         if (mapboxCtrlElement) {
           mapboxCtrlElement.style.zIndex = "-1";
         }
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ========== Penanganan Gesture ==========
+  // Penanganan gesture untu "Rekap"
   if (tableRekapElement) {
     let touchStartY = 0;
     let initialTableHeight = 0; // Tinggi awal dalam vh
@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
       formInputAkses.style.height = newHeightForm + "vh";
 
       // Tambahkan atau hapus kelas sesuai dengan tinggi
-      if (newHeightForm <= 80) {
+      if (newHeightForm <= 70) {
         formInputAkses.classList.add("rounded-tl-[15px]");
         formInputAkses.classList.add("rounded-tr-[15px]");
         toggleButtonFormInput.style.display = "block";
@@ -355,11 +355,11 @@ document.addEventListener("DOMContentLoaded", function () {
       formInputAkses.style.transition = "height 0.3s";
 
       // Tentukan tinggi akhir berdasarkan kondisi
-      if (parseFloat(formInputAkses.style.height) > 80) {
+      if (parseFloat(formInputAkses.style.height) > 70) {
         formInputAkses.style.height = "80vh";
         expandFormInput.style.height = "59vh";
       } else if (
-        parseFloat(formInputAkses.style.height) < 80 &&
+        parseFloat(formInputAkses.style.height) < 70 &&
         parseFloat(formInputAkses.style.height) >= 20
       ) {
         formInputAkses.style.height = "35vh";
@@ -388,10 +388,10 @@ document.addEventListener("DOMContentLoaded", function () {
         ((touchStartYProfil - touchCurrentYProfil) / window.innerHeight) * 100;
       let newHeightProfil = initialFormProfilHeight + diffYProfil;
       // Batasi tinggi minimum dan maksimum
-      newHeightProfil = Math.min(Math.max(0, newHeightProfil), 90);
+      newHeightProfil = Math.min(Math.max(0, newHeightProfil), 80);
       formProfil.style.height = newHeightProfil + "vh";
       // Tambahkan atau hapus kelas sesuai dengan tinggi
-      if (newHeightProfil <= 80) {
+      if (newHeightProfil <= 70) {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block";
@@ -420,10 +420,10 @@ document.addEventListener("DOMContentLoaded", function () {
       formProfil.style.transition = "height 0.3s";
 
       // Tentukan tinggi akhir berdasarkan kondisi
-      if (parseFloat(formProfil.style.height) > 80) {
-        formProfil.style.height = "90vh";
+      if (parseFloat(formProfil.style.height) > 70) {
+        formProfil.style.height = "80vh";
       } else if (
-        parseFloat(formProfil.style.height) < 80 &&
+        parseFloat(formProfil.style.height) < 70 &&
         parseFloat(formProfil.style.height) >= 20
       ) {
         formProfil.style.height = "35vh";
@@ -494,5 +494,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //
 });
-
-// tw elements
