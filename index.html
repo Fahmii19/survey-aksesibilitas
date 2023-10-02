@@ -25,1404 +25,129 @@
   </head>
 
   <body class="font-inter">
-    <div class="relative h-[100vh] flex flex-col">
-      <div class="z-10 bg-[#E2E2E2] w-full h-full flex flex-col">
-        <!-- Navigator - Dekstop -->
-        <nav class="bg-white border-gray-200 dark:bg-gray-900 dekstop-survey">
-          <div
-            class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4"
-          >
-            <!-- Menu -->
-            <div>
-              <div
-                id="mega-menu-icons"
-                class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-              >
-                <ul
-                  class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0"
+    <div class="relative h-[100vh] z-10 bg-slate-50 w-full">
+      <div class="grid grid-cols-1 h-full">
+        <!-- Tulisan -->
+        <div class="flex flex-col border border-green-500">
+          <div class="h-[10vh] w-full bg-white border-b">
+            <div class="flex justify-between items-center h-full px-6">
+              <div class="-ml-2.5 grid grid-cols-2">
+                <!-- Login -->
+                <div class="flex justify-start">
+                  <a href="#">
+                    <img
+                      src="./src/images/pintoinvest.png"
+                      class="h-12"
+                      alt="Flowbite Logo"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <!-- Aksi -->
+              <div class="flex items-center">
+                <button
+                  id="dropdownAvatarNameButton"
+                  data-dropdown-toggle="dropdownAvatarName"
+                  class="flex items-center text-sm font-medium text-gray-900 rounded-full"
+                  type="button"
                 >
-                  <li>
-                    <a
-                      id="rekapLink"
-                      href="#"
-                      class="menu block py-2 pl-3 pr-4 hover:bg-gray-50 md:hover:bg-transparent md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent text-blue-600"
-                    >
-                      Rekap
-                    </a>
-                  </li>
+                  <span class="sr-only">Open user menu</span>
 
-                  <li>
-                    <a
-                      id="surveyLink"
-                      href="#"
-                      class="menu block py-2 pl-3 pr-4 hover:bg-gray-50 md:hover:bg-transparent md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent text-gray-900"
-                    >
-                      Survey Aksesibilitas
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- Logo -->
-            <div>
-              <a href="#" class="flex items-center">
-                <img
-                  src="./src/images/logo_invest.png"
-                  class="h-8 mr-3"
-                  alt="Flowbite Logo"
-                />
-                <span
-                  class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-                  >Pintoinvest</span
-                >
-              </a>
-            </div>
-            <!-- User -->
-            <div class="flex items-center md:order-2">
-              <button
-                id="dropdownAvatarNameButton"
-                data-dropdown-toggle="dropdownAvatarName"
-                class="flex items-center text-sm font-medium text-gray-900 rounded-full"
-                type="button"
-              >
-                <span class="sr-only">Open user menu</span>
-                <img
-                  class="w-8 h-8 mr-2 rounded-full"
-                  src="./src/images/user.png"
-                  alt="user photo"
-                />
-                Fahmi
-                <svg
-                  class="w-2.5 h-2.5 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
+                  <!-- <div class="border-red-500 border-2 rounded-full">
+                    <img
+                      class="w-8 h-8 mr-2 rounded-full"
+                      src="./src/images/user.png"
+                      alt="user photo"
+                    />
+                  </div> -->
 
-              <!-- Dropdown menu -->
-              <div
-                id="dropdownAvatarName"
-                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-              >
-                <ul
-                  class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                  aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton"
-                >
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Profile</a
-                    >
-                  </li>
-                </ul>
-                <div class="py-2">
-                  <a
-                    href="login.html"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >Keluar</a
-                  >
-                </div>
-              </div>
-            </div>
-            <!--  -->
-          </div>
-        </nav>
-
-        <!-- Nama Judul Menu - Desktop -->
-        <div
-          class="flex flex-wrap items-center justify-between h-[12vh] dekstop-survey"
-        >
-          <div class="ml-5 font-bold text-3xl" id="judulMenu">Rekap</div>
-        </div>
-
-        <!--  Rekap - Screen Dekstop -->
-        <div id="rekapScreen" class="grid grid-cols-1 h-full dekstop-survey">
-          <div class="bg-slate-50 p-10">
-            <div class="relative overflow-x-auto sm:rounded-lg">
-              <table
-                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-              >
-                <thead class="text-xs text-gray-700 uppercase bg-slate-50">
-                  <tr>
-                    <th
-                      scope="col"
-                      class="px-6 py-3 flex justify-center items-center"
-                    ></th>
-                    <th scope="col" class="px-6 py-3">
-                      <div class="flex items-center">
-                        Nama Lokasi
-
-                        <svg
-                          class="w-3 h-3 ml-1.5 cursor-pointer"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 16 20"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
-                          />
-                        </svg>
-                      </div>
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      <div class="flex items-center">
-                        Jenis Lokasi
-
-                        <svg
-                          class="w-3 h-3 ml-1.5 cursor-pointer"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 16 20"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
-                          />
-                        </svg>
-                      </div>
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      <div class="flex items-center">
-                        Kelas Lokasi
-                        <svg
-                          class="w-3 h-3 ml-1.5 cursor-pointer"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 16 20"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
-                          />
-                        </svg>
-                      </div>
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      <div class="flex items-center">
-                        Pendestrian
-                        <svg
-                          class="w-3 h-3 ml-1.5 cursor-pointer"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 16 20"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
-                          />
-                        </svg>
-                      </div>
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      <div class="flex items-center">
-                        Kelurahan
-                        <svg
-                          class="w-3 h-3 ml-1.5 cursor-pointer"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 16 20"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
-                          />
-                        </svg>
-                      </div>
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      <div class="flex items-center">Aksi</div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- ID -->
-                  <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                  >
-                    <td class="pl-6 pr-0 py-4 flex items-center justify-center">
-                      <img
-                        data-attribut="1"
-                        class="w-5 h-5 cursor-pointer"
-                        src="./src/images/open_collapse.png"
-                        alt=""
-                      />
-                    </td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-4 py-4">
-                      <div class="inline-flex">
-                        <div class="mr-3">
-                          <img
-                            class="w-5 h-5"
-                            src="./src/images/edit.png"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <img
-                            class="w-5 h-5"
-                            src="./src/images/hapus.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- Konten ID -->
-                  <tr
-                    data-row="1"
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hidden"
-                  >
-                    <td
-                      class="pl-6 pr-0 py-4 flex items-center justify-center"
-                    ></td>
-                    <td colspan="6" class="px-6 py-4">
-                      <div class="flex flex-col">
-                        <div class="mb-3">
-                          <label
-                            for="nama_lokasi"
-                            class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                            >Nama Lokasi</label
-                          >
-                          <input
-                            type="text"
-                            id="nama_lokasi"
-                            name="nama_lokasi"
-                            class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                            value="Jalan manggis"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label
-                            for="jenis_lokasi"
-                            class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                            >Jenis Lokasi</label
-                          >
-                          <input
-                            type="text"
-                            id="jenis_lokasi"
-                            name="jenis_lokasi"
-                            class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                            value="Jalan"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- ID -->
-                  <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                  >
-                    <td class="pl-6 pr-0 py-4 flex items-center justify-center">
-                      <img
-                        data-attribut="2"
-                        class="w-5 h-5 cursor-pointer"
-                        src="./src/images/open_collapse.png"
-                        alt=""
-                      />
-                    </td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-6 py-4">Jakarta Selatan</td>
-                    <td class="px-4 py-4">
-                      <div class="inline-flex">
-                        <div class="mr-3">
-                          <img
-                            class="w-5 h-5"
-                            src="./src/images/edit.png"
-                            alt=""
-                          />
-                        </div>
-                        <div>
-                          <img
-                            class="w-5 h-5"
-                            src="./src/images/hapus.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- Konten ID -->
-                  <tr
-                    data-row="2"
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hidden"
-                  >
-                    <td
-                      class="pl-6 pr-0 py-4 flex items-center justify-center"
-                    ></td>
-                    <td colspan="6" class="px-6 py-4">
-                      <div class="flex flex-col">
-                        <div class="mb-3">
-                          <label
-                            for="nama_lokasi"
-                            class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                            >Nama Lokasi</label
-                          >
-                          <input
-                            type="text"
-                            id="nama_lokasi"
-                            name="nama_lokasi"
-                            class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                            value="Jalan manggis"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label
-                            for="jenis_lokasi"
-                            class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                            >Jenis Lokasi</label
-                          >
-                          <input
-                            type="text"
-                            id="jenis_lokasi"
-                            name="jenis_lokasi"
-                            class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                            value="Jalan"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!--  Survey Aksesibilitas - Screen Dekstop -->
-        <div id="surveyScreen" class="container-survey-aksesibilitas">
-          <!-- Mapbox - Screen Mobile -->
-          <div id="mapAksesibilitas" class="map-container">
-            <!-- Judul - Mobile -->
-
-            <div
-              class="relative z-10 h-[10vh] bg-slate-50 px-6 pt-10 mobile-survey"
-            >
-              <div class="flex items-center justify-between">
-                <div class="text-black font-bold text-2xl font-inter_bold">
-                  Aksesibilitas
-                </div>
-                <div class="flex items-center">
-                  <img
-                    src="./src/images/logout2.png"
-                    alt="Logout"
-                    class="h-6 md:h-12 lg:h-16"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Konten -->
-            <div class="mobile-survey h-[80vh]">
-              <!-- Konten Rekap -->
-              <div
-                id="rekapContainer"
-                class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[35vh] transition-all ease-in-out duration-300 table-rekap-hide absolute bottom-0 z-10 hidden"
-              >
-                <!--  -->
-
-                <div class="flex flex-col scroll_up_rekap">
-                  <div class="flex justify-center px-6 mb-3">
-                    <div
-                      class="w-7 h-1 bg-gray-300 rounded-full cursor-pointer sticky -top-2 z-10"
-                      id="toggleButtonRekap"
-                    ></div>
-                  </div>
-                  <!--  -->
-                  <div class="mb-4 -mt-1 flex flex-col px-6">
-                    <div class="font-medium text-xl text-gray-700">Rekap</div>
-                  </div>
-                </div>
-
-                <!--  -->
-                <div class="relative px-3 pb-11">
-                  <!-- Data Dumy1 -->
-                  <div class="flex flex-col mb-1">
-                    <!-- Data -->
-                    <div
-                      class="text-black text-sm grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
-                    >
-                      <div
-                        class="flex justify-start items-center w-full btn_open_table_detail"
-                      >
-                        Taman Pondok Indah Pinggir Kali
-                      </div>
-                      <div class="flex justify-end mt-1.5">
-                        <div class="w-[1.1rem] h-[1.1rem]">
-                          <img src="./src/images/hapus.png" alt="Delete" />
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Show Detail -->
-                    <!-- id="show-detail-rekap" -->
-                    <div
-                      class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3 hidden"
-                    >
-                      <div
-                        class="overflow-y-hidden h-[20vh] expand_rekap hide-scrollbar relative"
-                      >
-                        <form>
-                          <div class="mb-3">
-                            <label
-                              for="alamat"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Alamat Lokasi</label
-                            >
-                            <input
-                              type="text"
-                              id="alamat"
-                              name="alamat"
-                              class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              value="Jalan manggis"
-                              readonly=""
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="lebar"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Lebar Jalan</label
-                            >
-                            <input
-                              type="text"
-                              id="lebar"
-                              name="lebar"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              required=""
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="jenis"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Jenis Jalan</label
-                            >
-                            <select
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              name="jenis"
-                            >
-                              <option value="">Pilih</option>
-                              <option value="">Permukaan</option>
-                              <option value="">Underground</option>
-                              <option value="">Di atas</option>
-                            </select>
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="kelas"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Kelas Jalan</label
-                            >
-                            <select
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              name="kelas"
-                            >
-                              <option value="">Pilih</option>
-                              <option value="">Arteri</option>
-                              <option value="">Kolektor</option>
-                              <option value="">Lingkungan</option>
-                            </select>
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="kelas"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Pedestrian</label
-                            >
-
-                            <div class="grid grid-rows-2">
-                              <div class="flex items-center">
-                                <input
-                                  id="ada"
-                                  type="radio"
-                                  value=""
-                                  name="status"
-                                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
-                                />
-                                <label for="ada" class="ml-2 text-sm"
-                                  >Ada</label
-                                >
-                              </div>
-                              <div class="flex items-center">
-                                <input
-                                  id="tidak-ada"
-                                  type="radio"
-                                  value=""
-                                  name="status"
-                                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
-                                />
-                                <label for="tidak-ada" class="ml-2 text-sm"
-                                  >Tidak Ada</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-
-                          <div
-                            class="max-w-screen-lg mx-auto grid grid-rows-2 mb-6"
-                          >
-                            <div class="grid grid-cols-2 gap-x-5 mb-2">
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Depan</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoDepanInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoDepanInput', 'fotoDepanPreview')"
-                                  />
-                                  <label
-                                    for="fotoDepanInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoDepanPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Seberang</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoSeberangInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoSeberangInput', 'fotoSeberangPreview')"
-                                  />
-                                  <label
-                                    for="fotoSeberangInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoSeberangPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-x-5">
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Kiri</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoKiriInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoKiriInput', 'fotoKiriPreview')"
-                                  />
-                                  <label
-                                    for="fotoKiriInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoKiriPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Kanan</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoKananInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoKananInput', 'fotoKananPreview')"
-                                  />
-                                  <label
-                                    for="fotoKananInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoKananPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="max-w-screen-lg mx-auto grid grid-rows-1">
-                            <div class="grid grid-cols-1">
-                              <div class="flex justify-center xs:pb-7">
-                                <div class="">
-                                  <button
-                                    id="btn_table_detail"
-                                    type="button"
-                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-sm px-10 py-2.5 text-center"
-                                  >
-                                    Simpan
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--  -->
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Data Dumy1 -->
-                  <div class="flex flex-col mb-1">
-                    <!-- Data -->
-                    <div
-                      class="text-black text-sm grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
-                    >
-                      <div
-                        class="flex justify-start items-center w-full btn_open_table_detail"
-                      >
-                        Taman Pondok Indah Pinggir Kali
-                      </div>
-                      <div class="flex justify-end mt-1.5">
-                        <div class="w-[1.1rem] h-[1.1rem]">
-                          <img src="./src/images/hapus.png" alt="Delete" />
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Show Detail -->
-                    <div
-                      class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3 hidden"
-                    >
-                      <div
-                        class="overflow-y-hidden h-[20vh] expand_rekap hide-scrollbar relative"
-                      >
-                        <form>
-                          <div class="mb-3">
-                            <label
-                              for="alamat"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Alamat Lokasi</label
-                            >
-                            <input
-                              type="text"
-                              id="alamat"
-                              name="alamat"
-                              class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              value="Jalan manggis"
-                              readonly=""
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="lebar"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Lebar Jalan</label
-                            >
-                            <input
-                              type="text"
-                              id="lebar"
-                              name="lebar"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              required=""
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="jenis"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Jenis Jalan</label
-                            >
-                            <select
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              name="jenis"
-                            >
-                              <option value="">Pilih</option>
-                              <option value="">Permukaan</option>
-                              <option value="">Underground</option>
-                              <option value="">Di atas</option>
-                            </select>
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="kelas"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Kelas Jalan</label
-                            >
-                            <select
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              name="kelas"
-                            >
-                              <option value="">Pilih</option>
-                              <option value="">Arteri</option>
-                              <option value="">Kolektor</option>
-                              <option value="">Lingkungan</option>
-                            </select>
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="kelas"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Pedestrian</label
-                            >
-
-                            <div class="grid grid-rows-2">
-                              <div class="flex items-center">
-                                <input
-                                  id="ada"
-                                  type="radio"
-                                  value=""
-                                  name="status"
-                                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
-                                />
-                                <label for="ada" class="ml-2 text-sm"
-                                  >Ada</label
-                                >
-                              </div>
-                              <div class="flex items-center">
-                                <input
-                                  id="tidak-ada"
-                                  type="radio"
-                                  value=""
-                                  name="status"
-                                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
-                                />
-                                <label for="tidak-ada" class="ml-2 text-sm"
-                                  >Tidak Ada</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-
-                          <div
-                            class="max-w-screen-lg mx-auto grid grid-rows-2 mb-6"
-                          >
-                            <div class="grid grid-cols-2 gap-x-5 mb-2">
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Depan</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoDepanInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoDepanInput', 'fotoDepanPreview')"
-                                  />
-                                  <label
-                                    for="fotoDepanInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoDepanPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Seberang</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoSeberangInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoSeberangInput', 'fotoSeberangPreview')"
-                                  />
-                                  <label
-                                    for="fotoSeberangInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoSeberangPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-x-5">
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Kiri</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoKiriInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoKiriInput', 'fotoKiriPreview')"
-                                  />
-                                  <label
-                                    for="fotoKiriInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoKiriPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Kanan</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoKananInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoKananInput', 'fotoKananPreview')"
-                                  />
-                                  <label
-                                    for="fotoKananInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoKananPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="flex justify-center mb-4">
-                            <div class="">
-                              <button
-                                id="btn_table_detail"
-                                type="button"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-sm px-10 py-2.5 text-center"
-                              >
-                                Simpan
-                              </button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                  <!--  -->
-                </div>
-              </div>
-              <!-- Konten Form  -->
-              <div
-                class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 absolute bottom-0 z-10 form-input-akses hidden"
-              >
-                <!--  -->
-
-                <div class="flex flex-col scroll_up_form_input">
-                  <div class="flex justify-center px-6 mb-3">
-                    <div
-                      class="w-7 h-1 bg-gray-300 rounded-full cursor-pointer sticky -top-2 z-10"
-                      id="toggleButtonFormInput"
-                    ></div>
-                  </div>
-                  <!--  -->
-                  <div class="mb-4 -mt-1 flex flex-col px-6">
-                    <div class="font-medium text-xl text-gray-700">
-                      Form Input
-                    </div>
-                  </div>
-                </div>
-
-                <!--  -->
-                <div class="relative px-3 pb-11">
-                  <!-- Data Dumy1 -->
-                  <div class="flex flex-col mb-1">
-                    <!-- Data -->
-
-                    <div
-                      class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3"
-                    >
-                      <div
-                        class="overflow-y-hidden h-[20vh] expand_input hide-scrollbar relative"
-                      >
-                        <form>
-                          <div class="mb-3">
-                            <label
-                              for="lokasi"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Nama Lokasi</label
-                            >
-                            <input
-                              type="text"
-                              id="lokasi"
-                              name="lokasi"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              required=""
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="alamat"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Alamat Lokasi</label
-                            >
-                            <input
-                              type="text"
-                              id="alamat"
-                              name="alamat"
-                              class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              value="Jalan manggis"
-                              readonly=""
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="lebar"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Lebar Jalan</label
-                            >
-                            <input
-                              type="text"
-                              id="lebar"
-                              name="lebar"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              required=""
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="jenis"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Jenis Jalan</label
-                            >
-                            <select
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              name="jenis"
-                            >
-                              <option value="">Pilih</option>
-                              <option value="">Permukaan</option>
-                              <option value="">Underground</option>
-                              <option value="">Di atas</option>
-                            </select>
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="kelas"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Kelas Jalan</label
-                            >
-                            <select
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 px-2.5 py-1.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              name="kelas"
-                            >
-                              <option value="">Pilih</option>
-                              <option value="">Arteri</option>
-                              <option value="">Kolektor</option>
-                              <option value="">Lingkungan</option>
-                            </select>
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="kelas"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Pedestrian</label
-                            >
-
-                            <div class="grid grid-rows-2">
-                              <div class="flex items-center">
-                                <input
-                                  id="ada"
-                                  type="radio"
-                                  value=""
-                                  name="status"
-                                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
-                                />
-                                <label for="ada" class="ml-2 text-sm"
-                                  >Ada</label
-                                >
-                              </div>
-                              <div class="flex items-center">
-                                <input
-                                  id="tidak-ada"
-                                  type="radio"
-                                  value=""
-                                  name="status"
-                                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
-                                />
-                                <label for="tidak-ada" class="ml-2 text-sm"
-                                  >Tidak Ada</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-
-                          <div
-                            class="max-w-screen-lg mx-auto grid grid-rows-2 mb-6"
-                          >
-                            <div class="grid grid-cols-2 gap-x-5 mb-2">
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Depan</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoDepanInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoDepanInput', 'fotoDepanPreview')"
-                                  />
-                                  <label
-                                    for="fotoDepanInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoDepanPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Seberang</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoSeberangInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoSeberangInput', 'fotoSeberangPreview')"
-                                  />
-                                  <label
-                                    for="fotoSeberangInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoSeberangPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-x-5">
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Kiri</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoKiriInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoKiriInput', 'fotoKiriPreview')"
-                                  />
-                                  <label
-                                    for="fotoKiriInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoKiriPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                              <div>
-                                <label
-                                  class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                                  >Foto Kanan</label
-                                >
-                                <div class="relative">
-                                  <input
-                                    type="file"
-                                    id="fotoKananInput"
-                                    class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                                    accept="image/*"
-                                    onchange="previewImage('fotoKananInput', 'fotoKananPreview')"
-                                  />
-                                  <label
-                                    for="fotoKananInput"
-                                    class="cursor-pointer"
-                                  >
-                                    <img
-                                      id="fotoKananPreview"
-                                      class="w-auto h-5vh"
-                                      src="./src/images/noimage.png"
-                                      alt="Tidak ada gambar"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="flex justify-center mb-4">
-                            <div class="">
-                              <button
-                                id="btn_table_detail"
-                                type="button"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-0 font-medium rounded-full text-sm px-10 py-2.5 text-center"
-                              >
-                                Simpan
-                              </button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                  <!--  -->
-                </div>
-              </div>
-
-              <!-- Konten Profil -->
-              <div
-                class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 form-profil absolute bottom-0 z-10 hidden"
-              >
-                <!--  -->
-
-                <div class="flex flex-col scroll_up_rekap">
-                  <div class="flex justify-center px-6 mb-3">
-                    <div
-                      class="w-7 h-1 bg-gray-300 rounded-full cursor-pointer sticky -top-2 z-10"
-                      id="toggleButtonProfil"
-                    ></div>
-                  </div>
-                  <!--  -->
-                  <div class="mb-4 -mt-1 flex flex-col px-6">
-                    <div class="font-medium text-xl text-gray-700">Profil</div>
-                  </div>
-                </div>
-
-                <!--  -->
-                <div class="relative px-3 pb-11">
-                  <!-- Data Dumy1 -->
-                  <div class="flex flex-col mb-1">
-                    <!-- Data -->
-
-                    <div
-                      class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3"
-                    >
-                      <div
-                        class="overflow-y-hidden h-[20vh] expand_profil hide-scrollbar relative"
-                      >
-                        <form>
-                          <div class="mb-3">
-                            <label
-                              for="nama"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Nama</label
-                            >
-                            <input
-                              type="text"
-                              id="nama"
-                              name="nama"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              placeholder="Fahmi"
-                              readonly
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="penempatan"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Penempatan</label
-                            >
-                            <input
-                              type="text"
-                              id="penempatan"
-                              name="penempatan"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              placeholder="Jakarta Selatan"
-                              readonly
-                            />
-                          </div>
-                          <div class="mb-16">
-                            <label
-                              for="jabatan"
-                              class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
-                              >Jabatan</label
-                            >
-                            <input
-                              type="text"
-                              id="jabatan"
-                              name="jabatan"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
-                              placeholder="AJIB"
-                              readonly
-                            />
-                          </div>
-
-                          <div
-                            class="max-w-screen-lg mx-auto grid grid-rows-1 mb-16"
-                          >
-                            <div class="grid grid-cols-1">
-                              <div class="flex justify-center xs:pb-7">
-                                <div class="">&nbsp;</div>
-                              </div>
-                            </div>
-                          </div>
-                          <!--  -->
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Menu Navigation - Mobile  -->
-            <div
-              class="mobile-survey h-[10vh] w-full fixed bottom-0 p-5 px-6 bg-white shadow-3xl text-gray-400 cursor-pointer z-10"
-            >
-              <div class="grid grid-cols-3">
-                <!-- Menu1 -->
-                <div class="flex flex-col items-center">
-                  <div class="inline-flex flex-col items-center justify-center">
-                    <div
-                      class="flex w-8 h-8 items-center justify-center btn_rekap"
-                    >
-                      <img
-                        src="./src/images/rekap.png"
-                        alt=""
-                        class="menu-image-rekap"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Menu2 -->
-                <div class="flex flex-col items-center relative">
                   <div
-                    class="bottom-5 text-center flex items-center justify-center rounded-full text-3xl p-[3vh] text-white bg-[#2A64D9] transition ease-in duration-200 absolute btn_form_input"
+                    class="flex items-center justify-center p-1 border-2 border-gray-700 rounded-full shadow"
                   >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 18 18"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 1v16M1 9h16"
-                      />
-                    </svg>
+                    <img
+                      class="w-6 h-6 rounded-full"
+                      src="./src/images/user.png"
+                      alt="user photo"
+                    />
                   </div>
-                </div>
+                </button>
 
-                <!-- Menu3 -->
-                <div class="flex flex-col items-center">
-                  <div class="inline-flex flex-col items-center justify-center">
-                    <div
-                      class="flex w-8 h-8 items-center justify-center btn_profil"
+                <!-- Dropdown menu -->
+                <div
+                  id="dropdownAvatarName"
+                  class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 mx-10"
+                >
+                  <ul
+                    class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownAvatarNameButton"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Profile</a
+                      >
+                    </li>
+                  </ul>
+                  <div class="py-2">
+                    <a
+                      href="login.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                      >Keluar</a
                     >
-                      <img
-                        src="./src/images/user.png"
-                        alt=""
-                        class="menu-image-profil"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
-
-              <!--  -->
             </div>
           </div>
-          <!--  Screen Dekstop  -->
-          <div class="bg-slate-50 dekstop-survey">
-            <div class="md:h-[80vh] lg:h-[80vh] xl:h-[80vh]">
-              <div class="overflow-y-auto hide-scrollbar h-full p-10">
-                <form class="">
+
+          <!-- container-survey-aksesibilitas -->
+          <div class="grid grid-cols-[60px_1fr_1fr] h-full">
+            <div class="bg-slate-50 dekstop-survey px-0 py-5">
+              <!-- Survey Aksesibilitas -->
+              <div class="flex col justify-center mb-3">
+                <div class="flex flex-col">
+                  <div
+                    class="w-8 h-8 flex justify-center items-center cursor-pointer relative"
+                  >
+                    <div>
+                      <img
+                        class=""
+                        src="./src/images/open_collapse.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <!--  -->
+                </div>
+              </div>
+              <!-- Rekap -->
+              <div class="flex col justify-center">
+                <div class="flex flex-col">
+                  <div
+                    class="w-10 h-10 flex justify-center items-center cursor-pointer relative"
+                  >
+                    <div>
+                      <img
+                        class=""
+                        src="./src/images/active_rekap.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <!--  -->
+                </div>
+              </div>
+            </div>
+            <!-- Mapbox - Screen Mobile -->
+            <div id="mapAksesibilitas" class="map-container"></div>
+            <div class="bg-slate-50 dekstop-survey px-9 pt-9 pb-5">
+              <div
+                class="md:h-[81vh] lg:h-[81vh] xl:h-[81vh] overflow-y-auto hide-scrollbar border border-gray-300"
+              >
+                <!--  Screen Dekstop - Menu Survey Aksesibilitas -->
+                <form class="hidden">
                   <!--  -->
                   <div class="mb-3">
                     <label
@@ -1657,10 +382,128 @@
 
                   <!--  -->
                 </form>
+
+                <!--  Screen Dekstop - Menu Rekap -->
+                <div
+                  id="rekapScreen"
+                  class="grid grid-cols-1 h-full dekstop-survey"
+                >
+                  <div class="bg-slate-50">
+                    <div class="relative overflow-x-auto sm:rounded-lg">
+                      <table
+                        class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                      >
+                        <thead
+                          class="text-xs text-gray-700 uppercase bg-slate-50"
+                        >
+                          <tr>
+                            <th scope="col" class="px-6 py-3">
+                              <div class="flex items-center">
+                                Nama Lokasi
+
+                                <svg
+                                  class="w-3 h-3 ml-1.5 cursor-pointer"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 16 20"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6v13m0 0 3-3m-3 3-3-3m11-2V1m0 0L9 4m3-3 3 3"
+                                  />
+                                </svg>
+                              </div>
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                              <div class="flex items-center">Aksi</div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- ID -->
+                          <tr
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                          >
+                            <td class="px-6 py-4 cursor-pointer bg-white">
+                              Jakarta Selatan
+                            </td>
+                            <td class="px-4 py-4">
+                              <div class="inline-flex">
+                                <div class="mr-3">
+                                  <img
+                                    class="w-5 h-5"
+                                    src="./src/images/edit.png"
+                                    alt=""
+                                  />
+                                </div>
+                                <div>
+                                  <img
+                                    class="w-5 h-5"
+                                    src="./src/images/hapus.png"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <!-- Konten ID -->
+                          <tr
+                            data-row="1"
+                            class="bg-white dark:bg-gray-800 dark:border-gray-700 hidden"
+                          >
+                            <td
+                              class="pl-6 pr-0 py-4 flex items-center justify-center"
+                            ></td>
+                            <td colspan="6" class="px-6 py-4">
+                              <div class="flex flex-col">
+                                <div class="mb-3">
+                                  <label
+                                    for="nama_lokasi"
+                                    class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                                    >Nama Lokasi</label
+                                  >
+                                  <input
+                                    type="text"
+                                    id="nama_lokasi"
+                                    name="nama_lokasi"
+                                    class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                                    value="Jalan manggis"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label
+                                    for="jenis_lokasi"
+                                    class="block mb-1 text-sm font-medium text-gray-900 tracking-wide"
+                                    >Jenis Lokasi</label
+                                  >
+                                  <input
+                                    type="text"
+                                    id="jenis_lokasi"
+                                    name="jenis_lokasi"
+                                    class="bg-gray-200 border border-gray-300 text-gray-900 text-sm block w-full h-10 p-2.5 outline-none border-1 focus:border-gray-700 focus:ring-0"
+                                    value="Jalan"
+                                  />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <!--  -->
               </div>
             </div>
+            <!--  -->
           </div>
         </div>
+
         <!--  -->
       </div>
     </div>
