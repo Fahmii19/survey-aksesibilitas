@@ -127,7 +127,7 @@ select {
   }
 
   .container-survey-aksesibilitas {
-    @apply grid grid-cols-1;
+    @apply grid grid-cols-1 block !important;
   }
 
   .mobile-survey {

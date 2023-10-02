@@ -2190,8 +2190,9 @@ select {
   }
 
   .container-survey-aksesibilitas {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    display: block !important;
+    display: grid !important;
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
 
   .mobile-survey {
