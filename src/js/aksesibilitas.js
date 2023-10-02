@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Tentukan tinggi akhir berdasarkan kondisi
       if (parseFloat(tableRekapElement.style.height) > 70) {
         tableRekapElement.style.height = "80vh";
-        expandRekap.style.height = "62vh";
+        expandRekap.style.height = "55vh";
       } else if (
         parseFloat(tableRekapElement.style.height) < 70 &&
         parseFloat(tableRekapElement.style.height) >= 20
