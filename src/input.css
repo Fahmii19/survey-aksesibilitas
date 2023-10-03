@@ -121,6 +121,11 @@ select {
   padding: 8px 10px;
 }
 
+/* Datatables */
+#TableRekap tbody tr:hover {
+  background-color: inherit !important; /* Menghilangkan warna latar belakang saat hover */
+}
+
 /* Media Queries */
 @media (max-width: 767px) {
   .dekstop-survey {
