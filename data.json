@@ -1,0 +1,20 @@
+[
+  {
+    "namaLokasi": "Jakarta Selatan",
+    "jenisLokasi": "Permukaan",
+    "kelasLokasi": "Arteri",
+    "pedestrian": "Ada",
+    "kelurahan": "Tebet",
+    "kecamatan": "Tebet",
+    "kota": "Jakarta Selatan"
+  },
+  {
+    "namaLokasi": "Jakarta Utara",
+    "jenisLokasi": "Permukaan",
+    "kelasLokasi": "Arteri",
+    "pedestrian": "Ada",
+    "kelurahan": "Kelapa Gading",
+    "kecamatan": "Kelapa Gading",
+    "kota": "Jakarta Utara"
+  }
+]

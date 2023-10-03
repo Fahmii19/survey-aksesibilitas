@@ -435,59 +435,44 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ========== Logika Rekap Dekstop ==========
-  // const collapseButtons = document.querySelectorAll("[data-attribut]");
-
-  // collapseButtons.forEach((button) => {
-  //   button.addEventListener("click", function () {
-  //     const attributeValue = button.getAttribute("data-attribut");
-  //     const rowToToggle = document.querySelector(
-  //       `[data-row="${attributeValue}"]`
-  //     );
-
-  //     if (rowToToggle) {
-  //       if (
-  //         rowToToggle.style.display === "none" ||
-  //         !rowToToggle.style.display
-  //       ) {
-  //         rowToToggle.style.display = "table-row";
-  //         button.src = "./src/images/close_collapse.png"; // mengubah sumber gambar ketika baris ditampilkan
-  //       } else {
-  //         rowToToggle.style.display = "none";
-  //         button.src = "./src/images/open_collapse.png"; // mengembalikan sumber gambar ketika baris disembunyikan
-  //       }
-  //     }
-  //   });
-  // });
-
-  // // Menyeleksi semua elemen menu - Desktop
-  const menus = document.querySelectorAll(".menu");
-
-  document.getElementById("surveyScreen").classList.add("hidden");
+  // ========== Logika Rekap Dekstop ==========
+  const menuIcons = document.querySelectorAll(".menu-icon");
 
   // Fungsi untuk mengupdate menu yang aktif - Desktop
-  function updateActiveMenu(id) {
-    menus.forEach((menu) => {
-      menu.classList.remove("text-blue-600");
-      menu.classList.add("text-gray-900");
-      if (menu.id === id) {
-        menu.classList.add("text-blue-600");
-        menu.classList.remove("text-gray-900");
+  function updateActiveMenu(selectedIcon) {
+    menuIcons.forEach((icon) => {
+      const menuId = icon.getAttribute("data-menu");
+
+      if (icon === selectedIcon) {
+        if (menuId === "1") {
+          icon.src = "./src/images/open_active.png";
+        } else if (menuId === "2") {
+          icon.src = "./src/images/active_rekap.png";
+        }
+      } else {
+        if (menuId === "1") {
+          icon.src = "./src/images/open_collapse.png";
+        } else if (menuId === "2") {
+          icon.src = "./src/images/rekap.png";
+        }
       }
     });
   }
 
   // Menambahkan event listener ke setiap menu - Desktop
-  menus.forEach((menu) => {
-    menu.addEventListener("click", function () {
-      updateActiveMenu(this.id);
-      if (this.id === "rekapLink") {
-        document.getElementById("judulMenu").innerText = "Rekap";
-        document.getElementById("rekapScreen").classList.remove("hidden");
-        document.getElementById("surveyScreen").classList.add("hidden");
-      } else if (this.id === "surveyLink") {
-        document.getElementById("judulMenu").innerText = "Survey Aksesibilitas";
-        document.getElementById("rekapScreen").classList.add("hidden");
-        document.getElementById("surveyScreen").classList.remove("hidden");
+  menuIcons.forEach((icon) => {
+    icon.addEventListener("click", function () {
+      updateActiveMenu(icon);
+      const menuId = icon.getAttribute("data-menu");
+
+      if (menuId === "1") {
+        // document.getElementById("judulMenu").innerText = "Survey Aksesibilitas";
+        document.getElementById("rekapScreen").style.display = "none";
+        document.getElementById("surveyScreen").style.display = "block";
+      } else if (menuId === "2") {
+        // document.getElementById("judulMenu").innerText = "Rekap";
+        document.getElementById("rekapScreen").style.display = "block";
+        document.getElementById("surveyScreen").style.display = "none";
       }
     });
   });
