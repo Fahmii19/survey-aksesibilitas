@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let newHeight = initialTableHeight + diffY;
 
       // Batasi tinggi minimum dan maksimum
-      newHeight = Math.min(Math.max(0, newHeight), 80);
+      newHeight = Math.min(Math.max(0, newHeight), 90);
 
       // Perubahan tinggi elemen
       tableRekapElement.style.height = newHeight + "vh";
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let newHeightForm = initialFormHeight + diffYForm;
 
       // Batasi tinggi minimum dan maksimum
-      newHeightForm = Math.min(Math.max(0, newHeightForm), 80);
+      newHeightForm = Math.min(Math.max(0, newHeightForm), 90);
 
       // Perubahan tinggi elemen
       formInputAkses.style.height = newHeightForm + "vh";
@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ((touchStartYProfil - touchCurrentYProfil) / window.innerHeight) * 100;
       let newHeightProfil = initialFormProfilHeight + diffYProfil;
       // Batasi tinggi minimum dan maksimum
-      newHeightProfil = Math.min(Math.max(0, newHeightProfil), 80);
+      newHeightProfil = Math.min(Math.max(0, newHeightProfil), 90);
       formProfil.style.height = newHeightProfil + "vh";
       // Tambahkan atau hapus kelas sesuai dengan tinggi
       if (newHeightProfil <= 70) {
