@@ -138,6 +138,10 @@ select {
   table-layout: fixed;
 }
 
+.collapse_hide {
+  display: none;
+}
+
 /* Media Queries */
 @media (max-width: 767px) {
   .dekstop-survey {
