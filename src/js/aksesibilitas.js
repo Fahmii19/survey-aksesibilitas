@@ -1,3 +1,4 @@
+// Semua Function Mobile
 document.addEventListener("DOMContentLoaded", function () {
   // ========== Pendefinisian Variabel ==========
 
@@ -227,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Penanganan gesture untu "Rekap"
+  // Penanganan gesture untuk "Rekap"
   if (tableRekapElement) {
     let touchStartY = 0;
     let initialTableHeight = 0; // Tinggi awal dalam vh
@@ -434,7 +435,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ========== Logika Rekap Dekstop ==========
   // ========== Logika Rekap Dekstop ==========
   const menuIcons = document.querySelectorAll(".menu-icon");
 
