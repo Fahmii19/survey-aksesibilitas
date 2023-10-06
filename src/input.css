@@ -85,16 +85,6 @@ a.mapboxgl-ctrl-logo {
   box-shadow: none !important;
 }
 
-.mapboxgl-ctrl-group button {
-  background-color: white !important;
-  width: 35px !important;
-  height: 35px !important;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
 /* Layer and Location Icons */
 .custom-layer {
   background-image: url("../src/images/layers.png");
@@ -163,6 +153,17 @@ select {
   }
 }
 
+/*  */
+.mapboxgl-ctrl-group button {
+  background-color: white !important;
+  width: 35px !important;
+  height: 35px !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   .mobile-survey {
     @apply block;
@@ -176,6 +177,16 @@ select {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  .mapboxgl-ctrl-group button {
+    background-color: white !important;
+    width: 27px !important;
+    height: 27px !important;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
   .mobile-survey {
     @apply hidden !important;
   }
@@ -183,11 +194,21 @@ select {
   .mapboxgl-ctrl-top-right {
     right: 1vh !important;
     top: 32vh !important;
-    display: none !important;
+    display: block !important;
   }
 }
 
 @media (min-width: 1200px) {
+  .mapboxgl-ctrl-group button {
+    background-color: white !important;
+    width: 27px !important;
+    height: 27px !important;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
   .container-survey-aksesibilitas {
     @apply grid grid-cols-[60px_1fr_1fr];
   }
@@ -198,7 +219,7 @@ select {
 
   .mapboxgl-ctrl-top-right {
     right: 1vh !important;
-    top: 32vh !important;
-    display: none !important;
+    top: 68vh !important;
+    display: block !important;
   }
 }
