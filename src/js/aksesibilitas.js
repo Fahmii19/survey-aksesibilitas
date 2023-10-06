@@ -1,8 +1,7 @@
-// Semua Function Mobile
 document.addEventListener("DOMContentLoaded", function () {
-  // ========== Pendefinisian Variabel ==========
+  // ========== Start Function Mobile ==========
 
-  // Mendapatkan elemen-elemen yang akan digunakan
+  // ========== Pendefinisian Variabel ==========
   const mapboxCtrlElement = document.querySelector(".mapboxgl-ctrl-top-right");
   const formInputAkses = document.querySelector(".form-input-akses");
 
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const toggleButtonFormInput = document.getElementById(
     "toggleButtonFormInput"
-  ); // Ganti dengan ID yang sesuai
+  );
   const btnFormInput = document.querySelector(".btn_form_input");
   const toggleButtonProfil = document.getElementById("toggleButtonProfil");
   const toggleButtonRekap = document.getElementById("toggleButtonRekap");
@@ -36,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const formContainerFormInputHide = expandFormInput;
   const expandProfil = document.querySelector(".expand_profil");
   const formContainerProfilHide = expandProfil;
-
-  // ========== Fungsi Bantuan ==========
 
   // Fungsi untuk mereset semua elemen
   function resetAll() {
@@ -210,9 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.remove("rounded-tl-[15px]");
         formProfil.classList.remove("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "none";
-
-        // expandProfil.classList.remove("overflow-y-auto");
-        // expandProfil.classList.add("overflow-y-hidden");
       }
       if (formProfil.style.height === "35vh") {
         if (mapboxCtrlElement) {
@@ -220,10 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
-        toggleButtonProfil.style.display = "block"; // Tampilkan tombol toggle lagi
-
-        // expandProfil.classList.remove("overflow-y-hidden");
-        // expandProfil.classList.add("overflow-y-auto");
+        toggleButtonProfil.style.display = "block";
       }
     });
   }
@@ -396,16 +387,10 @@ document.addEventListener("DOMContentLoaded", function () {
         formProfil.classList.add("rounded-tl-[15px]");
         formProfil.classList.add("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "block";
-        //
-        // expandProfil.classList.remove("overflow-y-auto");
-        // expandProfil.classList.add("overflow-y-hidden");
       } else {
         formProfil.classList.remove("rounded-tl-[15px]");
         formProfil.classList.remove("rounded-tr-[15px]");
         toggleButtonProfil.style.display = "none";
-        //
-        // expandProfil.classList.remove("overflow-y-hidden");
-        // expandProfil.classList.add("overflow-y-auto");
       }
     });
 
@@ -435,101 +420,110 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Screen Dekstop - Menu Rekap - Dekstop
-  const judulTable = document.querySelector(".btn_open_judul_table");
-  const kembaliTable = document.querySelector(".btn_close_judul_table");
-  kembaliTable.classList.add("hidden");
-  const change_height_rekap = document.querySelector(".change_height_rekap");
+  // ========== End Function Mobile ==========
 
-  if (judulTable) {
-    judulTable.addEventListener("click", function () {
-      if (change_height_rekap.classList.contains("h-[73vh]")) {
-        change_height_rekap.classList.remove("h-[73vh]");
-        change_height_rekap.classList.add("h-[78vh]");
-      }
+  // ========== Start Function Dekstop ==========
 
-      kembaliTable.classList.remove("hidden");
-      const tombolTable = document.querySelector(".btn_open_tombol_table");
-      const hide_nagivation_table = document.querySelector(
+  //  Class untuk mengelola tampilan tabel - Dekstop.
+
+  class TableDisplayManager {
+    constructor() {
+      this.judulTable = document.querySelector(".btn_open_judul_table");
+      this.kembaliTable = document.querySelector(".btn_close_judul_table");
+      this.changeHeightRekap = document.querySelector(".change_height_rekap");
+      this.tombolTable = document.querySelector(".btn_open_tombol_table");
+      this.hideNavigationTable = document.querySelector(
         ".hide_nagivation_table"
       );
-      const kontenTable = document.querySelector(".btn_open_konten_table");
+      this.kontenTable = document.querySelector(".btn_open_konten_table");
 
-      if (tombolTable && kontenTable) {
-        tombolTable.classList.add("hidden");
-        hide_nagivation_table.classList.add("hidden");
-        kontenTable.classList.remove("hidden");
-      }
-    });
+      this.initialize();
+    }
+
+    // Menginisialisasi event listener dan pengaturan awal
+    initialize() {
+      this.kembaliTable.classList.add("hidden");
+
+      this.judulTable?.addEventListener("click", () => this.expandTable());
+      this.kembaliTable?.addEventListener("click", () => this.collapseTable());
+    }
+
+    // Mengelola penampilan tabel saat diklik expand
+    expandTable() {
+      this.toggleTableHeight();
+      this.kembaliTable.classList.remove("hidden");
+      this.tombolTable.classList.add("hidden");
+      this.hideNavigationTable.classList.add("hidden");
+      this.kontenTable.classList.remove("hidden");
+    }
+
+    // Mengelola penampilan tabel saat diklik collapse
+    collapseTable() {
+      this.toggleTableHeight();
+      this.kembaliTable.classList.add("hidden");
+      this.tombolTable.classList.remove("hidden");
+      this.hideNavigationTable.classList.remove("hidden");
+      this.kontenTable.classList.add("hidden");
+    }
+
+    // Mengubah ketinggian tabel saat expand dan collapse
+    toggleTableHeight() {
+      const isExpanded = this.changeHeightRekap.classList.contains("h-[78vh]");
+      this.changeHeightRekap.classList.toggle("h-[73vh]", isExpanded);
+      this.changeHeightRekap.classList.toggle("h-[78vh]", !isExpanded);
+    }
   }
 
-  if (kembaliTable) {
-    kembaliTable.addEventListener("click", function () {
-      const kembaliTable = document.querySelector(".btn_close_judul_table");
-      kembaliTable.classList.add("hidden");
+  //  Class untuk mengelola menu icon - Dekstop.
 
-      if (change_height_rekap.classList.contains("h-[78vh]")) {
-        change_height_rekap.classList.remove("h-[78vh]");
-        change_height_rekap.classList.add("h-[73vh]");
-      }
+  class MenuIconManager {
+    constructor(kembaliTable) {
+      this.menuIcons = document.querySelectorAll(".menu-icon");
+      this.kembaliTable = kembaliTable;
 
-      const tombolTable = document.querySelector(".btn_open_tombol_table");
-      const kontenTable = document.querySelector(".btn_open_konten_table");
-      const hide_nagivation_table = document.querySelector(
-        ".hide_nagivation_table"
-      );
+      this.bindEvents();
+    }
 
-      if (tombolTable && kontenTable) {
-        tombolTable.classList.remove("hidden");
-        hide_nagivation_table.classList.remove("hidden");
-        kontenTable.classList.add("hidden");
-      }
-    });
-  }
+    // Mengupdate ikon menu yang aktif
+    updateActiveMenu(selectedIcon) {
+      this.menuIcons.forEach((icon) => {
+        const menuId = icon.getAttribute("data-menu");
+        icon.src =
+          menuId === "1"
+            ? icon === selectedIcon
+              ? "./src/images/open_active.png"
+              : "./src/images/open_collapse.png"
+            : icon === selectedIcon
+            ? "./src/images/active_rekap.png"
+            : "./src/images/rekap.png";
+      });
+    }
 
-  //
+    // Mengikat event listener ke setiap ikon menu
+    bindEvents() {
+      this.menuIcons.forEach((icon) => {
+        icon.addEventListener("click", () => this.onIconClick(icon));
+      });
+    }
 
-  // ========== Logika Rekap Dekstop ==========
-  const menuIcons = document.querySelectorAll(".menu-icon");
-
-  // Fungsi untuk mengupdate menu yang aktif - Desktop
-  function updateActiveMenu(selectedIcon) {
-    menuIcons.forEach((icon) => {
+    // Mengelola tindakan saat ikon menu diklik
+    onIconClick(icon) {
+      this.updateActiveMenu(icon);
       const menuId = icon.getAttribute("data-menu");
 
-      if (icon === selectedIcon) {
-        if (menuId === "1") {
-          icon.src = "./src/images/open_active.png";
-        } else if (menuId === "2") {
-          icon.src = "./src/images/active_rekap.png";
-        }
-      } else {
-        if (menuId === "1") {
-          icon.src = "./src/images/open_collapse.png";
-        } else if (menuId === "2") {
-          icon.src = "./src/images/rekap.png";
-        }
-      }
-    });
+      document.getElementById("rekapScreen").style.display =
+        menuId === "2" ? "block" : "none";
+      document.getElementById("surveyScreen").style.display =
+        menuId === "1" ? "block" : "none";
+
+      // Trigger click event pada kembaliTable saat menu 1 dipilih
+      if (menuId === "1") this.kembaliTable.click();
+    }
   }
 
-  // Menambahkan event listener ke setiap menu - Desktop
-  menuIcons.forEach((icon) => {
-    icon.addEventListener("click", function () {
-      updateActiveMenu(icon);
-      const menuId = icon.getAttribute("data-menu");
+  // Inisialisasi class
+  const tableManager = new TableDisplayManager();
+  new MenuIconManager(tableManager.kembaliTable);
 
-      if (menuId === "1") {
-        // document.getElementById("judulMenu").innerText = "Survey Aksesibilitas";
-        document.getElementById("rekapScreen").style.display = "none";
-        document.getElementById("surveyScreen").style.display = "block";
-      } else if (menuId === "2") {
-        // document.getElementById("judulMenu").innerText = "Rekap";
-        document.getElementById("rekapScreen").style.display = "block";
-        document.getElementById("surveyScreen").style.display = "none";
-      }
-    });
-  });
-
-  //
+  // ========== End Function Dekstop ==========
 });
