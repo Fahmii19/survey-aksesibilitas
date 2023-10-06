@@ -435,6 +435,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Screen Dekstop - Menu Rekap - Dekstop
+  const judulTable = document.querySelector(".btn_open_judul_table");
+  const kembaliTable = document.querySelector(".btn_close_judul_table");
+  kembaliTable.classList.add("hidden");
+  const change_height_rekap = document.querySelector(".change_height_rekap");
+
+  if (judulTable) {
+    judulTable.addEventListener("click", function () {
+      if (change_height_rekap.classList.contains("h-[73vh]")) {
+        change_height_rekap.classList.remove("h-[73vh]");
+        change_height_rekap.classList.add("h-[78vh]");
+      }
+
+      kembaliTable.classList.remove("hidden");
+      const tombolTable = document.querySelector(".btn_open_tombol_table");
+      const hide_nagivation_table = document.querySelector(
+        ".hide_nagivation_table"
+      );
+      const kontenTable = document.querySelector(".btn_open_konten_table");
+
+      if (tombolTable && kontenTable) {
+        tombolTable.classList.add("hidden");
+        hide_nagivation_table.classList.add("hidden");
+        kontenTable.classList.remove("hidden");
+      }
+    });
+  }
+
+  if (kembaliTable) {
+    kembaliTable.addEventListener("click", function () {
+      const kembaliTable = document.querySelector(".btn_close_judul_table");
+      kembaliTable.classList.add("hidden");
+
+      if (change_height_rekap.classList.contains("h-[78vh]")) {
+        change_height_rekap.classList.remove("h-[78vh]");
+        change_height_rekap.classList.add("h-[73vh]");
+      }
+
+      const tombolTable = document.querySelector(".btn_open_tombol_table");
+      const kontenTable = document.querySelector(".btn_open_konten_table");
+      const hide_nagivation_table = document.querySelector(
+        ".hide_nagivation_table"
+      );
+
+      if (tombolTable && kontenTable) {
+        tombolTable.classList.remove("hidden");
+        hide_nagivation_table.classList.remove("hidden");
+        kontenTable.classList.add("hidden");
+      }
+    });
+  }
+
+  //
+
   // ========== Logika Rekap Dekstop ==========
   const menuIcons = document.querySelectorAll(".menu-icon");
 
