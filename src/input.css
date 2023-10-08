@@ -132,6 +132,17 @@ select {
   display: none;
 }
 
+/*  */
+.mapboxgl-ctrl-group button {
+  background-color: white !important;
+  width: 35px !important;
+  height: 35px !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 /* Media Queries */
 @media (max-width: 767px) {
   .dekstop-survey {
@@ -151,17 +162,14 @@ select {
     top: 32vh !important;
     display: block;
   }
-}
 
-/*  */
-.mapboxgl-ctrl-group button {
-  background-color: white !important;
-  width: 35px !important;
-  height: 35px !important;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  /* login */
+  .container-konten-login {
+    @apply basis-full;
+  }
+  .container-image-login {
+    @apply hidden;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -196,6 +204,14 @@ select {
     top: 32vh !important;
     display: block !important;
   }
+
+  /* login */
+  .container-konten-login {
+    @apply basis-5/12;
+  }
+  .container-image-login {
+    @apply basis-7/12;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -221,5 +237,13 @@ select {
     right: 1vh !important;
     top: 68vh !important;
     display: block !important;
+  }
+
+  /* login */
+  .container-konten-login {
+    @apply basis-5/12;
+  }
+  .container-image-login {
+    @apply basis-7/12;
   }
 }

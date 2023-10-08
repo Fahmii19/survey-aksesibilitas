@@ -7,24 +7,26 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <!-- CSS -->
+    <!-- Generated CSS -->
     <link rel="stylesheet" href="dist/output.css" />
 
+    <!-- Mapbox -->
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
       rel="stylesheet"
     />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 
+    <!-- Flowbite -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css"
       rel="stylesheet"
     />
 
-    <!-- Include jQuery -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Include DataTables CSS dan JS -->
+    <!-- DataTables CSS dan JS -->
     <link
       rel="stylesheet"
       type="text/css"
@@ -41,10 +43,11 @@
     <div class="relative h-[100vh] z-10 bg-slate-50 w-full">
       <div class="grid grid-cols-1 h-full">
         <div class="flex flex-col">
+          <!-- Tinggi Dari Judul - Screen Desktop -->
           <div class="h-[10vh] w-full bg-white border-b dekstop-survey">
             <div class="flex justify-between items-center h-full px-6">
               <div class="-ml-2.5 grid grid-cols-2">
-                <!-- Nama Judul Dekstop -->
+                <!-- Nama Judul - Screen Desktop  -->
                 <div class="flex items-center justify-start">
                   <a href="#" class="flex items-center">
                     <img
@@ -59,7 +62,7 @@
                 </div>
               </div>
 
-              <!-- Menu Dropdown Login -->
+              <!-- Start Menu Dropdown Login - Screen Desktop -->
               <div class="flex items-center">
                 <button
                   id="dropdownAvatarNameButton"
@@ -78,8 +81,6 @@
                     />
                   </div>
                 </button>
-
-                <!-- Dropdown menu -->
                 <div
                   id="dropdownAvatarName"
                   class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 mx-10"
@@ -105,13 +106,14 @@
                   </div>
                 </div>
               </div>
+              <!-- End Menu Dropdown Login - Screen Desktop -->
             </div>
           </div>
 
-          <!-- -->
+          <!-- Start Konten Survey Aksesibilitas Mobile & Dekstop -->
           <div class="container-survey-aksesibilitas h-full">
             <div class="bg-slate-50 dekstop-survey px-0 py-5">
-              <!-- Survey Aksesibilitas -->
+              <!-- Survey Aksesibilitas - Screen Desktop -->
               <div class="flex col justify-center mb-7 mt-4">
                 <div class="flex flex-col">
                   <div
@@ -126,7 +128,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Rekap -->
+              <!-- Rekap - Screen Desktop -->
               <div class="flex col justify-center">
                 <div class="flex flex-col">
                   <div
@@ -161,15 +163,13 @@
                 </div>
               </div>
 
-              <!-- Konten -->
+              <!-- Konten - Screen Mobile -->
               <div class="mobile-survey h-[90vh]">
-                <!-- Konten Rekap -->
+                <!-- Konten Rekap - Screen Mobile -->
                 <div
                   id="rekapContainer"
                   class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[35vh] transition-all ease-in-out duration-300 table-rekap-hide absolute bottom-0 z-10 hidden"
                 >
-                  <!--  -->
-
                   <div class="flex flex-col scroll_up_rekap">
                     <div class="flex justify-center px-6 mb-3">
                       <div
@@ -177,17 +177,14 @@
                         id="toggleButtonRekap"
                       ></div>
                     </div>
-                    <!--  -->
                     <div class="mb-4 -mt-1 flex flex-col px-6">
                       <div class="font-medium text-xl text-gray-700">Rekap</div>
                     </div>
                   </div>
 
-                  <!--  -->
+                  <!-- Data Dumy1 -->
                   <div class="relative px-3 pb-11">
-                    <!-- Data Dumy1 -->
                     <div class="flex flex-col mb-1">
-                      <!-- Data -->
                       <div
                         class="text-black text-sm grid grid-cols-[1fr,60px] border rounded-md py-3 px-3 bg-white"
                       >
@@ -202,8 +199,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- Show Detail -->
-                      <!-- id="show-detail-rekap" -->
+                      <!-- Show Detail Data Dumy -->
                       <div
                         class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3 hidden"
                       >
@@ -438,12 +434,11 @@
                                 </div>
                               </div>
                             </div>
-                            <!--  -->
                           </form>
                         </div>
                       </div>
                     </div>
-                    <!-- Data Dumy1 -->
+                    <!-- Data Dumy2 -->
                     <div class="flex flex-col mb-1">
                       <!-- Data -->
                       <div
@@ -696,12 +691,11 @@
                     <!--  -->
                   </div>
                 </div>
-                <!-- Konten Form  -->
+
+                <!-- Konten Form - Screen Mobile  -->
                 <div
                   class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 absolute bottom-0 z-10 form-input-akses hidden"
                 >
-                  <!--  -->
-
                   <div class="flex flex-col scroll_up_form_input">
                     <div class="flex justify-center px-6 mb-3">
                       <div
@@ -709,7 +703,7 @@
                         id="toggleButtonFormInput"
                       ></div>
                     </div>
-                    <!--  -->
+
                     <div class="mb-4 -mt-1 flex flex-col px-6">
                       <div class="font-medium text-xl text-gray-700">
                         Form Input
@@ -717,12 +711,9 @@
                     </div>
                   </div>
 
-                  <!--  -->
+                  <!-- Form - Screen Mobile  -->
                   <div class="relative px-3 pb-11">
-                    <!-- Data Dumy1 -->
                     <div class="flex flex-col mb-1">
-                      <!-- Data -->
-
                       <div
                         class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3"
                       >
@@ -969,16 +960,13 @@
                         </div>
                       </div>
                     </div>
-                    <!--  -->
                   </div>
                 </div>
 
-                <!-- Konten Profil -->
+                <!-- Konten Profil - Screen Mobile -->
                 <div
                   class="pb-[4vh] text-black pt-2 bg-slate-50 rounded-tl-[15px] rounded-tr-[15px] w-full h-[45vh] transition-all ease-in-out duration-300 form-profil absolute bottom-0 z-10 hidden"
                 >
-                  <!--  -->
-
                   <div class="flex flex-col scroll_up_rekap">
                     <div class="flex justify-center px-6 mb-3">
                       <div
@@ -986,7 +974,6 @@
                         id="toggleButtonProfil"
                       ></div>
                     </div>
-                    <!--  -->
                     <div class="mb-4 -mt-1 flex flex-col px-6">
                       <div class="font-medium text-xl text-gray-700">
                         Profil
@@ -994,12 +981,9 @@
                     </div>
                   </div>
 
-                  <!--  -->
+                  <!-- Profil - Screen Mobile  -->
                   <div class="relative px-3 pb-11">
-                    <!-- Data Dumy1 -->
                     <div class="flex flex-col mb-1">
-                      <!-- Data -->
-
                       <div
                         class="text-black bg-slate-50 w-full h-full transition-all ease-in-out duration-300 table-detail px-3 pb-5 mt-3"
                       >
@@ -1062,7 +1046,6 @@
                                 </div>
                               </div>
                             </div>
-                            <!--  -->
                           </form>
                         </div>
                       </div>
@@ -1133,19 +1116,16 @@
                     </div>
                   </div>
                 </div>
-
-                <!--  -->
               </div>
             </div>
-            <!--  -->
+
+            <!--  Screen Dekstop - Menu Survey Aksesibilitas -->
             <div class="bg-slate-50 dekstop-survey px-9 pt-4 pb-5">
-              <!--  Screen Dekstop - Menu Survey Aksesibilitas -->
               <div id="surveyScreen">
                 <div class="text-3xl font-extrabold mb-4">Tambah Data</div>
 
                 <div class="h-[78vh] overflow-y-auto hide-scrollbar">
                   <form class="">
-                    <!--  -->
                     <div class="mb-3">
                       <label
                         for="nama_lokasi"
@@ -1554,7 +1534,7 @@
                         </div>
                       </div>
                     </div>
-                    <!--  -->
+
                     <div class="flex flex-col mb-2">
                       <div
                         class="text-black text-sm grid grid-cols-[1fr,60px] border rounded-md bg-white"
@@ -2061,7 +2041,6 @@
                       </form>
                     </div>
                   </div>
-                  <!-- </div> -->
                 </div>
 
                 <!-- Navigation  dihiden sementara-->
@@ -2161,16 +2140,19 @@
               </div>
             </div>
           </div>
+          <!-- End Konten Survey Aksesibilitas Mobile & Dekstop -->
         </div>
       </div>
     </div>
   </body>
 
+  <!-- JS Flowbite -->
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"
     defer
   ></script>
 
+  <!-- JS Survey -->
   <script src="./src/js/aksesibilitas.js" defer></script>
   <script src="./src/js/peta.js" defer></script>
 </html>
